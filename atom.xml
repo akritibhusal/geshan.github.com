@@ -1,0 +1,1604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Geshan's Blog]]></title>
+  <link href="http://geshan.com.np/atom.xml" rel="self"/>
+  <link href="http://geshan.com.np/"/>
+  <updated>2019-03-29T04:23:38+00:00</updated>
+  <id>http://geshan.com.np/</id>
+  <author>
+    <name><![CDATA[Geshan Manandhar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Logging best practices to get the most out of application level logging -- Slides]]></title>
+    <link href="http://geshan.com.np/blog/2019/03/follow-these-logging-best-practices-to-get-the-most-out-of-application-level-logging-slides/"/>
+    <updated>2019-03-26T09:02:43+00:00</updated>
+    <id>http://geshan.com.np/blog/2019/03/follow-these-logging-best-practices-to-get-the-most-out-of-application-level-logging-slides</id>
+    <content type="html"><![CDATA[<p>Logs from the application level are the only way your application talks back to you. Having proper logs with commendable search capabilities is like having a torch in a dark room.</p>
+
+<p>Fully exploiting logs in case of any issues is very underrated. We as software engineers can utilize logs from the application to resolve issues as well as know the general health of the application.</p>
+
+<blockquote><p>Logs can be instrumental to profile application performance too.</p></blockquote>
+
+<p>I had written about <a href="https://geshan.com.np/blog/2015/08/importance-of-logging-in-your-applications/">logging</a> some years back too. This post is focused on best practices you can follow when logging from the application level and how it can help you as a software engineer.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/logging-best-practices/logging-bp.jpg"></p>
+
+<!-- more -->
+
+
+<h2>Best practices at a glace</h2>
+
+<p>Following are the main best practices for logging:</p>
+
+<h3>1. Log information optimally</h3>
+
+<p>Too much information is noise and too less information is inadequate. It is difficult to strike the balance of how much log is optimal but that is the challenge. In the case of microservices also think about traceability between services like using a unique request identifier. Another thing to keep in mind is logs are temporal, not permanent. As they are not stored in the database they usually have a life from some days to some weeks.</p>
+
+<h3>2. Always follow severity levels</h3>
+
+<p>An emergency means your on-call phone is going to ring at 2 AM in the morning but an info severity is something that won’t bother anyone. You have to agree as a team on some set standards like the <a href="https://tools.ietf.org/html/rfc5424">syslog one</a>.</p>
+
+<h3>3. Structure your logs</h3>
+
+<p>Have a structure in your log lines, like have a message and a context array to add more information about the message. Follow an agreed upon JSON standard for logging. This makes it easy to parse and search. You could even set more rules like the date is mandatory, a description cannot be more than 255 characters, extra information goes in the context. Having these simple rules makes it easier to find the log when in need. It is highly recommended to provide context with log lines like add the details of the order (things that are not sensitive of course) when logging that the order could not be shipped for instance.</p>
+
+<h3>4. Write logs carefully  (don’t hamper performance)</h3>
+
+<p>Make sure that adding logs does not add a lot of extra milliseconds to your response times. As far as possible write logs in an async way, logs could even be written locally in a log file and shipped using a log shipper to the service of your choice. You can also make use of tried and trusted library depending on the language/framework you are working with. Using queues could also be an option to ship logs but keep in mind the possible lag when viewing logs.</p>
+
+<h3>5. Use the right tools for the job</h3>
+
+<p>The tools and services you choose to ship, view, search and sort logs are your team’s choice. Depending on the budget, the appetite for using external services a team could use a fully self-managed stack like <a href="https://www.elastic.co/elk-stack">ELK</a>/<a href="https://www.graylog.org/">Graylog</a> or go full SAAS with services like <a href="https://logentries.com">Logentries</a>/<a href="https://sematext.com/logsene/">Sematext Logsense</a>. The main idea is to use the tools that fit your needs very efficiently. If you need almost real-time logs using a queue, for instance, might not be the best decision. So design your logging infrastructure and stack that fits your needs well.</p>
+
+<h2>The slides</h2>
+
+<p>I had done a talk at my workplace in February about “Logging best practices” and the slides from the talk are below:</p>
+
+<script async class="speakerdeck-embed" data-id="4f33e89002cc4a29926808ef42457fc2" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>You can view the slides on <a href="https://www.slideshare.net/geshan/logging-best-practices">slideshare</a> and <a href="https://speakerdeck.com/geshan/logging-best-practices">speaker deck</a> too.</p>
+
+<h2>Conclusion</h2>
+
+<blockquote><p>If a dog is a man’s best friend, logs are software engineer&rsquo;s best friend.</p></blockquote>
+
+<p>Use logs to the fullest to get the most out of it and keep in mind the best practices about logging.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Things tech recruiters look for in your resume and the first interview]]></title>
+    <link href="http://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for/"/>
+    <updated>2019-01-17T10:20:29+00:00</updated>
+    <id>http://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for</id>
+    <content type="html"><![CDATA[<p>Have you ever applied to many tech jobs that suit your experience and skill but never heard back? Does it feel like you are sending your resume to a black hole? Then this is something you absolutely must read. In this post, 3 tech recruiters in Sydney, Australia answer what they look for in a resume/candidate profile. They also open up about top 3 things they evaluate while conducting the first interview.</p>
+
+<blockquote><p>After you know what the tech recruiters are looking for you can tailor your resume that lands you an interview.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/tech-recruitment-aus/for-hire.jpg"></p>
+
+<!-- more -->
+
+
+<p>2019 started less than 3 weeks ago and I have seen many new tech roles open up. You can also read through <a href="https://geshan.com.np/blog/2018/09/7-practical-steps-to-land-your-first-tech-job/" title="Steps to land your first tech job">practical step to land a tech job</a> and get an edge over your competition on your job hunt. I have also compiled a <a href="https://github.com/geshan/au-companies-providing-work-visa-sponsorship" title="Companies in Austalia providing visa sponsorship for tech roles">list</a> of companies in Australia that provide work visa sponsorship. Of course, it depends a lot on the role and the candidate too.</p>
+
+<h2>Purpose of the CV/Resume</h2>
+
+<p>What is the purpose of your resume? In my opinion, the main purpose of your resume is to land you the first interview.</p>
+
+<blockquote><p>So, craft your resume to cater your audience very well. Then it is up to you to prove yourself worthy for the second interview up-to-the job offer stage.</p></blockquote>
+
+<p>For initial review, you can run your CV through <a href="https://cvcompiler.com/" title="Tech CV review powered by NLP and data insights">CVCompiler.com</a> (has a free or paid version). I have found it to be quite helpful for tech-related CVs.</p>
+
+<h2>Initial interview</h2>
+
+<p>Initial screening interview by a tech recruiter is generally done over phone or audio/video conference. This helps filter out candidates that are not the best cultural fit or even small things like &ldquo;Can the candidate speak good English?&rdquo;.</p>
+
+<blockquote><p>First interviews are generally short and not technical.</p></blockquote>
+
+<p>It is like the entry of the funnel and getting past the initial interview should not be that difficult.</p>
+
+<h2>What recruiters look for?</h2>
+
+<p>I asked 3 internal tech recruiters in Sydney, Australia the following 3 simple questions:</p>
+
+<ol>
+<li>How many resumes/candidate profiles do you go through in a day usually?</li>
+<li>What are the things you look for in a resume sent for a technical role?</li>
+<li>What are the top 3 things you evaluate in a candidate when conducting the first interview?</li>
+</ol>
+
+
+<p>Read on to find out what they had to say about tech recruitment as an internal tech recruiter:</p>
+
+<h2>The Answers</h2>
+
+<p>I asked the above 3 questions to Cloë Stanbridge (Safety Culture), James Richardson (Quantium) and Kevin Yoon (SiteMinder). Below are their answers:</p>
+
+<h3>Cloë Stanbridge (Safety Culture) looks for tech and soft skills</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Cloe from Safety Culture" alt="Cloe from Safety Culture" data-echo="/images/tech-recruitment-aus/cloe.jpg"></p>
+
+<p><a href="https://www.linkedin.com/in/cloestanbridge/" title="Cloë on LinkedIn">Cloë Stanbridge</a> has been working for <a href="https://safetyculture.com/" title="Safety culture website">Safety Culture</a> for almost 2 years now. She is currently the Talent Acquisition manager there. Safety Culture&rsquo;s mission is &ldquo;to help companies achieve safer and higher quality workplaces all around the world through innovative, low-cost mobile first products.&rdquo;</p>
+
+<blockquote><p>Safety Culture has multiple <a href="https://safetyculture.com/jobs/" title="Jobs at safety culture">open roles</a> as of now.</p></blockquote>
+
+<p>It has 5 offices around the world with 2 of them in Australia. Cloë expressed her point of view about the above question the following way:</p>
+
+<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
+
+<p>This can vary due to the volume of roles I have on hand but on an <strong>average about 10 a day</strong>.</p>
+
+<h4>What are the things you look for in a resume sent for a technical role?</h4>
+
+<p>Education, longevity and <strong>growth in their career</strong> is something I focus on. I also look into if the candidate has <strong>worked for a product/SaaS company</strong>. This helps me evaluate that they are used to iterating, Continuous Integration (CI) and <strong>are focused on quality rather than being constrained by budget or time.</strong></p>
+
+<p>Candidates who have worked in cross-functional teams is a plus. They don&rsquo;t need to have all of these things but scoring on most of them would warrant them an interview. Grammar/spelling mistakes is also a <strong>big no</strong>.</p>
+
+<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
+
+<ol>
+<li><strong>Communication</strong>: This is not just the ability to speak English but being able to explain technical terms to a non-technical person earns brownie points for the candidate.</li>
+<li><strong>Passion and interest for their craft</strong>: I would check if they have a side project. Learning something new in their free time would result in a better rating. The questions they ask hints to me about their passion for what they do.</li>
+<li><strong>How interested are they in the problems that we are solving</strong>: I would also evaluate if they just want &ldquo;a&rdquo; job or do they actually want to work for this company. This would also include being excited for the learning opportunity they would get at work.</li>
+</ol>
+
+
+<p>She was quite precise about the things she would look for in the CV and the candidate in the first interview.</p>
+
+<h3>James Richardson (Quantium) seeks alignment to JD and aptitude</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="James, currently working at Quantium" alt="James, currently working at Quantium" data-echo="/images/tech-recruitment-aus/james.jpg"></p>
+
+<p><a href="https://www.linkedin.com/in/jamesrichardsonrecruitment/" title="James on LinkedIn">James</a> has been associated with <a href="https://www.quantium.com/" title="Quantium website">Quantium</a> for almost 2 and a half years. Currently, he is the &ldquo;Lead Recruitment Business Partner&rdquo; at Quantium, he is also the co-organizer of <a href="https://www.meetup.com/node-sydney/" title="Node Sydney Meetup group">Node Sydney Meetup</a>. Quantium is a consulting firm working in multiple domains and has multiple products, with a focus on Data Science and Artificial Intelligence. With 4 office location in Australia, Quantium has a total of 9 offices all over the world.</p>
+
+<blockquote><p>They are also <a href="https://www.quantium.com/careers/" title="Quantium careers page">looking</a> for talented tech people like you.</p></blockquote>
+
+<p>James answered the above questions as follows:</p>
+
+<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
+
+<p>It really varies. In peak times, I could be screening anywhere between 50-250 per day depending on the role. For software orientated roles, these numbers reduce sharply. Looking at my current data,
+<strong>a recurring Backend role that is constantly advertised will attract around 40 applications per week</strong>, with a spike on Tuesdays.</p>
+
+<h4>What are the things you look for in a resume sent for a technical role?</h4>
+
+<p>It all depending on the nature of the vacancy. <strong>I tend to align to the JD “as much as possible”</strong>. The wishlist on the JD usually turns out to be just a &ldquo;wishlist&rdquo;. I’ll focus on the core of the position. Generally, I’m looking for the following things:
+  * Right to work in Australia: <strong>If this is a role we can sponsor/relocate, then usually I just blast straight past this.</strong></p>
+
+<ul>
+<li><p>Experience in tech: <strong>A huge amount of newbies will apply for senior/lead roles and I will typically refer them to our graduate entry.</strong> If they have some experience, I’ll log them under potential future candidate for a more junior position. I pay attention to what they have delivered previously.</p></li>
+<li><p>Last company: This helps boost the candidate&rsquo;s ranking. <strong>Anyone working for a top tier engineering company is going to get a lot of attention.</strong> The best first stage assessment confidence bearing is having another reputable company do that assessment. If I find a candidate working for a company with strong engineering credibility, it is going to give me a high degree of confidence in them.</p></li>
+<li><p>Tech relevance: I would check if have they been working in the tech stack we use? For instance functional programming vs web dev. <strong>It will be hard to argue for a JS dev applying for a backend Scala functional role without significant side projects/open source work</strong> (yes this happens).</p></li>
+<li><p>Meeting in person: Do I know them or have I met them counts too. If I Know people at their company that helps as well. <strong>Have I met them at a meetup?</strong></p></li>
+</ul>
+
+
+<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
+
+<ol>
+<li><strong>Attitude</strong>: A positive attitude always leaves a good impression.</li>
+<li><strong>Aptitude</strong>: How well does the candidate understand concepts and processes. I don’t have the skills to check code but they should have the ability to code well.</li>
+<li><strong>Communication</strong>: I would evaluate how easy is it to talk to the candidate. Their ability to understand new things matter as well. Another deciding factor is would I be excited to meet this candidate in person?</li>
+</ol>
+
+
+<p>He adds &ldquo;Essentially, being an in-house recruiter is about credibility. We LOVE hiring people, it’s what drives us to do the job. <strong>We also need to establish that internal credibility to be successful.</strong>&rdquo; I must add he was pretty elaborate with his answers :) especially the 2nd question.</p>
+
+<h3>Kevin Yoon values experience and ability to change</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Kevin, currently employed at Siteminder" alt="Kevin, currently employed at Siteminder" data-echo="/images/tech-recruitment-aus/kevin.jpg"></p>
+
+<p><a href="https://www.linkedin.com/in/simplified/" title="Kevin Yoon on LinkedIn">Kevin</a> has been employed at <a href="https://www.siteminder.com/" title="SiteMinder website">SiteMinder</a> for the past 4 months as the &ldquo;Talent Acquisition Lead - Tech &amp; Product&rdquo;. SiteMinder is a SaaS company working in the hospitality industry with a focus on online booking and related things.</p>
+
+<blockquote><p>They have a physical presence in <a href="https://www.siteminder.com/contact/" title="SiteMinder contact page">5 continents</a> and are hiring for multiple <a href="https://www.siteminder.com/jobs/" title="SiteMinder jobs page">roles</a>. It includes some tech roles too.</p></blockquote>
+
+<p>Kevin shared his opinions the following way:</p>
+
+<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
+
+<p>I review all applicant and referral CVs that have come through overnight. This <strong>varies between 20 to 50 CVs per day</strong> depending on the number of roles we have publicly advertised and announced internally.</p>
+
+<h4>What are the things you look for in a resume sent for a technical role?</h4>
+
+<p>First, it is <strong>matched against the job description and the job briefing</strong>. For mid-level and senior engineers, I focus on the most recent <strong>3 to 5 years of work experience</strong> and any relevant personal projects or initiatives in that period.</p>
+
+<p>Any mentoring or hackathons attended are good signs. If the candidate has given talks at meetups or conferences that is a plus too. I also look for coaching experiences in the past 3 to 5 years. I evaluate the actual tech stacks used by the candidate and the context it was utilized in.</p>
+
+<p>I take a deeper look at how the candidate built solutions with the tools available. The candidate’s role in the projects done as an individual contributor or within a team context is important too. <strong>Changes in tech used in each role/project</strong> through their progression also catches my eye.</p>
+
+<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
+
+<ol>
+<li>I would seek their <strong>motivation for change</strong> in relation to the salary they command in their respective roles. I try to elicit factors that inspire them for a change in addition to money.</li>
+<li>I also look for the candidate&rsquo;s ability to handle <strong>rapid change and criticism</strong> of their skills.</li>
+<li>Finally, I attempt to find out their <strong>expectation from their manager</strong>. I also intend to assess the environment which brings out their best performance.</li>
+</ol>
+
+
+<p>Kevin was to the point and expressed his views concisely. He has highlighted some things that would generally skip your mind as a person applying for a tech position. Be ready to explain your motivation for a job change in your next interview.</p>
+
+<h2>Conclusion</h2>
+
+<p>I would like to thank all 3 internal tech recruiters for their time and the valuable information they have provided. I hope you have extracted out the &ldquo;inside stuff&rdquo; from the above answers. Now, I think you will start editing your CVs to mention the impact and craft it to be a tool to land more interviews.</p>
+
+<blockquote><p>Similarly, you can also be well prepared for the first interview and ace it.</p></blockquote>
+
+<p>Wish you all the best for your job hunt in Australia!</p>
+
+<p>Share your thoughts and experience of finding a job in Australia. Have you found a role that makes you career high?</p>
+
+<hr />
+
+<p>PS: I might do a part 2 of this :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting started with debugging nodeJs applications with ndb]]></title>
+    <link href="http://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb/"/>
+    <updated>2019-01-06T00:02:36+00:00</updated>
+    <id>http://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb</id>
+    <content type="html"><![CDATA[<p>NodeJs was released almost 9 years ago. The <a href="https://nodejs.org/api/debugger.html" title="Default nodejs debugging process">default debugging process</a> of NodeJs (read Node.js) is quite clumsy. You are already aware of the need to add <code>--inspect</code> to the node script with node inspector. It is also dependent on chrome. Then look at the proper web socket connection which is hard and debug using chrome node debugger. To be honest, it is a pain in the neck.</p>
+
+<p>Finally, Google chrome labs has released ndb, which they say is &ldquo;An improved debugging experience for Node.js, enabled by Chrome DevTools&rdquo;. It is a boon to debug a nodejs app.</p>
+
+<p>I am going to show a step by step process of debugging nodejs application with <a href="https://github.com/GoogleChromeLabs/ndb" title="ndb github page">ndb</a>. In other words, you will learn how to debug a nodejs application using ndb. Below you can see it in action, let&rsquo;s roll up your sleeves and get started:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/00ndb.png"></p>
+
+<!-- more -->
+
+
+<h2>Prerequisites for debugging nodejs application</h2>
+
+<p>Below are some prerequisites before you get started:</p>
+
+<ol>
+<li>You have nodejs installed on your system (a no-brainer but still worth a mention)</li>
+<li>You have general knowledge of running node scripts and working with nodejs apps.</li>
+<li>You have prior debugging experience with nodejs or any other language.</li>
+</ol>
+
+
+<p>For debugging nodejs application in place of just another script I will use a full nodejs express application. It is an open source application I used for a demo on testing nodejs application.</p>
+
+<h2>Debugging nodejs express application as a demo</h2>
+
+<p>I am using my opensource <a href="https://github.com/geshan/currency-api" title="Currency API app on github">currency API</a> for this step-by-step getting started of debugging a nodejs application. It is built using express js framework. You can also check the running app hosted on <a href="https://currency-api-nodejs.now.sh/api/convert/USD/AUD/2019-01-01" title="Currency API app hosted on Zeit now">Zeit Now</a> to see the USD to AUD rate of 2019-01-10 as an example.</p>
+
+<p>The idea of the application is simple. If the conversion rate is available in the database it will fetch it from the database. If not it will fetch it from another API and send it back to the user also saving the rate in the database at the same time (async) for later use.</p>
+
+<p>You can clone the application from github and run <code>npm install</code> to get it ready for debugging. This is a very simple application with most of the logic in <code>exchangeRates.js</code> <a href="https://github.com/geshan/currency-api/blob/master/src/exchangeRates.js" title="You can have a look at the code on github">file</a>. It has mocha <a href="https://github.com/geshan/currency-api/blob/master/test/exchnageRatesTest.js" title="You can check the test too">tests</a> too as it was a demo for testing nodejs application.</p>
+
+<h3>1. Getting started, install ndb</h3>
+
+<p>Installing ndb is very easy. All you need to do to get started with debugging your nodejs application is to install <a href="https://github.com/GoogleChromeLabs/ndb#installation" title="ndb installation instructions on github">ndb</a>. I would suggest to install it globally with:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># with npm
+</span><span class='line'>npm install -g ndb
+</span><span class='line'>
+</span><span class='line'>#with yarn
+</span><span class='line'>yarn global add ndb</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can also install and use it locally per app if you want. One thing I had to fix was to get the latest version of chrome as I saw some permission issues.</p>
+
+<h3>2. Run the app with ndb (not node or nodemon)</h3>
+
+<p>For debugging nodejs applications using ndb you can directly run the nodejs app script with it rather than node. For example, if you were used to doing <code>node index.js</code> or <code>nodemon index.js</code> in development. To debug your app you can run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ndb index.js</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice that you don&rsquo;t need to put any <code>-- inspect</code> so the experience is a lot smoother.</p>
+
+<blockquote><p>You don&rsquo;t need to remember a different port or go to chrome devtools and open up a different inspector window to debug. Such a relief!</p></blockquote>
+
+<p>ndb opens up a screen like below when you do <code>ndb .</code> or <code>ndb index.js</code>:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/01ndb-index.png"></p>
+
+<p>Please add a breakpoint on line 46. As you ran the application with ndb it will run in debug mode and stop at the breakpoint like below when you hit <code>http://localhost:8080/api/convert/USD/AUD/2019-01-01</code> on the browser. I have set the breakpoint on exchangeRates.js like 46 in the screenshot below:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Pausing at the break-point while debugging" alt="debugging nodejs" data-echo="/images/debugging-node-js/02ndb-pause.png"></p>
+
+<p>ndb allows you to run any script for debugging. For example, I can run <code>ndb npm start</code> and it will use the nodemon run. This means I can debug the application while changing the code which is great.</p>
+
+<blockquote><p>As an example it can be run with <code>ndb npm start</code> to debug this nodejs express application.</p></blockquote>
+
+<p>You can also debug your test with a command like <code>ndb npm test</code>.</p>
+
+<h3>3. Let&rsquo;s debug some code</h3>
+
+<p>As the debugger is working I can place more break points or run through the code at my speed and convenience.</p>
+
+<blockquote><p>The essential shortcuts are <code>F10</code> to step over function call and <code>F11</code> to step into a function.</p></blockquote>
+
+<p>The usual debugging workflow I assume you are familiar with. below I have advanced to line 52:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Continuing further the break-point while debugging" alt="debugging node.js" data-echo="/images/debugging-node-js/03ndb-continue.png"></p>
+
+<h2>More debugging nodejs things</h2>
+
+<p>As any other debugger with ndb you can:</p>
+
+<ol>
+<li>Add watches</li>
+<li>Check the call stack trace</li>
+<li>Check the process</li>
+</ol>
+
+
+<blockquote><p>The console tab is also helpful if you want to some quick nodejs code in the context.</p></blockquote>
+
+<p>Read more about what you can do with it in the official <a href="https://github.com/GoogleChromeLabs/ndb#what-can-i-do" title="ndb readme what can I do section">readme</a>. Below is a screenshot of the useful console:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="ndb console is useful for debugging nodejs apps" alt="ndb console is useful for debugging nodejs apps" data-echo="/images/debugging-node-js/04ndb-console.png"></p>
+
+<h2>Conclusion (TLDR)</h2>
+
+<p>Debugging nodejs application with ndb is a better developer experience compared to the default debugger. To debug the currency API nodejs express app with it you run do the following commands give you have node > 8 installed:</p>
+
+<ol>
+<li>npm install -g ndb</li>
+<li>git clone git@github.com:geshan/currency-api.git</li>
+<li>cd currency-api</li>
+<li>npm install</li>
+<li>ndb npm start</li>
+<li>After the ndb debugger opens up add a breakpoint at line 46 of src/exchangeRates.js</li>
+<li>Then open <code>http://localhost:8080/api/convert/USD/AUD/2019-01-01</code> in the browser</li>
+<li>Now as the app should pause at the breakpoint, Enjoy! and continue debugging.</li>
+</ol>
+
+
+<p>If it works for this app, you can debug any of your nodejs application with this approach.</p>
+
+<blockquote><p>Welcome to the new way of debugging nodejs application that is browser independent and a lot more smoother than the default experience. Step up your debugging nodejs application game.</p></blockquote>
+
+<p>I hope this post has helped you debug your nodejs application better. If you have any other things to share about debugging nodejs apps or better usage of ndb please comment below!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2018 in review: 5 most viewed posts of this year]]></title>
+    <link href="http://geshan.com.np/blog/2018/12/2018-in-review-5-most-viewed-posts-of-this-year/"/>
+    <updated>2018-12-25T07:55:50+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/12/2018-in-review-5-most-viewed-posts-of-this-year</id>
+    <content type="html"><![CDATA[<p>I have never done this in the past 11 years of blogging, this time it is going to be different. I am listing the 5 most viewed posts from this blog in 2018. All posts are not from 2018 but they have been viewed more than the others. I am using my Google Analytics stats to compile this list. So, here I present the most popular blog posts of 2018 on <a href="https://geshan.com.np" title="Geshan blog">Geshan.com.np</a>:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/top-5-2018/everest.jpg" title="5 most viewed posts of 2018 a recap" alt="5 most viewed posts of 2018 a recap"></p>
+
+<!-- more -->
+
+
+<h2>1. <a href="https://geshan.com.np/blog/2018/12/you-can-do-it-in-sql/" title="A post on doing things in sql instead of code">You Can Do It in SQL, Stop Writing Extra Code for That</a></h2>
+
+<p>This post was published just 10 days back but I garnered a lot of views. The post highlights:</p>
+
+<blockquote><p>Use SQL to do math like sum, average etc. Utilize it for grouping one to many relational values like getting categories of product. Leverage SQL for string manipulation like using CONCAT_WS for concating first name and last name. Exploit SQL to sort by a custom priority formula.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/tea-lights.jpg" title="You can do it in SQL, stop writing extra code for that" alt="You can do it in SQL, stop writing extra code for that"></p>
+
+<h2>2. <a href="https://geshan.com.np/blog/2018/12/4-ways-docker-changed-the-way-software-engineers-work-in-past-half-decade/" title="Story about how docker has changed software engineering in past 5 years">4 Ways Docker Changed the Way Software Engineers Work in Past Half Decade</a></h2>
+
+<p>Another post from this December that got pretty popular in past weeks. This post is about how docker has changed software engineering in the past 5 years. The post can be summarized as:</p>
+
+<blockquote><p>With Docker, you ship the whole stack not only your code. Allocate minimum required resources to containers then scale them horizontally. With containers security generally already comes baked In. With Docker and Kubernetes you can get zero downtime and faster deployments leading to business profit.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/4-ways-docker/docker-whale.jpg" title="4 ways Docker changed the way software engineers work in past half decade" alt="4 ways Docker changed the way software engineers work in past half decade"></p>
+
+<h2>3. <a href="https://geshan.com.np/blog/2017/05/how-to-use-docker-compose-with-virtual-hosts-and-services-like-db-for-dev-environment/" title="post on how to use docker compose with virtual hosts and shared services like a db for dev env">How to Use Docker Compose With Virtual Hosts and Shared Services (Like Db) for Dev Environment</a></h2>
+
+<p>This is another post about Docker, it is from May 2017. This piece was also able to gather a good amount of views. The post advocates:</p>
+
+<blockquote><p>Use docker and docker-compose with external_links to reuse services like a database across multiple projects. Using Ngnix proxy with virtual hosts can simplify multi-project setup and operation.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/docker-compose-vhost/docker-compose-vhost.jpg" title="Docker compose with vhost and shared services" alt="Docker compose with vhost and shared services"></p>
+
+<h2>4. <a href="https://geshan.com.np/blog/2016/04/3-simple-rules-for-less-or-no-git-conflicts/" title="story about git conflicts and steps to avoid them">3 Simple Rules for Less or No Git Conflicts</a></h2>
+
+<p>This is a post about git from 2016. It also got many hits this year probably due to some search engine traffic. Mainly the post can be summarized at</p>
+
+<blockquote><p>Keep your changes small. Rebase your working branch with main branch often. And, review pull requests faster and merge them to main branch.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-rules-git-conflict/git-conflict.png" title="3 simple rules for less or no git conflicts" alt="3 simple rules for less or no git conflicts"></p>
+
+<h2>5. <a href="https://geshan.com.np/blog/2018/10/dont-code-your-microservice-like-a-monolith/" title="post on how to write microservices to keep it maintainable">Don’t Code Your Microservice Like a Monolith, Keep It Maintainable Not Over-engineered</a></h2>
+
+<p>This is a post from Oct this year about  Microservice and how to not code it like a Monolith. This post was also able to get some views from different sources. The post mainly advocates:</p>
+
+<blockquote><p>Microservices are small software systems. You can safely ditch MVC. Say no to ORM and also not take the design pattern baggage for microservices. Focus on code performance, readability, and maintainability not some old rules and patterns. Those patterns were made when people were not doing microservices.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/lego.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+
+<h2>Conclusion</h2>
+
+<blockquote><p>Looks like docker has been a popular topic for this year. Probably I would blog more about it next year too. I have started cross-posting my posts to <a href="https://dev.to/geshan" title="me on dev.to">Dev.to</a> and medium publications like <a href="https://medium.freecodecamp.org/@geshan" title="my posts on freecodecamp">FreeCodeCamp</a> and <a href="https://hackernoon.com/@geshan" title="my stories on hackernoon">HackerNoon</a>. I hope these posts help more and more people.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The most important tip for beginner software engineers is...]]></title>
+    <link href="http://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is/"/>
+    <updated>2018-12-21T08:47:44+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is</id>
+    <content type="html"><![CDATA[<p>Most of the tutorials you have read or watched till now usually do one thing, spoon-feeding. This is &ldquo;OK&rdquo; to learn a new thing but not good when you need to <code>solve</code> a task. A task usually involves reaching a goal by overcoming a problem. This post unveils the most important &ldquo;tip&rdquo; for all beginner software engineers.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="The most important tip for beginner software engineers is" alt="The most important tip for beginner software engineers is" data-echo="/images/tip-beginner-sw-eng/puzzle.jpg"></p>
+
+<!-- more -->
+
+
+<h2>TL;DR</h2>
+
+<blockquote><p>First, solve the problem. Then, write the code. - John Johnson</p></blockquote>
+
+<p>In other words.</p>
+
+<blockquote><p>Work the solution out on paper in steps, then start writing the code for it. Don&rsquo;t get tangled in the code and software design.</p></blockquote>
+
+<h2>So what happens</h2>
+
+<p>Many times I have heard this from beginner or even junior software engineers. I could follow the tutorial well and thought I understood the concept. But, when I tried to do a similar thing on my pet project I could not do it. It happens mainly because of 2 reasons. First, you somewhere lost your train of thought and could not establish a chain. Second, you were so tangled in the code that the main problem you were trying to solve became out of focus.</p>
+
+<p>This problem also happens for Software Engineers and even Senior Software Engineers. The good thing is with experience you know when to stop or take a break. Then, come back to the problem with a different prescriptive and find a solution faster.</p>
+
+<blockquote><p>Many of you can relate to this that you were trying so hard to fix an issue for hours. You took a break or slept over it and next session the solution was there in minutes.</p></blockquote>
+
+<p>This is not magic this is looking at the problem from another viewpoint.</p>
+
+<h2>Let&rsquo;s illustrate with an example</h2>
+
+<p>You have to do a task, it is to create a refund with payments. A refund always has a reason like damaged, late delivery etc and the payments for that item can be maximum of 2. One of type cash another of type credit (store credit). You are also given the database schema. This is a back-end task and you need to create a POST <code>/refunds</code> API that can create the refund and its related payments. The database structure is as below:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="refund schema v2" alt="refund schema v2" data-echo="/images/tip-beginner-sw-eng/refund-schema-v2.png"></p>
+
+<p>You could discuss the API payload too with one of the team members and agreed on the below JSON payload:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>POST /refunds
+</span><span class='line'>
+</span><span class='line'>{
+</span><span class='line'> reason: "damaged",
+</span><span class='line'> premium_customer: true,
+</span><span class='line'> payments: [
+</span><span class='line'>  {
+</span><span class='line'>     item_id: 20,
+</span><span class='line'>     amount: 5000,
+</span><span class='line'>     is_cash: true    
+</span><span class='line'>  },
+</span><span class='line'>  {
+</span><span class='line'>     item_id: 20,
+</span><span class='line'>     amount: 7250,
+</span><span class='line'>     is_cash: false
+</span><span class='line'>  }
+</span><span class='line'> ]
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>//decide on the response format</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>The usual scenario</h3>
+
+<p>What most beginner software engineers will do is start scanning the code base, if there is one. They will immediately start writing some code. If there is any testing culture in place maybe write some automated test code.</p>
+
+<blockquote><p>This is where most beginner and even some experienced software engineers slip. Don&rsquo;t write code when you have not solved the problem.</p></blockquote>
+
+<h3>The appropriate step</h3>
+
+<p>The most appropriate step, in my opinion, is to sit down and solve the problem on paper in steps. So you ask yourself to write <code>Refund</code> and its related <code>Payments</code> on the database what do I need to do. You come up with a plan in steps and tweak it.</p>
+
+<blockquote><p>If you have someone senior you can validate your steps and get feedback.</p></blockquote>
+
+<p>This will also decrease the code review time a lot as both of you have already agreed on the modality of the solution.</p>
+
+<h3>So how to do it</h3>
+
+<p>The task as mentioned earlier is to write a create/POST API where Refunds with payments can be created. Each refund can have max 2 payment one of type cash and another one of type credit. It can also be one refund with only one payment of either cash or credit. This is how I would have written the following steps on paper:</p>
+
+<ol>
+<li>Create a method to get the data from the controller sent by user</li>
+<li>Validate all the input for values, refund types, and reasons.</li>
+<li>If all validation passes, generate a random alphanumeric number of length 10 which is not existing in the refund table (recursive check)</li>
+<li>If validation fails to respond with a proper validation failure message, decide on response structure</li>
+<li>Start a database transaction
+
+<ol>
+<li>Insert the refund related values of refund_nr, reason_reason, is_premium_customer to the <code>refund</code> table</li>
+<li>On insert success, get the id of the last insert</li>
+<li>With the refund_id, insert payment related values of fk_refund, fk_item, amount, is_cash to the <code>payment</code> table</li>
+</ol>
+</li>
+<li>If all went well commit the database transaction</li>
+<li>If there was any issue rollback database transaction</li>
+<li>Respond with success or failure message depending on the databse transaction’s success with proper structure</li>
+<li>Wire up the controller and this method</li>
+</ol>
+
+
+<h3>Follow the plan in steps, now write code</h3>
+
+<p>After you have a step by step plan you can start writing code. Then,  you can go more in-depth on the method names, how to get the database connection and other details.</p>
+
+<blockquote><p>Depending on the language and framework you can also decide where should the validation code stay.</p></blockquote>
+
+<p>You could even write tests given the company and culture supports and encourages it.</p>
+
+<p>When your solution is evident in your mind and you have a step by step action plan on paper now you can write code.</p>
+
+<blockquote><p>You can even break up the parts in ways that will be easier to finish and wire up.</p></blockquote>
+
+<p>For example, the testing logic can be something that can be written separately and tested on its own. It is thinking about independent parts that can be wired up together to form the solution.</p>
+
+<h2>Conclusion</h2>
+
+<p>When you face your next task don&rsquo;t start writing code from the get-go. First, get a hold of the problem then devise a solution with steps best done away from a screen on paper. Then refine your solution and discuss with someone. When you are satisfied, translate that solution to code. This is a bit methodical but very effective.</p>
+
+<blockquote><p>Code is always a medium to the solution, not the solution itself.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[You can do it in SQL, stop writing extra code for that]]></title>
+    <link href="http://geshan.com.np/blog/2018/12/you-can-do-it-in-sql/"/>
+    <updated>2018-12-14T08:30:54+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/12/you-can-do-it-in-sql</id>
+    <content type="html"><![CDATA[<p>“SQL, Lisp, and Haskell are the only programming languages that I’ve seen where one spends more time thinking than typing.&ldquo; - Philip Greenspun</p>
+
+<p>Even with thinking more than typing SQL (Structured Query Language) we software engineers use it as a way to pull data only.</p>
+
+<blockquote><p>We usually don&rsquo;t leverage SQL&rsquo;s power of data manipulation and do the needed changes in code.</p></blockquote>
+
+<p>This is quite prevalent in software engineers who work in web applications. This post aims to enlighten you about the powers of SQL you might know but generally don&rsquo;t use.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/tea-lights.jpg" title="You can do it in SQL, stop writing extra code for that" alt="You can do it in SQL, stop writing extra code for that"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Use SQL to do math like sum, average etc. Utilize it for grouping one to many relational values like getting categories of product. Leverage SQL for string manipulation like using CONCAT_WS for concating first name and last name. Exploit SQL to sort by a custom priority formula. Examples below&hellip;</p></blockquote>
+
+<h2>The Example</h2>
+
+<p>It will be easier to explain the superpowers of SQL putting it in action on an example. Below is a basic schema with 2 tables in MYSQL for a refunds microservice:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/refund-schema.png" title="You can do it in SQL- refund schema" alt="You can do it in SQL - refund schema example"></p>
+
+<p>There are 2 refunds and 7 related payments as example <a href="http://sqlfiddle.com/#!9/b242d/5" title="Try the example in sql fiddle">data</a>.</p>
+
+<h3>Some assumptions</h3>
+
+<p>For the refunds microservice example schema and applications following assumptions are made:</p>
+
+<ol>
+<li>Refunds microservice and data structure store the fk_item (the id of the ordered/delivered item), but it is not a hard foreign key.</li>
+<li>Item can be refunded in either cash or credit for the amount paid for the same.</li>
+<li>Items can be refunded many times as long as remaining balance can cover requested refund amount for each cash and credit. For example, item was paid 50 in cash and 50 in credit. 2 refunds of 20 cash and 20 credit can be done. So after these transactions balance will be 10 cash and 10 credit for that item (50-20-20).</li>
+<li>Each refund can have multiple items payment. Each payment can be of type either cash or credit.</li>
+<li>All amounts are stored in cents so they are integers.</li>
+</ol>
+
+
+<p>Now let&rsquo;s use some SQL powers. You can find the example with related queries running on <a href="http://sqlfiddle.com/#!9/b242d/5">SQL Fiddle</a>.</p>
+
+<h3>Do the math in SQL</h3>
+
+<p>As software engineers, let&rsquo;s say if we need to find the total cash and credit amount refunded for an item what would we do? We would run something like:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT fk_item, fk_refund, amount, is_cash 
+</span><span class='line'>FROM payment WHERE fk_item=2001;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+With current data, it will give 3 rows like below:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/01result-without-group.png" title="Result without grouping and aggregate function sum" alt="Result without grouping and aggregate function sum"></p>
+
+<p>With these 3 rows, we would loop over them. If it is cash accumulate it to cashBalance variable, if not sum it up to creditBalace variable. Rather than that it would be a lot easier (probably faster) to do in SQL like:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT fk_item, SUM(amount) AS total_paid, 
+</span><span class='line'>IF(is_cash = 1, 'cash', 'credit') as type
+</span><span class='line'>FROM payment 
+</span><span class='line'>WHERE fk_item = 2001 
+</span><span class='line'>GROUP BY fk_item, is_cash;</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Resulting in:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/02result-with-grouping.png" title="Result with grouping and aggregate function sum" alt="Result with grouping and aggregate function sum"></p>
+
+<p>The result is easy now if you need the total refund for the item just change the GROUP BY to be on fk_item and it&rsquo;s done. For 2 and 3 records it won&rsquo;t feel significant. If there were say 20 refunds for that item, the first solution with a loop is writing more code with no gain.  Like sum, other SQL functions can be used too. Simple math operations like <a href="https://www.w3schools.com/sql/func_mysql_sum.asp" title="Sum in mysql">sum</a>, multiply, <a href="https://www.w3schools.com/sql/func_mysql_avg.asp" title="Average function in mysql">average</a> etc can be easy with SQL. This means no more loops.</p>
+
+<h3>Use GROUP_CONCAT to fetch related 1:m relation values</h3>
+
+<p><a href="http://www.mysqltutorial.org/mysql-group_concat/">Group concat</a> is a powerful operation in SQL databases. It is very useful when you need to get data from one to many relationship. For instance, you want to get all tags for a blog post or you want to get all categories of a product. Concerning this refunds example, one item can be refunded multiple times. So we will get all the refunds associated with the item id. To get this we will run only 1 query and get it without any loops in the code like below:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT fk_item, 
+</span><span class='line'>GROUP_CONCAT(DISTINCT fk_refund) refund_ids FROM payment
+</span><span class='line'>WHERE fk_item = 2001;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This results in:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/03result-group-concat.png" title="Result with group_concat" alt="Result with group_concat"></p>
+
+<p>Now we know that item 2001 has been refunded twice for 2 refunds. It will be easy to explode the refund Ids with <code>,</code> and proceed with any related operation.</p>
+
+<h3>String manipulation</h3>
+
+<p>Many <a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html" title="Mysql string functions">string manipulation</a> tasks like substring, concatenation, change case, and string compare can be done in SQL. With this example, I am going to show the usage of <code>CONCAT_WS</code>. It is concat with a separator. It can also be used to select for instance first_name and last_name with space in between.</p>
+
+<blockquote><p>In case of having an optional middle name <code>COALESCE</code> can be used with <code>CONCAT_WS</code>. That is something for you to explore :).</p></blockquote>
+
+<p>In this example, I will select refund_nr with it&rsquo;s related reason:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT CONCAT_WS("-", refund_nr, reason) AS refund_nr_with_reason
+</span><span class='line'>FROM refund;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Resulting in:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/04result-concat-ws.png" title="Result with concat_ws" alt="Result with concat_ws"></p>
+
+<p>If this needs to be shown on the credit note document, for example, no extra code is needed to join the values again. SQL makes it one step easier again.</p>
+
+<h3>Sorting with a custom formula</h3>
+
+<p>All software engineers know you can sort based on a column. But if you are given a custom priority formula to sort, what would you do? Probably again resort back to code and loop to sort. So lets set the priority formula rules for above example:</p>
+
+<ol>
+<li>Premium customer refunds get the highest priority (we hack it with a priority of 9999999999)</li>
+<li>Other than premium customers cash refunds get a priority of amount * 25 for credit it is amount * 20.</li>
+</ol>
+
+
+<p>As per above rules it is decided that premium customers and priority above 50000 (in cents) will be processed first. Then other refunds will be processes. Let&rsquo;s get the priority refunds as below:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT r.refund_nr, r.reason, p.fk_item, p.amount, p.is_cash, 
+</span><span class='line'>IF(p.premium_customer = 1, 9999999999, p.amount * (IF(is_cash = 1, 25, 20))) AS priority FROM 
+</span><span class='line'>refund AS r INNER JOIN payment AS p ON r.id = p.fk_refund
+</span><span class='line'>HAVING priority &gt; 50000
+</span><span class='line'>ORDER BY priority DESC</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>The results are below:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/05result-priority-formula.png" title="Result with sorting based on custom formula" alt="Result with sorting based on custom formula"></p>
+
+<p>With proper use of IF in SQL sorting by a custom priority formula is a lot easier than trying to do it with loops in code. Notice that even smaller amounts like 7.5 (750 cents) and 9.0 (900 cents) came to highest priority as these refund payment amounts were associated with premium customers.</p>
+
+<blockquote><p>Use the superpowers of SQL to make your life easier as a software engineer.</p></blockquote>
+
+<p>You can play with the example and run your own queries on <a href="http://sqlfiddle.com/#!9/b242d/5" title="The full example with queries in sql fiddle">SQL fiddle</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>There are other tricks of SQL that can help you as a software engineer. Like <code>UPDATE</code> with <code>INSERT</code> using <code>ON DUPLICATE KEY UPDATE</code>. Whenever you have an itch of doing some manipulation for data pulled in from database in code with loops, think again. The main takeaway from this story is:</p>
+
+<blockquote><p>Exploit the power of SQL to write less code because &ldquo;the best code is the code that was never written&rdquo;. If it is not written there is no need to maintain it.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 tech medium publications software engineers should strive to write for]]></title>
+    <link href="http://geshan.com.np/blog/2018/12/5-tech-medium-publications-software-engineers-should-strive-to-write-for/"/>
+    <updated>2018-12-05T08:16:06+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/12/5-tech-medium-publications-software-engineers-should-strive-to-write-for</id>
+    <content type="html"><![CDATA[<p>Starting a tech blog has changed in the last few years. 10 years back starting a blog without your website, you had 2 options Blogger or Wordpress. Both gave you a free sub-domain. Things did not change much for quite some time, but in 2012 medium came with a storm. It gained a lot of traction with its simplistic interface in 2014-2015. With the publication feature, Medium makes it very easy for a group of writers to collaborate.  These days I would suggest most people start their blog on it.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="5 tech medium publication software engineers should strive to write for" alt="5 tech medium publication software engineers should strive to write for" data-echo="/images/5-tech-medium-publications/library.jpg"></p>
+
+<!-- more -->
+
+
+<h2>Writing is tough, learning is essential</h2>
+
+<p>Writing is never easy for most people. If you don&rsquo;t try it you never know if it is something you like or not.</p>
+
+<blockquote><p>“A writer is someone for whom writing is more difficult than it is for other people.” ― Thomas Mann</p></blockquote>
+
+<p>Writing is another form of expressing yourself. As people working in the tech domain, we need this skill of expressing ourselves well. Similarly, reading and learning about new things is also very important in our field. Learning is essential to survive in tech and move forward. Open source software there are a lot of consumers compared to producers. Likewise, there are a lot of readers for tech content but relatively much fewer writers.</p>
+
+<h2>Tech Medium publications accepting writers</h2>
+
+<p>Below are the tech publications on Medium I would suggest all software engineers to follow to sharpen their skills:</p>
+
+<h3><a href="https://medium.freecodecamp.org/">FreeCodeCamp</a> - 511K followers</h3>
+
+<p>FreeCodeCamp is the place to go for learning how to code for free. It has a very popular and frequently updated publication on Medium. The content published on FreeCodeCamp blog is excellent. There are 17 editors and more than a 1K+ writers on this publication. You will need to read this elaborate blog <a href="http://bit.ly/how-to-submit">post</a> to know how to submit your story there. Writing for them is not easy, they also do light editing of your stories. Even if your story gets accepted it could have a wait time of 1-2 weeks to be published (my first story for them is still in the pipeline).  All in all you must try to get your stories published there because of the sheer number of subscribers. It is #2 on <a href="https://toppub.xyz/">toppub.xyz</a>.</p>
+
+<h3><a href="https://hackernoon.com/">HackerNoon</a> - 403kK followers</h3>
+
+<p>HackerNoon is also another extremely popular publication. It is on Medium right now but it may not be there for long. They are going public with <a href="https://www.startengine.com/hackernoon">crowd sourcing</a>. From the content point of view, there is a sizable amount of content for software engineers. It also has lots of stories on cryptocurrencies. With 7 editors and 7K+ writers (includes me), this is a huge publication too. To write for them you need to send your draft to <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x53;&#x74;&#111;&#114;&#x69;&#101;&#115;&#x40;&#65;&#x4d;&#x69;&#80;&#117;&#x62;&#x6c;&#x69;&#x63;&#97;&#116;&#x69;&#x6f;&#110;&#x73;&#x2e;&#x63;&#x6f;&#109;&#x2e;">&#83;&#116;&#x6f;&#x72;&#x69;&#101;&#115;&#x40;&#65;&#77;&#105;&#80;&#x75;&#x62;&#x6c;&#105;&#99;&#97;&#x74;&#x69;&#111;&#x6e;&#115;&#x2e;&#x63;&#x6f;&#x6d;&#46;</a> The wait time for each story is 1 week or more (I have already published 5 stories). It also has a writer&rsquo;s group on Facebook. You can include yourself as a &ldquo;Contributing Writer&rdquo; on <a href="https://www.linkedin.com/company/hackernoon/">LinkedIn</a> too.</p>
+
+<h3><a href="https://codeburst.io">CodeBurst.io</a> - 62K followers</h3>
+
+<p>CodeBurst is a popular medium publication with contents focused on web development. With a motto of &ldquo;Bursts of code to power through your day&rdquo;. I  see most stories geared towards Javascript. They have a page encouraging &ldquo;<a href="https://codeburst.io/how-to-write-for-codeburst-io-63fec4bf111c">Write For Us</a>&rdquo;. They mention having over 2 million page views per month. With 2 Editors and more than 900 writers, this is not a small Medium publication. I am not sure of the editorial process and wait times as I have not tried to publish any of my stories here. It could be a good starting point for new writers.</p>
+
+<h3><a href="https://itnext.io">ITNEXT.io</a> -  9.6K followers</h3>
+
+<p>ITNEXT seems to cover a wider array of topics from DevOps to Javascript. It calls itself  &ldquo;a platform for IT developers &amp; software engineers to share knowledge, connect, collaborate, learn and experience next-gen technologies&rdquo;. It has a short and to the point &ldquo;Write for ITNEXT&rdquo; <a href="https://itnext.io/write-for-itnext-4dea1fd3adf">page</a> with enough details on how to submit a story to them. With 7 editors and 840+ writers, it is undoubtedly a growing publication I reckon.  I can&rsquo;t comment on the waiting time for a story to be published on this one too.</p>
+
+<h3><a href="https://blog.bitsrc.io">Bits and Pieces</a> - 8.5K followers</h3>
+
+<p>Bits and Pieces look like a pretty active tech medium publication. It has content covering topics like NodeJs, PHP and mobile development. With a motto of &ldquo;Coding In The Age Of Code Components&rdquo;. It somewhat lives up to it. It has detailed &ldquo;Write a post&rdquo; <a href="https://blog.bitsrc.io/how-to-write-a-post-for-bits-and-pieces-13de0133151b">page</a> which includes lots of examples. With 5 editors and more than 65 writers, it is an expanding publication. I think the barrier to entry should not be that high. The waiting time for a story to be published should be less as well.</p>
+
+<h2>Popular Niche Ones</h2>
+
+<p>I would like to mention some popular niche publications. First one is <a href="https://medium.com/dailyjs">DailyJs</a> with 89K followers have a &ldquo;Submit Your Story&rdquo; <a href="https://medium.com/dailyjs/how-to-submit-your-story-to-dailyjs-30f02b2d5287">page</a>. <a href="https://uxdesign.cc/">UX Collective</a> with 228K follower is also <a href="https://uxdesign.cc/submit-your-article-to-uxdesign-cc-abea95d3a1ba">calling for stories</a>. Last but not least, <a href="https://uxplanet.org/">UX Planet</a> having 173K followers also wants you to write for <a href="https://uxplanet.org/how-to-publish-your-content-on-ux-planet-fd9dc99756db">them</a>.</p>
+
+<h2>Honorable Mention</h2>
+
+<p>Though <a href="https://dev.to/">dev.to</a> is not a Medium publication but it surely deserves a place here.</p>
+
+<blockquote><p>Currently the 11,357th website in the world, it has no editorial process.</p></blockquote>
+
+<p>This makes it one of the most accessible website to write for that without doubts has a big audience. I got <a href="https://dev.to/geshan">2250+ followers</a> on Dev.to in less than 2 months having just 20 posts.</p>
+
+<h2>Conclusion</h2>
+
+<p>If you don&rsquo;t accentuate your skills and knowledge people are not going to know about them automatically. Start a blog and write posts for such popular platforms. It will give you that needed exposure. Start blogging!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[4 ways Docker changed the way software engineers work in past half decade]]></title>
+    <link href="http://geshan.com.np/blog/2018/11/4-ways-docker-changed-the-way-software-engineers-work-in-past-half-decade/"/>
+    <updated>2018-11-30T22:14:51+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/11/4-ways-docker-changed-the-way-software-engineers-work-in-past-half-decade</id>
+    <content type="html"><![CDATA[<p>10 years back it was Git that transformed the way software engineers worked. Half a decade back it was <a href="https://www.docker.com/">Docker</a> that brought the container to the masses. Before Docker, container was like a sacred secret in companies like Google and Heroku. Docker is a software and a company too. It tried to build a broader ecosystem but <a href="https://kubernetes.io/">Kubernetes</a> stole the thunder along the way keeping <a href="https://docs.docker.com/engine/swarm/">swarm</a> at bay. This post is not about how some Docker tools are not popular. It is about how Docker has changed the way we work in the past 5 years.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="4 ways Docker changed the way software engineers work in past 5 years" alt="4 ways Docker changed the way software engineers work in past 5 years" data-echo="/images/4-ways-docker/docker-whale.jpg"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>With Docker, you ship the whole stack not only your code. Allocate minimum required resources to containers then scale them horizontally. With containers security generally already comes baked In. With Docker and Kubernetes you can get zero downtime and faster deployments leading to business profit.</p></blockquote>
+
+<h2>Changed the ways</h2>
+
+<p>If you want to go to the technical details of what is a container and why to use docker Google it :).</p>
+
+<blockquote><p>Docker has also partially deprecated many of the configuration management tools.</p></blockquote>
+
+<p>This post is about how Docker has changed the way we work after its release in March 2013. Below are some reasons that helped advance our way of working:</p>
+
+<h3>Ship the whole stack, not just code</h3>
+
+<p>With containers and Docker in specific, you always ship the whole stack in each version. The whole image gets rebuilt every time. It includes the precise OS+version, specific version of the language. It also has the dependencies like the framework and other libraries (versions depend on how you handle it). It also includes the code you have written and this results in a significant advantage. The advantage is, if it built correctly on your machine, it will potentially build on the server too. As soon as it runs it is the exact same environment on dev, staging, testing and even on production.</p>
+
+<blockquote><p>It happens because you didn&rsquo;t shop only the code, you shipped your code + vendor code + specific language version + precise OS version too.</p></blockquote>
+
+<h3>Allocate only needed resources to the application and scale horizontally</h3>
+
+<p>With each Docker container, you can be specific about how much resources you want to allocate to that particular container. Using software like Kubernetes it becomes so much easier to scale your application. Under high load, the no. of containers can expand and with less load, it can shrink too. So with this mechanism, each container (or pod for Kubernetes) can be allocated the minimum resources and scaled horizontally as per need.</p>
+
+<blockquote><p>For example, a simple Node JS app container/pod can run with like 128 MB memory and 0.25 CPU. As and when load increases run 5 pods in place of 2.</p></blockquote>
+
+<p>This requires the application to be built with horizontal scalability in mind. That basically means storing no data on the file system. Treating containers like cattle, not pet helps scale horizontally. It also makes high availability of application an achievable task.</p>
+
+<h3>Security is baked in</h3>
+
+<p>Using a container, not virtual machine the attack surface is already decreased. Following container security best practices you can already improve your security measures. Of course, if you have holes in the application like SQL injection that is a different story. Still, with smaller and security-focused images like Alpine, it will be easier to get the basics right.</p>
+
+<blockquote><p>Security is always about keeping the attack surface small. With containers and Docker closing more doors become easier.</p></blockquote>
+
+<p>The container should have access to only what it needs. As the file system is temporary for containers it can be a security boon as well as a security auditing issue.</p>
+
+<h3>Deploy faster with zero downtime</h3>
+
+<p>Deploying Docker containers is always about shipping the whole stack. So the chances of one file not syncing or one server not getting the latest changes are not there. As a successful build of the image is always required to deploy it any problems will be found in the build process.</p>
+
+<blockquote><p>With software like Kubernetes and Helm, orchestrating and deploying containers become straightforward. With High Availability (HA) in place using proper load balancing, deployments can be zero downtime.</p></blockquote>
+
+<p>Easier and faster deployment equates to the ability to deploy smaller changes. Smaller changes done well can lead to a better response to market needs quickly. To sum up, use the right tools to deploy your containers in a way to use it for business advantage.</p>
+
+<h2>Conclusion</h2>
+
+<p>The past 5 years have seen rapid adoption of Docker. With tools like Kubernetes deploying and scaling applications has been much effortless than some years ago.</p>
+
+<blockquote><p>Don&rsquo;t worship your virtual machines, use the resources it provides efficiently. Get on the Docker and containers train and reap its benefits.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 signs that reveal your software development process is agile only on paper and solutions for them]]></title>
+    <link href="http://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them/"/>
+    <updated>2018-11-20T09:00:22+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them</id>
+    <content type="html"><![CDATA[<p>Agility comes with practice not putting big words on paper. Using Jira does not make your software development process agile. Saying we do &ldquo;scrum&rdquo; is not being agile. Being agile is having an agile mindset and putting it into practice everyday. It is about thinking about the value you deliver to the customer and how to do it better.  This post will also unveil these 5 signs and how to solve these issues. The signs and solutions will concern multiple roles like Product Manager, Software engineer etc.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/board.jpg"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>If you are writing documents > 5 pages you can improve. There should be a clear definition of Ready for development and Done. Story/Issue should be based on value delivered to the customer not only the technical aspect. Releasing a new version of software once a month and saying we are agile should be a crime. Not caring about the team is not doing agile right.</p></blockquote>
+
+<p>Below are the signs that explain why the paper boat agility will not work and how to fix them:</p>
+
+<h2>Documents that are longer than 5 pages</h2>
+
+<p>There will be big features (epics) and they have to be explained. This does not give you a license to write 50 pager documents. If a document is longer than 5 pages many team members will not read it, accept this fact.</p>
+
+<blockquote><p>One beautiful Monday morning you get a memo of 30 pages text about the new feature business wants us to develop. Will you read it thoroughly? The answer is No.</p></blockquote>
+
+<p>You might skim through it to sustain in the meeting and that&rsquo;s about it. Documents become obsolete fast. When requirements change no one bothers to update documentation.</p>
+
+<h3>Solution</h3>
+
+<p> Write documents that are less than or equal to 5 pages. Make it concise and precise. Start creating visual aids for the process to explain it. Create mock-ups, use tools like <a href="https://balsamiq.com/">Balsamiq</a>. Express the requirements in a way that is understood by everyone with less or no reading involved. Then as per need create a UI design and discuss. After that implement it in code.</p>
+
+<h2>Unclear definition of Ready for development and Done</h2>
+
+<p>Definition of ready for development and Done are crucial for team success. Not having these or having unclear ones will hamper the team performance.</p>
+
+<blockquote><p>A software engineer should be clear about when the story is ready to be picked up for development. Same goes for Done.</p></blockquote>
+
+<p>Is it ready for development when the story is created but the description does not exist? Is it done as soon as I deploy it to production and move my task to &ldquo;Done&rdquo; column? If there are confusions like these it is a bad smell that needs to be addressed.</p>
+
+<h3>Solution</h3>
+
+<p>Have a clear point by point &ldquo;Definition of Ready&rdquo; and &ldquo;Definition of Done&rdquo;. This will help to measure and improve team performance. It will also assist in everyone involved to understand the meaning of these things the same way.</p>
+
+<h2>Stories based on the technical aspect not value to a customer</h2>
+
+<p>Agile software development is always about delivering value to the customer. The value in the form of working software not a pile of documents. If there a story like &ldquo;As a customer service manager I need to know who created a refund so that I can track and audit refunds in future&rdquo;. This task might entail adding a &ldquo;created_by&rdquo; field in the refunds table for instance. But this should not result in having a &ldquo;story&rdquo; that says &ldquo;Add created_by field in the refunds table&rdquo;. Of course, it can be a task/subtask as part of the main story. The main story delivers value but this database task is something that aids the process.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/story.jpg"></p>
+
+<h3>Solution</h3>
+
+<p>Have clear definitions and boundaries of Epic, Story, and task.  Each story should deliver some value to the customer (as above picture).  If you are following Scrum you will have story points too for things like team velocity. Technical tasks are required. Still, only the right sum of technical tasks deliver value to the customer.</p>
+
+<blockquote><p>The main thing here is &ldquo;always focus on the value being delivered to the customer&rdquo;.</p></blockquote>
+
+<h2>Releasing a new version of software once a month</h2>
+
+<p>The first thing to consider here is:</p>
+
+<blockquote><p>Deployment is a technical task and releasing a new software version is a business activity.</p></blockquote>
+
+<p><a href="https://geshan.com.np/blog/2018/10/deployment-is-not-release/">Deployment is not release</a>. If you are not able to make that distinction there is something that needs to be fixed. On top of it, if you hardly release one new version each month, you are doing agile wrong.  <a href="https://en.wikipedia.org/wiki/Release_early,_release_often">Release early release often</a> is an excellent philosophy to get feedback early. With early feedback, you can make a new set of changes in the next release to make the software better. This might not apply for mobile applications with long vendor approval process. For web applications deploying and releasing multiple times a day should be a norm.</p>
+
+<h3>Solution</h3>
+
+<p>Build a culture and technical process to be able to deploy and/or release to production multiple times a day.</p>
+
+<blockquote><p>Enforce good code quality and excellent software engineering practices. Follow tried and tested best practices like code reviews, automated testing, CI/CD, <a href="https://geshan.com.np/blog/2015/08/importance-of-logging-in-your-applications/">logging</a>, monitoring, and <a href="https://geshan.com.np/blog/2015/08/the-best-automated-deployment-tool-the-one-that-fits-your-needs/">automated deployment</a>.</p></blockquote>
+
+<p>Call it DevOps, SRE or Platforms engineering whatever you want but do it and deploy without fear whenever you want.</p>
+
+<h2>Not being careful about team motivation</h2>
+
+<p>Software development is a team sport. If one player is hurt the team covers for that player. If one team member lacks some skills team covers and helps teach that skill to the team member. Self organizing team that reflects on how to make the process better is at the heart of agile.</p>
+
+<blockquote><p>Team motivation and happy team members are essential to high productivity.</p></blockquote>
+
+<p>If you are being treated like story executors with no voice and no room for improvement, it is a big bad sign.</p>
+
+<h3>Solution</h3>
+
+<p>Build a culture of continuous improvement. Reflect on things that have been done and how the process can be enhanced. For instance, if doing 60% new features and 40% bugs did not work well, find a better ratio. Do team activities and things that uplift the team spirit.</p>
+
+<h2>Conclusion</h2>
+
+<p>Being agile on paper and being agile in practice are two different things. Don&rsquo;t let your agile software process be like waterfall with the so-labeled agile skin. Be agile and fix these signs to have high team output with fantastic performance.</p>
+
+<blockquote><p>Agile should be implemented to solve people and communication problems which results in stabilizing the technical issues.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Moving from A and B to 150 microservices, the journey, and learnings [Slides]]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/moving-from-a-and-b-to-~150-microservices/"/>
+    <updated>2018-10-26T21:08:00+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/moving-from-a-and-b-to-~150-microservices</id>
+    <content type="html"><![CDATA[<p>I gave a talk at #devopsdaysNewy on 24-Oct-2018. It was a great conference with lots of amazing people.
+I want to thank the organizers for putting together such an amazing event. I want to extend the thanks to the sponsors who made it possible :). It was very good couple of days to meet new people and form a network. I think my talk on microservices went pretty good too. It was my second devops days and I enjoyed it.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Moving from A and B to 150 microservices, the journey, and learnings" alt="Moving from A and B to 150 microservices, the journey, and learnings" data-echo="/images/a-b-to-150-ms/150-ms-geshan.jpg"></p>
+
+<!-- more -->
+
+
+<h2>The abstract</h2>
+
+<p>Are you frustrated working with large, legacy and potentially lethal code bases? We were frustrated too,but in 4-5 years of time, we replaced A (front-end) and B (back-office) system with ~150 microservices. From the days of no tests and clumsy deployment process, we moved to each service with unit tests, CI and deploying with a bot. With the business buying in the process, we enabled the business to reach new heights. This talk reveals that journey and the things we learned along the way.</p>
+
+<h2>The slides</h2>
+
+<script async class="speakerdeck-embed" data-id="05a92573b3fc4221b6a17478ae0db2b2" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>Slides on <a href="https://www.slideshare.net/geshan/moving-from-a-and-b-to-150-microservices-the-journey-and-learnings">slide share</a></p>
+
+<h2>Conclusion</h2>
+
+<p>I gave the same talk at Node Sydney <a href="https://www.meetup.com/node-sydney/events/cvdqzpyxmbjb/">September meetup</a> that went pretty well too. Hope to be able to give more talks in future and meet more interesting people.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Deployment is not Release, let's use feature flags]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/deployment-is-not-release/"/>
+    <updated>2018-10-25T21:13:05+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/deployment-is-not-release</id>
+    <content type="html"><![CDATA[<p>Breaking down a big feature to epics and stories is always tricky. Then you have sub-stories making the process complicated. If you could deploy the finished task that delivers value to the business it would help. Enter feature flags, using this you can deploy your code to production behind a gate. Code and feature are on production but not fully released to everyone. This post is going to help you adjust your mental model for getting more benefits with feature flags.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/deployment-not-release/flags.jpg" title="Deployment is not Release, lets use feature flags" alt="Deployment is not Release, lets use feature flags">
+[Image Source <a href="https://unsplash.com/photos/jCBzW_Q_UGI">Unspalsh</a>]</p>
+
+<!-- more -->
+
+
+<h2>Why use feature flags?</h2>
+
+<p>Have you ever faced a situation that you need to deploy an epic but it is not possible as it is 80% completed? It is an epic that has to be &ldquo;released&rdquo; all or nothing. That is where the power of feature flag comes into play. You can deploy (not release to everyone) each new value addition to production. The trick here is to put it behind a simple logic like if email ends in @yourcompany.com. You can check a minimal code <a href="https://geshan.com.np/blog/2016/09/how-to-do-a-minimum-viable-feature-switch/">example</a>.</p>
+
+<blockquote><p>You have to separate the technical deployment process from the business process of releasing a new feature.</p></blockquote>
+
+<h2>How to use feature flags?</h2>
+
+<p>Feature switch, feature toggle are some of the other names of feature flags. It can be effortless like if the logged in user&rsquo;s email is in our white-list we show this form. It can even be a feature that shows up when you add a specific cookie with a defined value in the browser. It can be highly orchestrated too with the use of a SAAS for feature flags. <a href="https://launchdarkly.com/">Launch Darkly</a> is a feature flag as a service company. You can use it if you have the time and resource to invest in it.</p>
+
+<p>Any path you take simple or complex the result is you have control over who can access a new feature. The feature is not released to everyone. The difference is how to activate/deactivate a feature flag. It can be as easy as clicking a checkbox or doing another deployment to open up a feature to everyone.</p>
+
+<blockquote><p>My suggestion is to start small, do an if condition in code and start experimenting. If it works well try other ways like a white-list or even a special cookie from the browser.</p></blockquote>
+
+<h2>Advantages of feature flags</h2>
+
+<p>There are many advantages of using feature flags in production. Lets list down a few highlights:</p>
+
+<ol>
+<li>Ability to test a feature on production in private with a select group of users.</li>
+<li>Ability to easily add or remove users who can use that feature.</li>
+<li>The confidence of releasing near bug-free features. Software engineers and QA can test on production even multiple times. Release the feature after bug fixes only when they are confident.</li>
+<li>There will be lesser code conflicts. When the task is complete, code changes are merged to the main branch before/after deployment. This also saves some valuable development time.</li>
+<li>The benefit of experimenting some things to a white-list of people in production. This can even lead to good feedback and positive changes.</li>
+</ol>
+
+
+<h2>Conclusion</h2>
+
+<p>You can deploy even small tasks to production with a proper use of feature flags. Think about adding value to the customer and deploying often. Test on production and when you are confident release it to everyone. Always remember Deployment != Release. Happy Feature flagging!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Don't code your microservice like a monolith, keep it maintainable not over-engineered]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/dont-code-your-microservice-like-a-monolith/"/>
+    <updated>2018-10-12T04:54:07+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/dont-code-your-microservice-like-a-monolith</id>
+    <content type="html"><![CDATA[<p>Will you use a gun to kill a fly? The answer is NO. The same thing goes when you want to write a microservice application that is going to be maximum of 10K lines of code. Don&rsquo;t over-engineer it. Ok, you have been writing and maintaining large code bases. Some might be 100K+ lines of code but you need to get over your habits and think differently. This post helps you unravel the mysteries of writing small and maintainable microservices. The suggestions are opinionated but it is in practice in a million dollar business.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/lego.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Microservices are small software systems. You can safely ditch MVC. Say no to ORM and also not take the design pattern baggage for microservices. Focus on code performance, readability, and maintainability not some old rules and patterns. Those patterns were made when people were not doing microservices.</p></blockquote>
+
+<h2>Why write microservices in the first place?</h2>
+
+<p>Microservices architecture, in my opinion, is breaking one or more monoliths into multiple smaller systems. These are more maintainable, independently developed and deployed pieces of software based on business functions. These smaller (presumably “micro”) systems should focus on only one business function and do it well. The catch here is &ldquo;micro&rdquo;, these pieces should ideally be under 10K lines of code.</p>
+
+<p>As they are independent it helps the business release features faster. The shipments team is not dependent on the checkout team. Something deployed on the shipments app is never going to break checkout. It becomes very decoupled. The blast radius of each change is controlled. That is the reason for rapid microservice adoption.</p>
+
+<p>Now let&rsquo;s look at the ways you were used to doing things and why it makes less sense in this microservices era.</p>
+
+<h2>Do you need MVC?</h2>
+
+<p>Model-View-Controller, I got introduced to it in 2007 or maybe a bit earlier. Then I used to think it was the silver bullet to all software architecture issues. I don&rsquo;t hold that opinion anymore. Yes, you used to work with Java or PHP and every other framework was MVC based. Now, you don&rsquo;t need to be strict about MVC anymore. Focus on clarity and getting things done.</p>
+
+<p>Use controllers if you want and if it still makes sense. Think like my app gets HTTP request and it has to give back HTTP response. Do think of having a backend API and frontend(s) consuming it. Check the code below, it is surely not MVC:</p>
+
+<script src="https://gist.github.com/geshan/1f76e5ebb3c15fd3c147c6c97420f923.js"></script>
+
+
+<p>You can see the full app <a href="https://github.com/geshan/currency-api">here</a>. Veify the structure it is not MVC :)</p>
+
+<p>So rather than doing an effort to get precise lines of M-V-C, write tests, implement continuous integration. Add some logs and monitoring to the app. Make the code maintainable, keep it as lean and simple as possible.</p>
+
+<h2>Don&rsquo;t take on the ORM overhead</h2>
+
+<p>Object Relation Mapping (ORM) when I first saw an ORM in action, I said to myself this is one of the best things ever known to programmers. 10+ years later I would be cautious to suggest an ORM to any software engineer. Last year I refactored a full ORM implementation to a raw SQL query way and it made that part of the application perform 20% faster. On top of it, the database transactions were evident and the code was far more readable hence maintainable.</p>
+
+<p>Data mapper or Active record both bring their own opinions, ways of doing things and extra weight. This not only causes performance issues but also code readability suffers. Think of the pre and post hooks/event listener Doctrine has, they work like magic and it is always tricky to understand magic.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/pot-on-head.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+
+<p>Just try this, explain how an ORM related insert code works VS how a simple and straightforward INSERT SQL query works to a beginner/junior software engineer. You will already regret using that ORM. Especially in the context of microservices ORM is a clear overhead. The microservice is anticipated to be maximum of 10K lines of code and affect hardly 10 tables so just don&rsquo;t use an ORM, period.</p>
+
+<h2>Design patterns might be a baggage</h2>
+
+<p>I am not saying that you don&rsquo;t need to learn about <a href="https://en.wikipedia.org/wiki/Software_design_pattern">software design patterns</a>. You should know about SOLID, law of Demeter, factory pattern, strategy pattern, singleton, adapter pattern etc. Well, most of these make sense if you do object-oriented programming right? What if you write a microservice in Node JS that is 1k lines of code spread across ~7 files. It does one small slice of the business function. All these patterns become nice to know stuff at that point.</p>
+
+<p>Design Patterns are relevant for a code base that is already big and in the next 6-12 months is going to be bigger, your usual monolith. They can turn out to be &ldquo;extra baggage&rdquo; for a service that is 100s of lines of code now and will become 1000s of lines of code in the next 6-12 months. We never foresee it to be bigger than that because to do that other part we will have another microservice. So keep your microservice code fat free and well tested.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/baggage.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+
+<h2>Conclusion</h2>
+
+<p>If you still want to code your microservice like the last monolith you worked on maybe you are doing something wrong. Think of it again, if you go for a day trip you don&rsquo;t pack and carry things like you are going for a 2 weeks vacation. Think of code performance and maintainability, let the data speak for you and break the rules. Happy software engineering!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why use docker? 3 reasons from a development perspective]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/why-use-docker-3-reasons-from-a-development-perspective/"/>
+    <updated>2018-10-10T04:29:22+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/why-use-docker-3-reasons-from-a-development-perspective</id>
+    <content type="html"><![CDATA[<p>Docker has been popular in the technology space in the past 5 years is an understatement. It has <a href="https://trends.google.com/trends/explore?date=2013-09-08%202018-10-08&amp;q=%2Fm%2F0wkcjgj">exploded</a> in usage and popularity in half a decade. Containers have taken us by storm. Newer applications without containerization feel like it is missing something. Docker has stood out to be the king in the container arena. This post details the reasons to use Docker for your development environment.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/why-docker/whale.jpg" title="Why use docker? 3 reasons from a development perspective" alt="Why use docker? 3 reasons from a development perspective"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Docker is super useful for development environment because if it runs on your machine, it runs anywhere. It runs on your friend&rsquo;s machine, on staging and also on production. When a new team member starts, s/he runs 3 commands and the app(s) are running. The new team member can be productive from day 1. Finally, a new version of PHP or MYSQL is coming. You can test your app easily with Docker and make it run in the old version with no issues.</p></blockquote>
+
+<h2>Docker Docker Docker</h2>
+
+<p>You can <a href="https://runnable.com/docker/why-use-docker">read</a> all you want about Virtual Machines (VMs) vs Containers. And there is a list of reasons to use Docker in the <a href="https://www.airpair.com/docker/posts/8-proven-real-world-ways-to-use-docker">real-world</a>. This piece discusses why to use Docker for development. If you want to go hands read about using <a href="https://geshan.com.np/blog/2017/05/how-to-use-docker-compose-with-virtual-hosts-and-services-like-db-for-dev-environment/">docker and docker compose</a> for your development environment.</p>
+
+<p>Docker has many advantages but the most important one is the container analogy. That you don&rsquo;t only ship your code but ship the whole OS and all related layers with each deployment in a standard way. It is a complete package containing the right version of OS, the desired version of the language, any external dependencies of your application and your application code. That too in a lightweight, isolated and resource controllable way. This is where docker blows away the VMs.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/why-docker/ship.jpg" title="Why use docker? 3 reasons from a development perspective" alt="Why use docker? 3 reasons from a development perspective"></p>
+
+<h2>Reasons to use Docker for the development environment</h2>
+
+<p>If you have read this far, now let&rsquo;s dive into the reasons you would want to use Docker for your development environment:</p>
+
+<h3>1. Runs on my machine = runs anywhere</h3>
+
+<p>If you have correctly dockerized your app and it runs without problems on your machine, 99% of the times it will run smoothly anywhere. By anywhere it means on your friend&rsquo;s machine, on the staging environment and production too. Given all of them have docker installed and configured correctly your app will run. Using docker also makes the application code cloud provider agnostic. Your application can potentially run on AWS or GCP or Azure without issues.</p>
+
+<h3>2. New team member can be productive from day 1</h3>
+
+<p>Think of this, a new team member joins then s/he spends more than a day to set up the machine with the right OS. Setup the language(s) used in the company add database(s) on top of it. 2-3 days is wasted on just getting the environment setup correctly. Enter docker + docker-compose, the new joiner sets up the OS. Installs docker then runs 3-5 commands, grabs some coffee and magic: your apps(s) are running. The new joiner can contribute with the working code on day 1. Think of all the cost a company can save with this approach. A streamlined docker implementation makes it a reality.</p>
+
+<h3>3. Test app&rsquo;s compatibility with the newer version of language/database</h3>
+
+<p>Picture this, a new version of the language you use just released. Like you were using PHP 5.6 and 7.0 has come out. You don&rsquo;t know how much work will be needed to make your application compatible with the new version of the language. Use docker here, you just need to run two different docker containers one running the current version and another running the newer version. You can even test the app side by side to measure performance. This can apply for any programming language.</p>
+
+<p>The same technique can be used to say test MYSQL version 5.7 and 8.0. You might think there are tools like NVM (Node version manager) or RVM (Ruby version manager) but things like that don&rsquo;t exist for each language. Also, you can just use docker than overloading your local machine.</p>
+
+<h2>Conclusion</h2>
+
+<p>Docker is a boon to both software engineers and DevOps engineers. It makes releasing software much easier as the whole stack is shipped not only the code. Still, to move your production to Docker many things need to be considered. Things like container builder (for instance <a href="https://cloud.google.com/cloud-build/docs/">Google cloud build</a>), container orchestration (like <a href="https://kubernetes.io/">Kubernetes</a>). So before jumping to the container on staging/production be convinced of its benefits on the local development environment. I hope you exploit Docker to extract the most benefit out of it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Don't just learn a new language/framework, implement it as a running open source project]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/dont-just-learn-a-new-language-slash-framework/"/>
+    <updated>2018-10-08T04:27:26+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/dont-just-learn-a-new-language-slash-framework</id>
+    <content type="html"><![CDATA[<p>“For the things we have to learn before we can do them, we learn by doing them.” ― Aristotle, The Nicomachean Ethics. Imagine you already read 3 books about cycling. Then someone gave you a cycle and asked to ride it, will you be able to ride it? The simple answer is &ldquo;No&rdquo;. It is not about how much have you read about cycling or how many videos did you watch about it. It is about getting on a cycle, balancing on it, learning the feet, hands and eye co-ordination. Same goes for learning a new tech skill, a new language or framework.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/language-framework-learn/cycle.jpg" title="Dont just learn a new language framework, implement it as a running open source project" alt="Dont just learn a new language framework, implement it as a running open source project"></p>
+
+<!-- more -->
+
+
+<p>Now if you think how will I do this new project I don&rsquo;t even know language &lsquo;X&rsquo; or framework &lsquo;Y&rsquo; stop complaining. Maybe you are a new starter in tech or coding but you need to know how to learn new things. The best way to learn something new is by doing it.</p>
+
+<blockquote><p>This post will focus on getting some common things right. It will help you get from I want to learn &lsquo;X&rsquo; to I have a project running in &lsquo;X&rsquo;, so follow on.</p></blockquote>
+
+<p>If you are convinced about doing a project to learn something new, open source it. Github is the de facto service to host your open source projects. Then you can leverage lots of services for free. This post will be equally useful for coding new starters as well as experienced software engineers.</p>
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Write a project to learn that language/framework, open source it then leverage services for free. Don&rsquo;t just watch courses, read the docs and then find solutions. Learn by doing. Use git and implement docker in your project. Code correctly add a code quality check service to be aware of the best practices, deploy your project to get a working URL for it.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/language-framework-learn/lang-framework-learn.jpg" title="Dont just learn a new language framework, implement it as a running open source project" alt="Dont just learn a new language framework, implement it as a running open source project"></p>
+
+<h2>Don&rsquo;t just watch courses, read the docs and find solutions</h2>
+
+<p>Nowadays, there are a plethora of choices to learn new things. Still, video courses are one of the most popular media. You can learn something new on <a href="https://www.udemy.com">Udemy</a>, <a href="https://www.pluralsight.com/">Pluralsight</a> or even <a href="https://youtube.com">Youtube</a>.</p>
+
+<blockquote><p>Until you learn by doing, watching the videos is only going to help to a certain level. It is better for you to go through the official documentation.</p></blockquote>
+
+<p>For instance, reading the React JS docs is better than only going through a React JS course. You find out the creators&#8217; perspective. The reason behind creating another Javascript framework/library helping you find proper solutions.</p>
+
+<h2>Learn Git to collaborate</h2>
+
+<p>&ldquo;No man is an island&rdquo;, especially in tech you generally don&rsquo;t work alone. You are part of a team. So even when learning something new try to find someone who you can collaborate with.</p>
+
+<blockquote><p>Git is immensely <a href="https://trends.google.com/trends/explore?q=git,svn,mercurial,bazaar">popular</a> compared to any of its competition. It is beneficial when there is more than 1 person writing code for a project.</p></blockquote>
+
+<p>You should learn git by doing, check the Github <a href="https://try.github.io/">tutorial</a>. I would highly recommend the learn by doing section. After you push it to Github anyone can potentially contribute to it.</p>
+
+<h2>Implement docker, get over works on my machine syndrome</h2>
+
+<p>In 2018, if you want to make your application more accessible, use <a href="https://www.docker.com/">Docker</a>. This will also help a lot in increasing contribution for your open source project. Running your project locally with docker compose will be like executing 2 commands.</p>
+
+<blockquote><p>Docker has many advantages. For a beginner, it is a way to make sure your app runs the same way on your machine, your friend&rsquo;s machine.</p></blockquote>
+
+<p>It will also be the same on the server you deploy your app to. As long as it runs on Docker well, you can rest assured it will run without issues on any environment.</p>
+
+<h2>Add code quality check</h2>
+
+<p>Just making it work should not be your priority. Writing quality should also be in your priority. Add code quality checks for the open source project you created for learning. Depending on the language/framework you could choose any service.</p>
+
+<blockquote><p>I would highly recommend <a href="https://codeclimate.com/quality/">Code Climate</a>. Code Climate supports a wide array of languages from Javascript to PHP and from Java/Kotlin to Swift for mobile developers.</p></blockquote>
+
+<p>With the new <a href="https://codeclimate.com/browser-extension/">browser plugin</a>, you get insights about your code in a Github pull request screen. You just connect it once to your Github repo and start seeing your code quality report. You can then better your code quality too. You can have a look at this <a href="https://codeclimate.com/github/geshan/currency-api/src/exchangeRates.js/source">example</a>.</p>
+
+<h2>Deploy your project</h2>
+
+<p>Now you are writing a new project to learn your favorite &lsquo;X&rsquo; or &lsquo;Y&rsquo;. You have written some parts of it, you are collaborating with Git and have the code open source on Github. You have Docker in place and code quality checks run on each push, great! But you can&rsquo;t show it to your friend who is living in a different city/country right? Wrong!</p>
+
+<p>You can use different services to deploy your web application. With a URL you can show it to your friend, a recruiter or anyone who knows the URL.</p>
+
+<blockquote><p>You can deploy it for free to services like <a href="https://www.heroku.com">Heroku</a> or <a href="https://zeit.co/now">Zeit Now</a>. If you have Dockerized your open source app I would recommend Zeit Now.</p></blockquote>
+
+<p>With the recent <a href="https://zeit.co/github">Github integration</a>, Zeit Now will give a new URL to each pull request. This makes testing a breeze. You can check an example on a demo <a href="https://github.com/geshan/currency-api/pull/9">currency converter API</a> app I wrote.</p>
+
+<h2>Conclusion</h2>
+
+<blockquote><p>To conclude, learning by doing is the best way to learn a new thing. Your aim should be to not only make it work but do it following the best practices. That is where code quality comes into play. If you can add automated tests and continuous integration it will be icing on the cake for a starter. Wish you all the best for learning by doing!</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 practical steps to land your first tech job]]></title>
+    <link href="http://geshan.com.np/blog/2018/09/7-practical-steps-to-land-your-first-tech-job/"/>
+    <updated>2018-09-29T05:55:58+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/09/7-practical-steps-to-land-your-first-tech-job</id>
+    <content type="html"><![CDATA[<p>&ldquo;If you hate your job, take a loan and you will start liking it&rdquo;. I don&rsquo;t remember where I read this but this sounds convincing. Now think of the tech job market worldwide, saying it is growing would be an understatement, it is booming. Still, why don&rsquo;t fresh graduates not get a job when the pass out of universities? Let&rsquo;s have a closer look at this issue and try to help technology students get a job as soon as their course finishes.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/5-steps-first-tech-job/first-tech-job-a.jpg" title="5 practical steps to land your first tech job" alt="5 practical steps to land your first tech job"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Network in person, use recuriter&rsquo;s help, contribute to open source, list companies/roles you want to work in and learn a new tech thing each month to land your first tech job. Bonus but important points, make a killer resume, have a great pet project deployed online to show and start early.</p></blockquote>
+
+<h2>Interesting subject</h2>
+
+<p>Around 11 years back I wrote this blog post &ldquo;<a href="https://geshan.com.np/blog/2007/11/10-web-by-things-technology-student-or/">10 things a tech student must know</a>&rdquo; then 4 years back I did a talk at the college I completed my bachelor&rsquo;s from titled &ldquo;<a href="https://geshan.com.np/blog/2014/08/things-i-wished-i-knew-while-doing-my/">Things I Wished I Knew While Doing My Tech Bachelor / Undergraduate</a>&rdquo;. Again 2 years back and in Nov of 2017 I did another talk with QnA and interaction with the title &ldquo;<a href="https://geshan.com.np/blog/2016/06/career-paths-for-to-be-tech-graduates-slides/">Career Paths for to Be Tech Graduates</a>&rdquo;  at a couple of college in Kathmandu. I also did another talk called &ldquo;<a href="https://geshan.com.np/blog/2017/02/things-i-wished-i-knew-as-a-junior-developer-slides/">Things I wished I knew as a junior developer</a>&rdquo; for a meetup in Feb 2017. This has been an interesting topic for me in the past decade.</p>
+
+<h2>Why don&rsquo;t students get a tech job after the course?</h2>
+
+<p>Let&rsquo;s face this, it is a mix of the education system and the individual student themselves. I studied my undergrad/bachelors in tech in Kathmandu, Nepal and my master in tech too in the Netherlands. Surely, very different education systems and outlook to education. One thing in common is both don&rsquo;t make the student an employment ready product. On the individual side, don&rsquo;t do a course because your friend is doing it. Simple logic, first ask your self where do you see yourself in 5 or 3 years then backtrack your way to reach there.</p>
+
+<h2>How to fix this?</h2>
+
+<p>I am no education expert or anything still I have worked like a decade in tech and in multiple countries by now. One thing is sure, skills and results are the primary and degrees are secondary. Universities/colleges should try to bridge the gap between students and real market needs. Like I don&rsquo;t know of any university that will teach students lets say <code>git</code> that you are going to use each day at work. That doesn&rsquo;t mean what is being taught is wrong :). Yes, I am ranting a bit here.</p>
+
+<p>On the student&rsquo;s side, you need to research what is relevant for the market, learn on your own and brand yourself so that you can sell your skills faster. For instance, if I interview a candidate who has a good tech blog with helpful and regular posts may be even on medium. Your chances of getting hired are up by like ~5% already.</p>
+
+<blockquote><p>Because being able to put your ideas/learning in words is an important skill for a software engineer.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/5-steps-first-tech-job/first-tech-job-b.jpg" title="5 practical steps to land your first tech job" alt="5 practical steps to land your first tech job"></p>
+
+<h2>Lets get to the steps now</h2>
+
+<p>After all my rants tirades lets focus on how you as a tech student can land a job as soon as you finish your degree. Below are the things you need to do to increase your chances to land your first tech job.</p>
+
+<h3>1. In person networking</h3>
+
+<p>Go to at least 1 <a href="meetup.com">meetup</a>/conference/training/events each month and add at least 2 new people on Linked In who can help you find a job. Not to mention message/email them after the meeting to build a relationship. Meetups are a great way to meet up people who you would normally not meet. Depending on the city you are in like if you are in Sydney you could go to a tech meetup each week. If you are in Kathmandu you could catch a meetup each month. Going to a usually free meetup is beneficial in many ways, you learn new things listening to people, you can network&hellip; Don&rsquo;t underestimate the power of meeting people in the flesh.</p>
+
+<p>So you are asking why would this person refer me? Right? The answer is simple <code>Many companies have referral bonus</code>. If they refer you and you get selected, get the job, complete your probation they get a certain sum of money. A win-win situation for all you, the referrer and the company. Email, then call and ask for a coffee meeting is recommended before asking for a job referral. Of course not to mention you should have an amazing CV.</p>
+
+<h3>2. Use recruiter help</h3>
+
+<p>In the starting, it should be you emailing and potentially calling tech recruiters. The idea is simple, it is a recruiter&rsquo;s job to find good candidates for tech roles. So be open tell them you are looking for junior or starting jobs and try to find a match. Probably the recruiter knows a couple of openings where you could actually be a good fit. Depending on the city there are internships, graduate roles which are specifically targeted at fresh grads. You might need to run away from recruiters after you have some years of experience, but that is a different story.</p>
+
+<h3>3. Contribute to open source</h3>
+
+<p>I know many companies which will look at you github profile first then go through your resume. So <code>actions speak louder than words</code>. To begin with, you don&rsquo;t need to start contributing code. You can start with helping on documentation etc. There are lots of ways to give back to open source. <a href="https://hacktoberfest.digitalocean.com/">Hacktoberfest 2018</a> is starting in 2 days make good use of it. So learning git and github becomes a prerequisite for this step. If you are a tech student in their final semester and don&rsquo;t know git = you don&rsquo;t have a very bright future in tech :).</p>
+
+<h3>4. Make a list of companies with probable roles</h3>
+
+<p>If you don&rsquo;t have a target how will you ever achieve it, if you have a target you can have plans to attain it. Make a list of companies and positions/role that you want to work in when you finish your degree. Towards the end of the course if you are not sure to pick backend or frontend or UI/UX or DevOps/SRE or data engineering or DBA or &hellip; sorry but no one can help a confused person ;). If you see yourself as a frontend engineer at say Atlassian you need to work for it. Another handy tip is to keep a spreadsheet of all the jobs you have applied for with dates to do a proper follow-up. It is not easy to get a call for an interview for less experienced candidates so check step 1 referral helps a lot here.</p>
+
+<h3>5. Learn a new tech thing each month</h3>
+
+<p>Now as you have shortlisted companies and roles you want to work for you have obviously read the job descriptions. So you now know what skills the market and/or the company you aim to join is looking for. Start learning it, dedicate some hours each week/weekend and learn it. Best way to learn is to try to build your pet project, it could be anything that excites you. Don&rsquo;t just go through a course on <code>docker</code> and say yes I know docker. Show it running on a project and then you will actually learn it. If you already know 7 out of 10 things the company will need to teach another junior software engineer, your chances of getting the job automatically becomes higher.</p>
+
+<h2>Conclusion</h2>
+
+<p>There are many other general things that you need to be good on like having a clear and impressive 1-page resume, having at least one project that is online. Like, having basic knowledge of a breadth of things and a bit of depth in the area you want to work in,  knowing your skill and going to the right area of tech also helps. You need to do the above steps like 6-9 months before your course ends else doing things in haste and the very end will not help much.</p>
+
+<p>The tech industry needs new people every year worldwide. From the positive angle, tech needs more and more new people.</p>
+
+<blockquote><p>From the other side, your competition is not only in your city but anywhere in the world so your skills and ability to learn sets you apart.</p></blockquote>
+
+<p>Best of luck hunting for your first tech role!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to do a zero downtime database (DB) migration (schema change) with a practical example]]></title>
+    <link href="http://geshan.com.np/blog/2018/04/how-to-do-a-zero-downtime-database-db-migration-schema-change-with-a-practical-example/"/>
+    <updated>2018-04-30T18:00:41+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/04/how-to-do-a-zero-downtime-database-db-migration-schema-change-with-a-practical-example</id>
+    <content type="html"><![CDATA[<p>Database migration on a production database is never simple. Depending on the volume of requests some teams schedule database migration to off hours. You can run your alter statements with zero or minimal downtime following the steps mentioned below with a practical example.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/db-migration.png" title="How to do a zero downtime database" alt="How to do a zero downtime database"></p>
+
+<!-- more -->
+
+
+<h2>Example</h2>
+
+<p>As an example for this post, let&rsquo;s assume you work for an E-commerce company which has both recurring and new customers. You have partners who publicize a discount code valid for a given date range and get a percent of the order&rsquo;s total tracked by their discount code. Below is the schema for the partner and coupon code. Below is the initial schema before any change:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/schema-01.png" title="Initial DB schema" alt="Initial DB Schema"></p>
+
+<p>Now the new requirement is to track different commission percent for the new and recurring customer. New and recurring customers are evaluated by a different system/microservice and it is also responsible for commission calculation based on order total which is out of the scope of this focused example.</p>
+
+<p>To do commission tracking by customer type we would decide to add 2 new columns commission_percent_new_customer, commission_percent_recurring_customer, the difficult question is how to roll it out without downtime.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/schema-02.png" title="Updated schema with 2 new columns" alt="Updated schema with 2 new columns"></p>
+
+<h3>Migration script (DB schema alter statement)</h3>
+
+<p>The following migration script will update the DB schema to be in the above state for MYSQL DB:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ALTER TABLE `partner_discount_code` ADD `commission_percent_new_customer` DECIMAL NULL AFTER `commission_percent`,
+</span><span class='line'>ADD `commission_percent_recurring_customer` DECIMAL NULL AFTER `commission_percent_new_customer`, 
+</span><span class='line'>,algorithm=inplace,lock=none;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice the <code>algorithm=inplace,lock=none</code> it is discussed below.</p>
+
+<h2>Evaluating Downtime</h2>
+
+<p>In the above example there can be 2 types of downtime as follows:</p>
+
+<ol>
+<li>Tables locked while migration runs</li>
+<li>Downtime because of newly introduced columns and code not matching to it</li>
+</ol>
+
+
+<p>For the first downtime issue depending on the database, it can be mitigated to a significant level with executing proper alter SQL statements. For example in MYSQL if <code>,algorithm=inplace, lock=none</code> is suffixed with your alter it will run with 0 to minimum table lock allowing reads and writes while the migration runs. This is especially important when altering tables with millions of rows as the alter can take minutes depending on the structure and data volume of the tables involved.</p>
+
+<p>For the second issue, if db alter and code release is deployed in a specific sequence it can be handled much better. The deployment steps are listed below:</p>
+
+<h2>Deployment Steps</h2>
+
+<ol>
+<li>Add the two new columns to the partner_discount_code, let&rsquo;s say the code is in v 1.1 now</li>
+<li>Deploy code v 1.2 which adds and edits all 3 columns - commission_percent, commission_percent_new_customer and commission_percent_recurring_customer.</li>
+<li>Test that all the things work as expected, even if you need to roll back nothing breaks and it&rsquo;s fully backward compatible</li>
+<li>When everything is fine, deploy code v 1.3 that adds or edits only on the 2 new columns</li>
+<li>Test it for a day or two, then as per need you can drop the commission_percent column on the partner_discount_code table as it&rsquo;s not used anymore</li>
+</ol>
+
+
+<h3>Final schema after dropping commission_percent column</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/schema-03.png" title="Updated schema with 1 column less" alt="Updated schema with 1 column less"></p>
+
+<h2>Things to consider</h2>
+
+<ul>
+<li>Always be careful with database migration. It&rsquo;s is surely safe to take a backup of the table you will run the alter statement on before executive it.</li>
+<li>Don&rsquo;t deploy the code first that write to new columns then run the migration, it will result in errors as the code will try to access non-existing column(s).</li>
+<li>Always think of backward compatibility usually without a revert migration. Generally, access to production database is only given to a select few.</li>
+<li>Run drop or rename columns only after you are fully satisfied that the new changes are not breaking anything.</li>
+<li>It is better to run migrations (alter SQL) manually than part of the deployment to keep things segregated and more predictable.</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>Database migration is not difficult if it is done the right way. Hope this post helps you run your DB migrations in a smoother fashion.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Convert your tech hiring funnel into an hour glass, retain your tech talent]]></title>
+    <link href="http://geshan.com.np/blog/2017/08/convert-your-tech-hiring-funnel-into-an-hour-glass/"/>
+    <updated>2017-08-18T16:52:05+00:00</updated>
+    <id>http://geshan.com.np/blog/2017/08/convert-your-tech-hiring-funnel-into-an-hour-glass</id>
+    <content type="html"><![CDATA[<p>Sometimes I feel that the software company (<a href="http://younginnovations.com.np/ourstory">YIPL</a>) we started a decade back is turning into a software engineer factory. We take in fresh grads or junior software engineers, train them, mentor them. When they get the skills after 6-9 months and are ready to be productive to the company they move to a bigger better software company. This is a common story in Kathmandu Tech Scene. I am not blaming people moving jobs in tech but I think, there is a fundamental flaw in the process and system itself. In this blog post I will unveil a tech hiring funnel we follow for a few tech startups in Kathmandu. It will also contain some of my thoughts on how to retain tech talent by converting the funnel into an hour glass.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/tech-hiring-funnel-hour-glass/tech-hiring-funnel-hourglass.jpg" title="Convert your tech hiring funnel into an hour glass, retain your tech talent" alt="Convert your tech hiring funnel into an hour glass, retain your tech talent"></p>
+
+<!-- more -->
+
+
+<p>I am not a hiring manager or recruiter. Below is my own experience of some years trying to source and retain tech talents mainly in Kathmandu, Nepal. I feel, these processes can be applied to any hire many tech roles anywhere in the world.</p>
+
+<h2>Tech Hiring Funnel</h2>
+
+<p>Hiring for tech roles is a difficult job. Like any other team, if one wrong person gets hired in the tech team it can spoil the team spirit of the whole team. So IMHO, it is better to not hire a person if in doubt than to take chance. Once the person is in the team, it will be a lot difficult to take any negative action than not hiring the person in the first place.</p>
+
+<p>To avoid such problems, here is a tech hiring funnel focused on   software engineers:</p>
+
+<ol>
+<li>We get the CV or head hunt to receive the CV. Some candidates are filtered out just by the CV.</li>
+<li>Then we send in a set of questions over email for software engineers, <a href="http://bit.ly/sw-eng-ques">this</a> one is focused on PHP/JS.
+
+<ol>
+<li>This helps filter out some candidates. If the answer is without depth or just googled it is easy to filter out the candidate.</li>
+</ol>
+</li>
+<li>After we are satisfied with the answers we send a coding task/challenge. <a href="http://bit.ly/sw-eng-task">This</a> one is for a PHP back-end software engineer.
+
+<ol>
+<li>Always with a deadline which includes a weekend as working candidates need time to do this.</li>
+<li>There might be things s/he is doing for the first time in the task, even experienced software engineers have something new in the above task (at least in the case of Software Engineers in Kathmandu).</li>
+<li>This helps us filter out lots of people as candidates have big words in their CV but the solution gives us a clear picture of their coding skills.</li>
+</ol>
+</li>
+<li>Depending on the task solution we generally give a score of 1-10 to be objective in the analysis.</li>
+<li>Then if the task solution is good enough, there might be a phone interview for initial screening</li>
+<li>Then there can be one technical and one management interview or both put together depending on the candidate.</li>
+<li>Even after interviews we score on 1-10 to be objective then the decision is to offer or not offer the position to the candidate.</li>
+</ol>
+
+
+<p>The above is the funnel works for majority of tech positions like software engineer (both back-end and front-end), UI/UX engineer, QA engineer, DevOps/SRE engineer etc. Questions and task will vary depending on the role of course. The steps can be changed to match your company rules and policy.</p>
+
+<p>It works well at the 10s scale but I am not sure how good will it will work at the 100s scale.</p>
+
+<h2>The hourglass transformation</h2>
+
+<p>If you spend so much time hiring a good candidate but do not have a great on-boarding procedure you are doing something wrong.  Listen to <a href="https://blog.fogcreek.com/how-to-onboard-software-engineers-interview-with-kate-heddleston/">this</a> amazing podcast/interview with Kate Heddleston to get more idea about tech role on-boarding. After a smooth on-boarding process, I think the following things matter for retaining tech talent:</p>
+
+<ol>
+<li>Motivation is always important. Bluntly put &ldquo;money talks&rdquo;. If you are not able to pay your software engineers good money (at least as per market rates) they will look for other opportunities.</li>
+<li>Software engineers and generally other tech roles crave for challenges. New things, shiny technology attracts us tech people. So keeping your software stack up to date will help retain tech talent.</li>
+<li>Team culture matters a lot. How your team accepts a new member. The culture of mentoring and growth is crucial for software teams.</li>
+<li>Visionary leadership is very important. If you are doing the same thing you were doing 5 or even 2 years back there is a problem in the team. Update and upgrade is the need in technology as it moves very fast.</li>
+<li>Create an environment to grow. If your junior software engineer can&rsquo;t grow to a software engineer in 1-2 years there is some issue to fix. Servant leadership with opportunity to grow will help retention.</li>
+</ol>
+
+
+<h2>Conclusion</h2>
+
+<p>Every team might not have all the skills it needs. Be open to communicate the skills your team lacks and move forward to build that skill. For instance if your team needs DevOps tool&rsquo;s skills hire a consultant for 3-6 months with a target of getting the most out of the consultant to team 1-3 members of the team those skills.</p>
+
+<blockquote><p>Hopefully, this will help you hire and retain your tech talent better.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Adopt a painless continuous delivery culture, add more business value [Slides]]]></title>
+    <link href="http://geshan.com.np/blog/2017/08/adopt-a-painless-continuous-delivery-culture/"/>
+    <updated>2017-08-02T03:17:30+00:00</updated>
+    <id>http://geshan.com.np/blog/2017/08/adopt-a-painless-continuous-delivery-culture</id>
+    <content type="html"><![CDATA[<p>Your work responsibilities boil down to 2 things, either add value to customers or save cost for the business.
+Value to the business is always more important than the latest technical fad. If a feature is done (production
+ready) but not deployed to production it is an opportunity loss for the business.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/continuous-delivery/geshan-devops--days-pdx-2017.jpg" title="Adopt a painless continuous delivery culture, add more business value [Slides]" alt="Adopt a painless continuous delivery culture, add more business value [Slides]"></p>
+
+<!-- more -->
+
+
+<p>Below are the slides of my
+talk titled &ldquo;Adopt a painless continuous delivery culture, add more business value&rdquo; given today at
+<a href="https://www.devopsdays.org/events/2017-portland/program/">DevOpsDays Portland 2017</a>:</p>
+
+<h2>The Slides</h2>
+
+<script async class="speakerdeck-embed" data-id="44a57cc9c1eb4c5a9ba087cea49dac78" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>Slides on <a href="http://bit.ly/cdbv-gm">slideshare</a></p>
+
+<h2>The Video</h2>
+
+<p>The video of the talk is below:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2oYPAHJwr6U" frameborder="0" allowfullscreen></iframe>
+
+
+<h2>The Abstract</h2>
+
+<p>A continuous delivery of new features definitely adds value to the business, it should be effortless to the tech team too. 5 years back our sys-admin team was in Istanbul and the dev team was in Dubai. Even then changes were shipped periodically but the process was cumbersome. A stable delivery pipeline with tests, continuous integration and small atomic deployments with github flow gives us a leading-edge. The culture of logging and monitoring ingrained in our team helps us move fast. Now, we ask a chatbot to deploy our microservices several times a day to production. In this session, I will unveil details on how you can get started with a smooth continuous delivery pipeline one step at a time.</p>
+
+<h2>Conclusion</h2>
+
+<p>The first day of DevOps Days PDX 2017 was pretty impressive. Looking forward to day 2!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Software Companies Tech Competency Matrix]]></title>
+    <link href="http://geshan.com.np/blog/2017/06/software-companies-tech-competency-matrix/"/>
+    <updated>2017-06-07T12:18:57+00:00</updated>
+    <id>http://geshan.com.np/blog/2017/06/software-companies-tech-competency-matrix</id>
+    <content type="html"><![CDATA[<p>Every company is a <a href="https://www.forbes.com/sites/forbestechcouncil/2017/01/23/why-every-company-is-a-technology-company/#62d4503657ae">technology company</a>. A technology company without great software and technical team is insignificant. In this post I will unfold my understanding of what makes a tech team competent in 4 levels with 6 main criteria and 25 sub criteria.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/swtcm/swtcm.jpg" title="Software Companies Tech Competency Matrix" alt="Software Companies Tech Competency Matrix"></p>
+
+<!-- more -->
+
+
+<h2>Assumptions</h2>
+
+<p>Below are some of the assumptions I have made for this opinionated matrix:</p>
+
+<ul>
+<li>It focuses on a tech/engineering team doing software development.</li>
+<li>It tilts towards software teams practicing agile methodologies.</li>
+<li>It is more targeted towards web applications/APIs developing teams.</li>
+<li>Many things can be added to the 6 main criteria and 25 sub criteria, still these 25 points I think are important.</li>
+<li>Many things are dependent on the scale your team works at, for example if you get 2 requests per minute you don&rsquo;t need a load-balancer :)</li>
+</ul>
+
+
+<h2>The matrix</h2>
+
+<p>If its difficult to read jump directly to the <a href="https://docs.google.com/spreadsheets/d/1uDx5RG8k7Oxl6REGPgZIG-qqCNfn3E8WwczPPyoWvSA/edit?usp=sharing">google sheet</a>.</p>
+
+<iframe src="https://docs.google.com/spreadsheets/d/1uDx5RG8k7Oxl6REGPgZIG-qqCNfn3E8WwczPPyoWvSA/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false" width="750px" height="1000px"></iframe>
+
+
+<h2>Add more things</h2>
+
+<p>If you want to add more things check this <a href="https://docs.google.com/spreadsheets/d/1uDx5RG8k7Oxl6REGPgZIG-qqCNfn3E8WwczPPyoWvSA/edit?usp=sharing">google sheet</a> and comment below.</p>
+
+<p>Thanks the the people who helped me review this and for their valuable inputs. And thanks Sijin Joseph for the <a href="http://sijinjoseph.com/programmer-competency-matrix/">programmer competency matrix</a> from where I got the idea to
+make such kind a matrix on a team level then individual programmer.</p>
+
+<h2>Conclusion</h2>
+
+<p>As a company evaluates any programmer, you could try to rate your team or processes giving them a point as per the level in each of the 25 criteria.
+So any team could score between 25-100 (25 is level 1 on each point and 100 is level 4 in each point). It should be an interesting exercise, <a href="https://docs.google.com/spreadsheets/d/1nenLo3uV3xN0PBt-heg0HLogLgHKw32QFeF4wj6Hdqs/edit?usp=sharing">here</a> is an example.</p>
+
+<blockquote><p>Hopefully you know where your tech competency/maturity stands on a team level better now.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to use docker compose with virtual hosts and shared services (like db) for dev environment]]></title>
+    <link href="http://geshan.com.np/blog/2017/05/how-to-use-docker-compose-with-virtual-hosts-and-services-like-db-for-dev-environment/"/>
+    <updated>2017-05-24T14:53:04+00:00</updated>
+    <id>http://geshan.com.np/blog/2017/05/how-to-use-docker-compose-with-virtual-hosts-and-services-like-db-for-dev-environment</id>
+    <content type="html"><![CDATA[<p>Docker as been immensely popular in the past years. If you are not using docker at least in your dev environment in 2017.
+You are surely missing out on some great advantages. Your new software engineer should start writing production-ready code
+in a matter of hours not days. All thanks to docker.  Along the same lines, this post will cover how you can set up
+docker for your dev environment with least friction and maximum productivity. It is an opinionated post. We migrated to this <code>external_links</code>
+<a href="https://docs.docker.com/compose/compose-file/#externallinks">approach</a> so that we could run multiple projects/microservices that use the same db/services shared among them.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/docker-compose-vhost/docker-compose-vhost.jpg" title="Docker compose with vhost and shared services" alt="Docker compose with vhost and shared services"></p>
+
+<!-- more -->
+
+
+<h2>Context</h2>
+
+<ul>
+<li>This tutorial is generally agnostic of docker and docker-compose versions (I am using docker compose 1 syntax). I assume you have docker and docker-compose installed and know about them.</li>
+<li>It uses external images like Nginx proxy for virtual host per project. Mysql db as shared external service. It could also have been mongo or redis or even rabbit mq. The main point is to use it as <code>external_link</code> in the docker compose file, so that it can be shared among projects.</li>
+<li>It uses a demo app which emulates the page visit/hit counter popular decades back with a <a href="https://github.com/geshan/counter/blob/master/index.js">~30 liner Nodejs app</a> and Mysql db.</li>
+<li>I would like to keep the description as concise as possible and in points to make it simple and clear. You should read the code of <a href="https://github.com/geshan/counter">sample counter project</a> and sample mysql container&rsquo;s <a href="https://github.com/geshan/sample-mysql/blob/master/docker-compose.yml">docker-compose.yml</a> well.</li>
+<li>The goal is to grasp the concepts well and apply it to your current project. For example, you could start with replacing your local mysql install with a docker container.</li>
+</ul>
+
+
+<h2>Problems to solve</h2>
+
+<ol>
+<li>After I use docker and docker compose, the web server (nginx/apache etc) of project A takes up port 80 and I can&rsquo;t run project B on port 80 or have a virtual host for both projects.</li>
+<li>When I use my db (mysql/postgres) as a service in my docker compose for project A, It is cumbersome to use the same db for another project as its coupled with project A.</li>
+<li>I just want to run my mysql database, import some data and run some queries. I don&rsquo;t want to run my app for now.</li>
+</ol>
+
+
+<h2>Solution goals</h2>
+
+<ol>
+<li>To make services like db etc independent of projects and shared among projects similar to having a local install of mysql with multiple databases.</li>
+<li>Multiple projects should be able to run in parallel and each of them will have their own virtual host for easy accessibility.</li>
+</ol>
+
+
+<h2>Steps</h2>
+
+<ol>
+<li>Run the Nginx proxy to enable virtual hosts with <code>$ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy</code></li>
+<li>Add <code>127.0.0.1 counter.local.dev</code> to your hosts file (on unix based system it is <code>/etc/hosts</code> file)</li>
+<li>Create an empty folder db in your home (<code>~/db</code>), to save your mysql data</li>
+<li>Clone mysql repo from <a href="https://github.com/geshan/sample-mysql">here</a> maybe at <code>~/projects/mysql</code></li>
+<li>In <code>~/projects/mysql</code> run docker-compose up to run mysql, it will create <a href="https://github.com/geshan/sample-mysql/blob/master/init-dump/counter.sql">counter db, counts table with one row</a>.</li>
+<li>Clone the sample counter app from <a href="https://github.com/geshan/counter">here</a> to maybe <code>~/projects/counter</code>.</li>
+<li>In <code>~/projects/counter</code> run <code>docker-compose up</code></li>
+<li>Then go to <code>http://counter.local.dev</code> on your browser you should see <code>Page visited 1 times</code>, refresh it, it should say <code>Page visited 2 times</code></li>
+</ol>
+
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/docker-compose-vhost/page-visited.png" title="All working you should see this" alt="All working you should see this"></p>
+
+<p>Virtual host has been possible in above setup as we ran the nginx proxy and configured <code>VIRTUAL_HOST</code> and <code>VIRTUAL_PORT</code> parameters correctly
+in the docker-compose.yml of the sample counter project. Mysql was already running before the project even started to run and it was <code>external_links</code>,
+the IP of the mysql container was automatically added to the <code>/etc/hosts</code> of the counter project container which enabled us to use the host for mysql db
+as <a href="https://github.com/geshan/counter/blob/master/index.js#L4">mysql</a> in the connection config we passed to the mysql library.</p>
+
+<p>Steps for running dependent services like nginx proxy, mysql can surely be automated for speed and efficiency.</p>
+
+<h2>Takeaways</h2>
+
+<ol>
+<li>You can plan a step by step migration like first get your db/queue migrated from local install to docker then the app.</li>
+<li>Use <code>external_links</code> for all the services like db/queue/redis/solr anything that needs to be shared among projects.</li>
+<li>Use <a href="https://github.com/jwilder/nginx-proxy">nginx proxy</a> to enable virtual host per project with two simple env variables <code>VIRTUAL_HOST</code> and <code>VIRTUAL_PORT</code> in the project&rsquo;s <a href="https://github.com/geshan/counter/blob/master/docker-compose.yml#L8-L9">docker-compose</a> file. <code>VIRTUAL_PORT</code> is 8080 because application is <a href="https://github.com/geshan/counter/blob/master/index.js#L27">running</a> on port 8080 and same port is exposed from the <a href="https://github.com/geshan/counter/blob/master/Dockerfile#L10">dockerfile</a>.</li>
+<li>Run all your dependencies before hand and then run <code>docker-compose up</code> on your project(s). Dependencies can be run with <code>docker-compose up -d</code> to put it in the background. You can use <code>docker-compose -f logs</code> to follow logs and check if the service is running fine.</li>
+<li>In this way, you can run multiple projects sharing the same db instance and each project can have its own virtual host.</li>
+</ol>
+
+
+<blockquote><p>Hope you found this helpful. For more clarity, please read the <a href="https://github.com/geshan/counter/blob/master/Dockerfile">Dockerfile</a>, <a href="https://github.com/geshan/counter/blob/master/docker-compose.yml">docker-compose.yml</a> and <a href="https://github.com/geshan/counter/blob/master/index.js">index.js</a> of the sample counter project thoroughly.</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

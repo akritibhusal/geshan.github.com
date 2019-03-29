@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jobs | Geshan's Blog]]></title>
+  <link href="http://geshan.com.np/blog/categories/jobs/atom.xml" rel="self"/>
+  <link href="http://geshan.com.np/"/>
+  <updated>2019-03-29T04:23:38+00:00</updated>
+  <id>http://geshan.com.np/</id>
+  <author>
+    <name><![CDATA[Geshan Manandhar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Things tech recruiters look for in your resume and the first interview]]></title>
+    <link href="http://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for/"/>
+    <updated>2019-01-17T10:20:29+00:00</updated>
+    <id>http://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for</id>
+    <content type="html"><![CDATA[<p>Have you ever applied to many tech jobs that suit your experience and skill but never heard back? Does it feel like you are sending your resume to a black hole? Then this is something you absolutely must read. In this post, 3 tech recruiters in Sydney, Australia answer what they look for in a resume/candidate profile. They also open up about top 3 things they evaluate while conducting the first interview.</p>
+
+<blockquote><p>After you know what the tech recruiters are looking for you can tailor your resume that lands you an interview.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/tech-recruitment-aus/for-hire.jpg"></p>
+
+<!-- more -->
+
+
+<p>2019 started less than 3 weeks ago and I have seen many new tech roles open up. You can also read through <a href="https://geshan.com.np/blog/2018/09/7-practical-steps-to-land-your-first-tech-job/" title="Steps to land your first tech job">practical step to land a tech job</a> and get an edge over your competition on your job hunt. I have also compiled a <a href="https://github.com/geshan/au-companies-providing-work-visa-sponsorship" title="Companies in Austalia providing visa sponsorship for tech roles">list</a> of companies in Australia that provide work visa sponsorship. Of course, it depends a lot on the role and the candidate too.</p>
+
+<h2>Purpose of the CV/Resume</h2>
+
+<p>What is the purpose of your resume? In my opinion, the main purpose of your resume is to land you the first interview.</p>
+
+<blockquote><p>So, craft your resume to cater your audience very well. Then it is up to you to prove yourself worthy for the second interview up-to-the job offer stage.</p></blockquote>
+
+<p>For initial review, you can run your CV through <a href="https://cvcompiler.com/" title="Tech CV review powered by NLP and data insights">CVCompiler.com</a> (has a free or paid version). I have found it to be quite helpful for tech-related CVs.</p>
+
+<h2>Initial interview</h2>
+
+<p>Initial screening interview by a tech recruiter is generally done over phone or audio/video conference. This helps filter out candidates that are not the best cultural fit or even small things like &ldquo;Can the candidate speak good English?&rdquo;.</p>
+
+<blockquote><p>First interviews are generally short and not technical.</p></blockquote>
+
+<p>It is like the entry of the funnel and getting past the initial interview should not be that difficult.</p>
+
+<h2>What recruiters look for?</h2>
+
+<p>I asked 3 internal tech recruiters in Sydney, Australia the following 3 simple questions:</p>
+
+<ol>
+<li>How many resumes/candidate profiles do you go through in a day usually?</li>
+<li>What are the things you look for in a resume sent for a technical role?</li>
+<li>What are the top 3 things you evaluate in a candidate when conducting the first interview?</li>
+</ol>
+
+
+<p>Read on to find out what they had to say about tech recruitment as an internal tech recruiter:</p>
+
+<h2>The Answers</h2>
+
+<p>I asked the above 3 questions to Cloë Stanbridge (Safety Culture), James Richardson (Quantium) and Kevin Yoon (SiteMinder). Below are their answers:</p>
+
+<h3>Cloë Stanbridge (Safety Culture) looks for tech and soft skills</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Cloe from Safety Culture" alt="Cloe from Safety Culture" data-echo="/images/tech-recruitment-aus/cloe.jpg"></p>
+
+<p><a href="https://www.linkedin.com/in/cloestanbridge/" title="Cloë on LinkedIn">Cloë Stanbridge</a> has been working for <a href="https://safetyculture.com/" title="Safety culture website">Safety Culture</a> for almost 2 years now. She is currently the Talent Acquisition manager there. Safety Culture&rsquo;s mission is &ldquo;to help companies achieve safer and higher quality workplaces all around the world through innovative, low-cost mobile first products.&rdquo;</p>
+
+<blockquote><p>Safety Culture has multiple <a href="https://safetyculture.com/jobs/" title="Jobs at safety culture">open roles</a> as of now.</p></blockquote>
+
+<p>It has 5 offices around the world with 2 of them in Australia. Cloë expressed her point of view about the above question the following way:</p>
+
+<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
+
+<p>This can vary due to the volume of roles I have on hand but on an <strong>average about 10 a day</strong>.</p>
+
+<h4>What are the things you look for in a resume sent for a technical role?</h4>
+
+<p>Education, longevity and <strong>growth in their career</strong> is something I focus on. I also look into if the candidate has <strong>worked for a product/SaaS company</strong>. This helps me evaluate that they are used to iterating, Continuous Integration (CI) and <strong>are focused on quality rather than being constrained by budget or time.</strong></p>
+
+<p>Candidates who have worked in cross-functional teams is a plus. They don&rsquo;t need to have all of these things but scoring on most of them would warrant them an interview. Grammar/spelling mistakes is also a <strong>big no</strong>.</p>
+
+<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
+
+<ol>
+<li><strong>Communication</strong>: This is not just the ability to speak English but being able to explain technical terms to a non-technical person earns brownie points for the candidate.</li>
+<li><strong>Passion and interest for their craft</strong>: I would check if they have a side project. Learning something new in their free time would result in a better rating. The questions they ask hints to me about their passion for what they do.</li>
+<li><strong>How interested are they in the problems that we are solving</strong>: I would also evaluate if they just want &ldquo;a&rdquo; job or do they actually want to work for this company. This would also include being excited for the learning opportunity they would get at work.</li>
+</ol>
+
+
+<p>She was quite precise about the things she would look for in the CV and the candidate in the first interview.</p>
+
+<h3>James Richardson (Quantium) seeks alignment to JD and aptitude</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="James, currently working at Quantium" alt="James, currently working at Quantium" data-echo="/images/tech-recruitment-aus/james.jpg"></p>
+
+<p><a href="https://www.linkedin.com/in/jamesrichardsonrecruitment/" title="James on LinkedIn">James</a> has been associated with <a href="https://www.quantium.com/" title="Quantium website">Quantium</a> for almost 2 and a half years. Currently, he is the &ldquo;Lead Recruitment Business Partner&rdquo; at Quantium, he is also the co-organizer of <a href="https://www.meetup.com/node-sydney/" title="Node Sydney Meetup group">Node Sydney Meetup</a>. Quantium is a consulting firm working in multiple domains and has multiple products, with a focus on Data Science and Artificial Intelligence. With 4 office location in Australia, Quantium has a total of 9 offices all over the world.</p>
+
+<blockquote><p>They are also <a href="https://www.quantium.com/careers/" title="Quantium careers page">looking</a> for talented tech people like you.</p></blockquote>
+
+<p>James answered the above questions as follows:</p>
+
+<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
+
+<p>It really varies. In peak times, I could be screening anywhere between 50-250 per day depending on the role. For software orientated roles, these numbers reduce sharply. Looking at my current data,
+<strong>a recurring Backend role that is constantly advertised will attract around 40 applications per week</strong>, with a spike on Tuesdays.</p>
+
+<h4>What are the things you look for in a resume sent for a technical role?</h4>
+
+<p>It all depending on the nature of the vacancy. <strong>I tend to align to the JD “as much as possible”</strong>. The wishlist on the JD usually turns out to be just a &ldquo;wishlist&rdquo;. I’ll focus on the core of the position. Generally, I’m looking for the following things:
+  * Right to work in Australia: <strong>If this is a role we can sponsor/relocate, then usually I just blast straight past this.</strong></p>
+
+<ul>
+<li><p>Experience in tech: <strong>A huge amount of newbies will apply for senior/lead roles and I will typically refer them to our graduate entry.</strong> If they have some experience, I’ll log them under potential future candidate for a more junior position. I pay attention to what they have delivered previously.</p></li>
+<li><p>Last company: This helps boost the candidate&rsquo;s ranking. <strong>Anyone working for a top tier engineering company is going to get a lot of attention.</strong> The best first stage assessment confidence bearing is having another reputable company do that assessment. If I find a candidate working for a company with strong engineering credibility, it is going to give me a high degree of confidence in them.</p></li>
+<li><p>Tech relevance: I would check if have they been working in the tech stack we use? For instance functional programming vs web dev. <strong>It will be hard to argue for a JS dev applying for a backend Scala functional role without significant side projects/open source work</strong> (yes this happens).</p></li>
+<li><p>Meeting in person: Do I know them or have I met them counts too. If I Know people at their company that helps as well. <strong>Have I met them at a meetup?</strong></p></li>
+</ul>
+
+
+<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
+
+<ol>
+<li><strong>Attitude</strong>: A positive attitude always leaves a good impression.</li>
+<li><strong>Aptitude</strong>: How well does the candidate understand concepts and processes. I don’t have the skills to check code but they should have the ability to code well.</li>
+<li><strong>Communication</strong>: I would evaluate how easy is it to talk to the candidate. Their ability to understand new things matter as well. Another deciding factor is would I be excited to meet this candidate in person?</li>
+</ol>
+
+
+<p>He adds &ldquo;Essentially, being an in-house recruiter is about credibility. We LOVE hiring people, it’s what drives us to do the job. <strong>We also need to establish that internal credibility to be successful.</strong>&rdquo; I must add he was pretty elaborate with his answers :) especially the 2nd question.</p>
+
+<h3>Kevin Yoon values experience and ability to change</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Kevin, currently employed at Siteminder" alt="Kevin, currently employed at Siteminder" data-echo="/images/tech-recruitment-aus/kevin.jpg"></p>
+
+<p><a href="https://www.linkedin.com/in/simplified/" title="Kevin Yoon on LinkedIn">Kevin</a> has been employed at <a href="https://www.siteminder.com/" title="SiteMinder website">SiteMinder</a> for the past 4 months as the &ldquo;Talent Acquisition Lead - Tech &amp; Product&rdquo;. SiteMinder is a SaaS company working in the hospitality industry with a focus on online booking and related things.</p>
+
+<blockquote><p>They have a physical presence in <a href="https://www.siteminder.com/contact/" title="SiteMinder contact page">5 continents</a> and are hiring for multiple <a href="https://www.siteminder.com/jobs/" title="SiteMinder jobs page">roles</a>. It includes some tech roles too.</p></blockquote>
+
+<p>Kevin shared his opinions the following way:</p>
+
+<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
+
+<p>I review all applicant and referral CVs that have come through overnight. This <strong>varies between 20 to 50 CVs per day</strong> depending on the number of roles we have publicly advertised and announced internally.</p>
+
+<h4>What are the things you look for in a resume sent for a technical role?</h4>
+
+<p>First, it is <strong>matched against the job description and the job briefing</strong>. For mid-level and senior engineers, I focus on the most recent <strong>3 to 5 years of work experience</strong> and any relevant personal projects or initiatives in that period.</p>
+
+<p>Any mentoring or hackathons attended are good signs. If the candidate has given talks at meetups or conferences that is a plus too. I also look for coaching experiences in the past 3 to 5 years. I evaluate the actual tech stacks used by the candidate and the context it was utilized in.</p>
+
+<p>I take a deeper look at how the candidate built solutions with the tools available. The candidate’s role in the projects done as an individual contributor or within a team context is important too. <strong>Changes in tech used in each role/project</strong> through their progression also catches my eye.</p>
+
+<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
+
+<ol>
+<li>I would seek their <strong>motivation for change</strong> in relation to the salary they command in their respective roles. I try to elicit factors that inspire them for a change in addition to money.</li>
+<li>I also look for the candidate&rsquo;s ability to handle <strong>rapid change and criticism</strong> of their skills.</li>
+<li>Finally, I attempt to find out their <strong>expectation from their manager</strong>. I also intend to assess the environment which brings out their best performance.</li>
+</ol>
+
+
+<p>Kevin was to the point and expressed his views concisely. He has highlighted some things that would generally skip your mind as a person applying for a tech position. Be ready to explain your motivation for a job change in your next interview.</p>
+
+<h2>Conclusion</h2>
+
+<p>I would like to thank all 3 internal tech recruiters for their time and the valuable information they have provided. I hope you have extracted out the &ldquo;inside stuff&rdquo; from the above answers. Now, I think you will start editing your CVs to mention the impact and craft it to be a tool to land more interviews.</p>
+
+<blockquote><p>Similarly, you can also be well prepared for the first interview and ace it.</p></blockquote>
+
+<p>Wish you all the best for your job hunt in Australia!</p>
+
+<p>Share your thoughts and experience of finding a job in Australia. Have you found a role that makes you career high?</p>
+
+<hr />
+
+<p>PS: I might do a part 2 of this :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 practical steps to land your first tech job]]></title>
+    <link href="http://geshan.com.np/blog/2018/09/7-practical-steps-to-land-your-first-tech-job/"/>
+    <updated>2018-09-29T05:55:58+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/09/7-practical-steps-to-land-your-first-tech-job</id>
+    <content type="html"><![CDATA[<p>&ldquo;If you hate your job, take a loan and you will start liking it&rdquo;. I don&rsquo;t remember where I read this but this sounds convincing. Now think of the tech job market worldwide, saying it is growing would be an understatement, it is booming. Still, why don&rsquo;t fresh graduates not get a job when the pass out of universities? Let&rsquo;s have a closer look at this issue and try to help technology students get a job as soon as their course finishes.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/5-steps-first-tech-job/first-tech-job-a.jpg" title="5 practical steps to land your first tech job" alt="5 practical steps to land your first tech job"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Network in person, use recuriter&rsquo;s help, contribute to open source, list companies/roles you want to work in and learn a new tech thing each month to land your first tech job. Bonus but important points, make a killer resume, have a great pet project deployed online to show and start early.</p></blockquote>
+
+<h2>Interesting subject</h2>
+
+<p>Around 11 years back I wrote this blog post &ldquo;<a href="https://geshan.com.np/blog/2007/11/10-web-by-things-technology-student-or/">10 things a tech student must know</a>&rdquo; then 4 years back I did a talk at the college I completed my bachelor&rsquo;s from titled &ldquo;<a href="https://geshan.com.np/blog/2014/08/things-i-wished-i-knew-while-doing-my/">Things I Wished I Knew While Doing My Tech Bachelor / Undergraduate</a>&rdquo;. Again 2 years back and in Nov of 2017 I did another talk with QnA and interaction with the title &ldquo;<a href="https://geshan.com.np/blog/2016/06/career-paths-for-to-be-tech-graduates-slides/">Career Paths for to Be Tech Graduates</a>&rdquo;  at a couple of college in Kathmandu. I also did another talk called &ldquo;<a href="https://geshan.com.np/blog/2017/02/things-i-wished-i-knew-as-a-junior-developer-slides/">Things I wished I knew as a junior developer</a>&rdquo; for a meetup in Feb 2017. This has been an interesting topic for me in the past decade.</p>
+
+<h2>Why don&rsquo;t students get a tech job after the course?</h2>
+
+<p>Let&rsquo;s face this, it is a mix of the education system and the individual student themselves. I studied my undergrad/bachelors in tech in Kathmandu, Nepal and my master in tech too in the Netherlands. Surely, very different education systems and outlook to education. One thing in common is both don&rsquo;t make the student an employment ready product. On the individual side, don&rsquo;t do a course because your friend is doing it. Simple logic, first ask your self where do you see yourself in 5 or 3 years then backtrack your way to reach there.</p>
+
+<h2>How to fix this?</h2>
+
+<p>I am no education expert or anything still I have worked like a decade in tech and in multiple countries by now. One thing is sure, skills and results are the primary and degrees are secondary. Universities/colleges should try to bridge the gap between students and real market needs. Like I don&rsquo;t know of any university that will teach students lets say <code>git</code> that you are going to use each day at work. That doesn&rsquo;t mean what is being taught is wrong :). Yes, I am ranting a bit here.</p>
+
+<p>On the student&rsquo;s side, you need to research what is relevant for the market, learn on your own and brand yourself so that you can sell your skills faster. For instance, if I interview a candidate who has a good tech blog with helpful and regular posts may be even on medium. Your chances of getting hired are up by like ~5% already.</p>
+
+<blockquote><p>Because being able to put your ideas/learning in words is an important skill for a software engineer.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/5-steps-first-tech-job/first-tech-job-b.jpg" title="5 practical steps to land your first tech job" alt="5 practical steps to land your first tech job"></p>
+
+<h2>Lets get to the steps now</h2>
+
+<p>After all my rants tirades lets focus on how you as a tech student can land a job as soon as you finish your degree. Below are the things you need to do to increase your chances to land your first tech job.</p>
+
+<h3>1. In person networking</h3>
+
+<p>Go to at least 1 <a href="meetup.com">meetup</a>/conference/training/events each month and add at least 2 new people on Linked In who can help you find a job. Not to mention message/email them after the meeting to build a relationship. Meetups are a great way to meet up people who you would normally not meet. Depending on the city you are in like if you are in Sydney you could go to a tech meetup each week. If you are in Kathmandu you could catch a meetup each month. Going to a usually free meetup is beneficial in many ways, you learn new things listening to people, you can network&hellip; Don&rsquo;t underestimate the power of meeting people in the flesh.</p>
+
+<p>So you are asking why would this person refer me? Right? The answer is simple <code>Many companies have referral bonus</code>. If they refer you and you get selected, get the job, complete your probation they get a certain sum of money. A win-win situation for all you, the referrer and the company. Email, then call and ask for a coffee meeting is recommended before asking for a job referral. Of course not to mention you should have an amazing CV.</p>
+
+<h3>2. Use recruiter help</h3>
+
+<p>In the starting, it should be you emailing and potentially calling tech recruiters. The idea is simple, it is a recruiter&rsquo;s job to find good candidates for tech roles. So be open tell them you are looking for junior or starting jobs and try to find a match. Probably the recruiter knows a couple of openings where you could actually be a good fit. Depending on the city there are internships, graduate roles which are specifically targeted at fresh grads. You might need to run away from recruiters after you have some years of experience, but that is a different story.</p>
+
+<h3>3. Contribute to open source</h3>
+
+<p>I know many companies which will look at you github profile first then go through your resume. So <code>actions speak louder than words</code>. To begin with, you don&rsquo;t need to start contributing code. You can start with helping on documentation etc. There are lots of ways to give back to open source. <a href="https://hacktoberfest.digitalocean.com/">Hacktoberfest 2018</a> is starting in 2 days make good use of it. So learning git and github becomes a prerequisite for this step. If you are a tech student in their final semester and don&rsquo;t know git = you don&rsquo;t have a very bright future in tech :).</p>
+
+<h3>4. Make a list of companies with probable roles</h3>
+
+<p>If you don&rsquo;t have a target how will you ever achieve it, if you have a target you can have plans to attain it. Make a list of companies and positions/role that you want to work in when you finish your degree. Towards the end of the course if you are not sure to pick backend or frontend or UI/UX or DevOps/SRE or data engineering or DBA or &hellip; sorry but no one can help a confused person ;). If you see yourself as a frontend engineer at say Atlassian you need to work for it. Another handy tip is to keep a spreadsheet of all the jobs you have applied for with dates to do a proper follow-up. It is not easy to get a call for an interview for less experienced candidates so check step 1 referral helps a lot here.</p>
+
+<h3>5. Learn a new tech thing each month</h3>
+
+<p>Now as you have shortlisted companies and roles you want to work for you have obviously read the job descriptions. So you now know what skills the market and/or the company you aim to join is looking for. Start learning it, dedicate some hours each week/weekend and learn it. Best way to learn is to try to build your pet project, it could be anything that excites you. Don&rsquo;t just go through a course on <code>docker</code> and say yes I know docker. Show it running on a project and then you will actually learn it. If you already know 7 out of 10 things the company will need to teach another junior software engineer, your chances of getting the job automatically becomes higher.</p>
+
+<h2>Conclusion</h2>
+
+<p>There are many other general things that you need to be good on like having a clear and impressive 1-page resume, having at least one project that is online. Like, having basic knowledge of a breadth of things and a bit of depth in the area you want to work in,  knowing your skill and going to the right area of tech also helps. You need to do the above steps like 6-9 months before your course ends else doing things in haste and the very end will not help much.</p>
+
+<p>The tech industry needs new people every year worldwide. From the positive angle, tech needs more and more new people.</p>
+
+<blockquote><p>From the other side, your competition is not only in your city but anywhere in the world so your skills and ability to learn sets you apart.</p></blockquote>
+
+<p>Best of luck hunting for your first tech role!</p>
+]]></content>
+  </entry>
+  
+</feed>

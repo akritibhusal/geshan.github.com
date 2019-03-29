@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: devops | Geshan's Blog]]></title>
+  <link href="http://geshan.com.np/blog/categories/devops/atom.xml" rel="self"/>
+  <link href="http://geshan.com.np/"/>
+  <updated>2019-03-29T04:23:38+00:00</updated>
+  <id>http://geshan.com.np/</id>
+  <author>
+    <name><![CDATA[Geshan Manandhar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[4 ways Docker changed the way software engineers work in past half decade]]></title>
+    <link href="http://geshan.com.np/blog/2018/11/4-ways-docker-changed-the-way-software-engineers-work-in-past-half-decade/"/>
+    <updated>2018-11-30T22:14:51+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/11/4-ways-docker-changed-the-way-software-engineers-work-in-past-half-decade</id>
+    <content type="html"><![CDATA[<p>10 years back it was Git that transformed the way software engineers worked. Half a decade back it was <a href="https://www.docker.com/">Docker</a> that brought the container to the masses. Before Docker, container was like a sacred secret in companies like Google and Heroku. Docker is a software and a company too. It tried to build a broader ecosystem but <a href="https://kubernetes.io/">Kubernetes</a> stole the thunder along the way keeping <a href="https://docs.docker.com/engine/swarm/">swarm</a> at bay. This post is not about how some Docker tools are not popular. It is about how Docker has changed the way we work in the past 5 years.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="4 ways Docker changed the way software engineers work in past 5 years" alt="4 ways Docker changed the way software engineers work in past 5 years" data-echo="/images/4-ways-docker/docker-whale.jpg"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>With Docker, you ship the whole stack not only your code. Allocate minimum required resources to containers then scale them horizontally. With containers security generally already comes baked In. With Docker and Kubernetes you can get zero downtime and faster deployments leading to business profit.</p></blockquote>
+
+<h2>Changed the ways</h2>
+
+<p>If you want to go to the technical details of what is a container and why to use docker Google it :).</p>
+
+<blockquote><p>Docker has also partially deprecated many of the configuration management tools.</p></blockquote>
+
+<p>This post is about how Docker has changed the way we work after its release in March 2013. Below are some reasons that helped advance our way of working:</p>
+
+<h3>Ship the whole stack, not just code</h3>
+
+<p>With containers and Docker in specific, you always ship the whole stack in each version. The whole image gets rebuilt every time. It includes the precise OS+version, specific version of the language. It also has the dependencies like the framework and other libraries (versions depend on how you handle it). It also includes the code you have written and this results in a significant advantage. The advantage is, if it built correctly on your machine, it will potentially build on the server too. As soon as it runs it is the exact same environment on dev, staging, testing and even on production.</p>
+
+<blockquote><p>It happens because you didn&rsquo;t shop only the code, you shipped your code + vendor code + specific language version + precise OS version too.</p></blockquote>
+
+<h3>Allocate only needed resources to the application and scale horizontally</h3>
+
+<p>With each Docker container, you can be specific about how much resources you want to allocate to that particular container. Using software like Kubernetes it becomes so much easier to scale your application. Under high load, the no. of containers can expand and with less load, it can shrink too. So with this mechanism, each container (or pod for Kubernetes) can be allocated the minimum resources and scaled horizontally as per need.</p>
+
+<blockquote><p>For example, a simple Node JS app container/pod can run with like 128 MB memory and 0.25 CPU. As and when load increases run 5 pods in place of 2.</p></blockquote>
+
+<p>This requires the application to be built with horizontal scalability in mind. That basically means storing no data on the file system. Treating containers like cattle, not pet helps scale horizontally. It also makes high availability of application an achievable task.</p>
+
+<h3>Security is baked in</h3>
+
+<p>Using a container, not virtual machine the attack surface is already decreased. Following container security best practices you can already improve your security measures. Of course, if you have holes in the application like SQL injection that is a different story. Still, with smaller and security-focused images like Alpine, it will be easier to get the basics right.</p>
+
+<blockquote><p>Security is always about keeping the attack surface small. With containers and Docker closing more doors become easier.</p></blockquote>
+
+<p>The container should have access to only what it needs. As the file system is temporary for containers it can be a security boon as well as a security auditing issue.</p>
+
+<h3>Deploy faster with zero downtime</h3>
+
+<p>Deploying Docker containers is always about shipping the whole stack. So the chances of one file not syncing or one server not getting the latest changes are not there. As a successful build of the image is always required to deploy it any problems will be found in the build process.</p>
+
+<blockquote><p>With software like Kubernetes and Helm, orchestrating and deploying containers become straightforward. With High Availability (HA) in place using proper load balancing, deployments can be zero downtime.</p></blockquote>
+
+<p>Easier and faster deployment equates to the ability to deploy smaller changes. Smaller changes done well can lead to a better response to market needs quickly. To sum up, use the right tools to deploy your containers in a way to use it for business advantage.</p>
+
+<h2>Conclusion</h2>
+
+<p>The past 5 years have seen rapid adoption of Docker. With tools like Kubernetes deploying and scaling applications has been much effortless than some years ago.</p>
+
+<blockquote><p>Don&rsquo;t worship your virtual machines, use the resources it provides efficiently. Get on the Docker and containers train and reap its benefits.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 signs that reveal your software development process is agile only on paper and solutions for them]]></title>
+    <link href="http://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them/"/>
+    <updated>2018-11-20T09:00:22+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them</id>
+    <content type="html"><![CDATA[<p>Agility comes with practice not putting big words on paper. Using Jira does not make your software development process agile. Saying we do &ldquo;scrum&rdquo; is not being agile. Being agile is having an agile mindset and putting it into practice everyday. It is about thinking about the value you deliver to the customer and how to do it better.  This post will also unveil these 5 signs and how to solve these issues. The signs and solutions will concern multiple roles like Product Manager, Software engineer etc.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/board.jpg"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>If you are writing documents > 5 pages you can improve. There should be a clear definition of Ready for development and Done. Story/Issue should be based on value delivered to the customer not only the technical aspect. Releasing a new version of software once a month and saying we are agile should be a crime. Not caring about the team is not doing agile right.</p></blockquote>
+
+<p>Below are the signs that explain why the paper boat agility will not work and how to fix them:</p>
+
+<h2>Documents that are longer than 5 pages</h2>
+
+<p>There will be big features (epics) and they have to be explained. This does not give you a license to write 50 pager documents. If a document is longer than 5 pages many team members will not read it, accept this fact.</p>
+
+<blockquote><p>One beautiful Monday morning you get a memo of 30 pages text about the new feature business wants us to develop. Will you read it thoroughly? The answer is No.</p></blockquote>
+
+<p>You might skim through it to sustain in the meeting and that&rsquo;s about it. Documents become obsolete fast. When requirements change no one bothers to update documentation.</p>
+
+<h3>Solution</h3>
+
+<p> Write documents that are less than or equal to 5 pages. Make it concise and precise. Start creating visual aids for the process to explain it. Create mock-ups, use tools like <a href="https://balsamiq.com/">Balsamiq</a>. Express the requirements in a way that is understood by everyone with less or no reading involved. Then as per need create a UI design and discuss. After that implement it in code.</p>
+
+<h2>Unclear definition of Ready for development and Done</h2>
+
+<p>Definition of ready for development and Done are crucial for team success. Not having these or having unclear ones will hamper the team performance.</p>
+
+<blockquote><p>A software engineer should be clear about when the story is ready to be picked up for development. Same goes for Done.</p></blockquote>
+
+<p>Is it ready for development when the story is created but the description does not exist? Is it done as soon as I deploy it to production and move my task to &ldquo;Done&rdquo; column? If there are confusions like these it is a bad smell that needs to be addressed.</p>
+
+<h3>Solution</h3>
+
+<p>Have a clear point by point &ldquo;Definition of Ready&rdquo; and &ldquo;Definition of Done&rdquo;. This will help to measure and improve team performance. It will also assist in everyone involved to understand the meaning of these things the same way.</p>
+
+<h2>Stories based on the technical aspect not value to a customer</h2>
+
+<p>Agile software development is always about delivering value to the customer. The value in the form of working software not a pile of documents. If there a story like &ldquo;As a customer service manager I need to know who created a refund so that I can track and audit refunds in future&rdquo;. This task might entail adding a &ldquo;created_by&rdquo; field in the refunds table for instance. But this should not result in having a &ldquo;story&rdquo; that says &ldquo;Add created_by field in the refunds table&rdquo;. Of course, it can be a task/subtask as part of the main story. The main story delivers value but this database task is something that aids the process.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/story.jpg"></p>
+
+<h3>Solution</h3>
+
+<p>Have clear definitions and boundaries of Epic, Story, and task.  Each story should deliver some value to the customer (as above picture).  If you are following Scrum you will have story points too for things like team velocity. Technical tasks are required. Still, only the right sum of technical tasks deliver value to the customer.</p>
+
+<blockquote><p>The main thing here is &ldquo;always focus on the value being delivered to the customer&rdquo;.</p></blockquote>
+
+<h2>Releasing a new version of software once a month</h2>
+
+<p>The first thing to consider here is:</p>
+
+<blockquote><p>Deployment is a technical task and releasing a new software version is a business activity.</p></blockquote>
+
+<p><a href="https://geshan.com.np/blog/2018/10/deployment-is-not-release/">Deployment is not release</a>. If you are not able to make that distinction there is something that needs to be fixed. On top of it, if you hardly release one new version each month, you are doing agile wrong.  <a href="https://en.wikipedia.org/wiki/Release_early,_release_often">Release early release often</a> is an excellent philosophy to get feedback early. With early feedback, you can make a new set of changes in the next release to make the software better. This might not apply for mobile applications with long vendor approval process. For web applications deploying and releasing multiple times a day should be a norm.</p>
+
+<h3>Solution</h3>
+
+<p>Build a culture and technical process to be able to deploy and/or release to production multiple times a day.</p>
+
+<blockquote><p>Enforce good code quality and excellent software engineering practices. Follow tried and tested best practices like code reviews, automated testing, CI/CD, <a href="https://geshan.com.np/blog/2015/08/importance-of-logging-in-your-applications/">logging</a>, monitoring, and <a href="https://geshan.com.np/blog/2015/08/the-best-automated-deployment-tool-the-one-that-fits-your-needs/">automated deployment</a>.</p></blockquote>
+
+<p>Call it DevOps, SRE or Platforms engineering whatever you want but do it and deploy without fear whenever you want.</p>
+
+<h2>Not being careful about team motivation</h2>
+
+<p>Software development is a team sport. If one player is hurt the team covers for that player. If one team member lacks some skills team covers and helps teach that skill to the team member. Self organizing team that reflects on how to make the process better is at the heart of agile.</p>
+
+<blockquote><p>Team motivation and happy team members are essential to high productivity.</p></blockquote>
+
+<p>If you are being treated like story executors with no voice and no room for improvement, it is a big bad sign.</p>
+
+<h3>Solution</h3>
+
+<p>Build a culture of continuous improvement. Reflect on things that have been done and how the process can be enhanced. For instance, if doing 60% new features and 40% bugs did not work well, find a better ratio. Do team activities and things that uplift the team spirit.</p>
+
+<h2>Conclusion</h2>
+
+<p>Being agile on paper and being agile in practice are two different things. Don&rsquo;t let your agile software process be like waterfall with the so-labeled agile skin. Be agile and fix these signs to have high team output with fantastic performance.</p>
+
+<blockquote><p>Agile should be implemented to solve people and communication problems which results in stabilizing the technical issues.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Moving from A and B to 150 microservices, the journey, and learnings [Slides]]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/moving-from-a-and-b-to-~150-microservices/"/>
+    <updated>2018-10-26T21:08:00+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/moving-from-a-and-b-to-~150-microservices</id>
+    <content type="html"><![CDATA[<p>I gave a talk at #devopsdaysNewy on 24-Oct-2018. It was a great conference with lots of amazing people.
+I want to thank the organizers for putting together such an amazing event. I want to extend the thanks to the sponsors who made it possible :). It was very good couple of days to meet new people and form a network. I think my talk on microservices went pretty good too. It was my second devops days and I enjoyed it.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Moving from A and B to 150 microservices, the journey, and learnings" alt="Moving from A and B to 150 microservices, the journey, and learnings" data-echo="/images/a-b-to-150-ms/150-ms-geshan.jpg"></p>
+
+<!-- more -->
+
+
+<h2>The abstract</h2>
+
+<p>Are you frustrated working with large, legacy and potentially lethal code bases? We were frustrated too,but in 4-5 years of time, we replaced A (front-end) and B (back-office) system with ~150 microservices. From the days of no tests and clumsy deployment process, we moved to each service with unit tests, CI and deploying with a bot. With the business buying in the process, we enabled the business to reach new heights. This talk reveals that journey and the things we learned along the way.</p>
+
+<h2>The slides</h2>
+
+<script async class="speakerdeck-embed" data-id="05a92573b3fc4221b6a17478ae0db2b2" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>Slides on <a href="https://www.slideshare.net/geshan/moving-from-a-and-b-to-150-microservices-the-journey-and-learnings">slide share</a></p>
+
+<h2>Conclusion</h2>
+
+<p>I gave the same talk at Node Sydney <a href="https://www.meetup.com/node-sydney/events/cvdqzpyxmbjb/">September meetup</a> that went pretty well too. Hope to be able to give more talks in future and meet more interesting people.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Deployment is not Release, let's use feature flags]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/deployment-is-not-release/"/>
+    <updated>2018-10-25T21:13:05+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/deployment-is-not-release</id>
+    <content type="html"><![CDATA[<p>Breaking down a big feature to epics and stories is always tricky. Then you have sub-stories making the process complicated. If you could deploy the finished task that delivers value to the business it would help. Enter feature flags, using this you can deploy your code to production behind a gate. Code and feature are on production but not fully released to everyone. This post is going to help you adjust your mental model for getting more benefits with feature flags.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/deployment-not-release/flags.jpg" title="Deployment is not Release, lets use feature flags" alt="Deployment is not Release, lets use feature flags">
+[Image Source <a href="https://unsplash.com/photos/jCBzW_Q_UGI">Unspalsh</a>]</p>
+
+<!-- more -->
+
+
+<h2>Why use feature flags?</h2>
+
+<p>Have you ever faced a situation that you need to deploy an epic but it is not possible as it is 80% completed? It is an epic that has to be &ldquo;released&rdquo; all or nothing. That is where the power of feature flag comes into play. You can deploy (not release to everyone) each new value addition to production. The trick here is to put it behind a simple logic like if email ends in @yourcompany.com. You can check a minimal code <a href="https://geshan.com.np/blog/2016/09/how-to-do-a-minimum-viable-feature-switch/">example</a>.</p>
+
+<blockquote><p>You have to separate the technical deployment process from the business process of releasing a new feature.</p></blockquote>
+
+<h2>How to use feature flags?</h2>
+
+<p>Feature switch, feature toggle are some of the other names of feature flags. It can be effortless like if the logged in user&rsquo;s email is in our white-list we show this form. It can even be a feature that shows up when you add a specific cookie with a defined value in the browser. It can be highly orchestrated too with the use of a SAAS for feature flags. <a href="https://launchdarkly.com/">Launch Darkly</a> is a feature flag as a service company. You can use it if you have the time and resource to invest in it.</p>
+
+<p>Any path you take simple or complex the result is you have control over who can access a new feature. The feature is not released to everyone. The difference is how to activate/deactivate a feature flag. It can be as easy as clicking a checkbox or doing another deployment to open up a feature to everyone.</p>
+
+<blockquote><p>My suggestion is to start small, do an if condition in code and start experimenting. If it works well try other ways like a white-list or even a special cookie from the browser.</p></blockquote>
+
+<h2>Advantages of feature flags</h2>
+
+<p>There are many advantages of using feature flags in production. Lets list down a few highlights:</p>
+
+<ol>
+<li>Ability to test a feature on production in private with a select group of users.</li>
+<li>Ability to easily add or remove users who can use that feature.</li>
+<li>The confidence of releasing near bug-free features. Software engineers and QA can test on production even multiple times. Release the feature after bug fixes only when they are confident.</li>
+<li>There will be lesser code conflicts. When the task is complete, code changes are merged to the main branch before/after deployment. This also saves some valuable development time.</li>
+<li>The benefit of experimenting some things to a white-list of people in production. This can even lead to good feedback and positive changes.</li>
+</ol>
+
+
+<h2>Conclusion</h2>
+
+<p>You can deploy even small tasks to production with a proper use of feature flags. Think about adding value to the customer and deploying often. Test on production and when you are confident release it to everyone. Always remember Deployment != Release. Happy Feature flagging!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Don't code your microservice like a monolith, keep it maintainable not over-engineered]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/dont-code-your-microservice-like-a-monolith/"/>
+    <updated>2018-10-12T04:54:07+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/dont-code-your-microservice-like-a-monolith</id>
+    <content type="html"><![CDATA[<p>Will you use a gun to kill a fly? The answer is NO. The same thing goes when you want to write a microservice application that is going to be maximum of 10K lines of code. Don&rsquo;t over-engineer it. Ok, you have been writing and maintaining large code bases. Some might be 100K+ lines of code but you need to get over your habits and think differently. This post helps you unravel the mysteries of writing small and maintainable microservices. The suggestions are opinionated but it is in practice in a million dollar business.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/lego.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Microservices are small software systems. You can safely ditch MVC. Say no to ORM and also not take the design pattern baggage for microservices. Focus on code performance, readability, and maintainability not some old rules and patterns. Those patterns were made when people were not doing microservices.</p></blockquote>
+
+<h2>Why write microservices in the first place?</h2>
+
+<p>Microservices architecture, in my opinion, is breaking one or more monoliths into multiple smaller systems. These are more maintainable, independently developed and deployed pieces of software based on business functions. These smaller (presumably “micro”) systems should focus on only one business function and do it well. The catch here is &ldquo;micro&rdquo;, these pieces should ideally be under 10K lines of code.</p>
+
+<p>As they are independent it helps the business release features faster. The shipments team is not dependent on the checkout team. Something deployed on the shipments app is never going to break checkout. It becomes very decoupled. The blast radius of each change is controlled. That is the reason for rapid microservice adoption.</p>
+
+<p>Now let&rsquo;s look at the ways you were used to doing things and why it makes less sense in this microservices era.</p>
+
+<h2>Do you need MVC?</h2>
+
+<p>Model-View-Controller, I got introduced to it in 2007 or maybe a bit earlier. Then I used to think it was the silver bullet to all software architecture issues. I don&rsquo;t hold that opinion anymore. Yes, you used to work with Java or PHP and every other framework was MVC based. Now, you don&rsquo;t need to be strict about MVC anymore. Focus on clarity and getting things done.</p>
+
+<p>Use controllers if you want and if it still makes sense. Think like my app gets HTTP request and it has to give back HTTP response. Do think of having a backend API and frontend(s) consuming it. Check the code below, it is surely not MVC:</p>
+
+<script src="https://gist.github.com/geshan/1f76e5ebb3c15fd3c147c6c97420f923.js"></script>
+
+
+<p>You can see the full app <a href="https://github.com/geshan/currency-api">here</a>. Veify the structure it is not MVC :)</p>
+
+<p>So rather than doing an effort to get precise lines of M-V-C, write tests, implement continuous integration. Add some logs and monitoring to the app. Make the code maintainable, keep it as lean and simple as possible.</p>
+
+<h2>Don&rsquo;t take on the ORM overhead</h2>
+
+<p>Object Relation Mapping (ORM) when I first saw an ORM in action, I said to myself this is one of the best things ever known to programmers. 10+ years later I would be cautious to suggest an ORM to any software engineer. Last year I refactored a full ORM implementation to a raw SQL query way and it made that part of the application perform 20% faster. On top of it, the database transactions were evident and the code was far more readable hence maintainable.</p>
+
+<p>Data mapper or Active record both bring their own opinions, ways of doing things and extra weight. This not only causes performance issues but also code readability suffers. Think of the pre and post hooks/event listener Doctrine has, they work like magic and it is always tricky to understand magic.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/pot-on-head.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+
+<p>Just try this, explain how an ORM related insert code works VS how a simple and straightforward INSERT SQL query works to a beginner/junior software engineer. You will already regret using that ORM. Especially in the context of microservices ORM is a clear overhead. The microservice is anticipated to be maximum of 10K lines of code and affect hardly 10 tables so just don&rsquo;t use an ORM, period.</p>
+
+<h2>Design patterns might be a baggage</h2>
+
+<p>I am not saying that you don&rsquo;t need to learn about <a href="https://en.wikipedia.org/wiki/Software_design_pattern">software design patterns</a>. You should know about SOLID, law of Demeter, factory pattern, strategy pattern, singleton, adapter pattern etc. Well, most of these make sense if you do object-oriented programming right? What if you write a microservice in Node JS that is 1k lines of code spread across ~7 files. It does one small slice of the business function. All these patterns become nice to know stuff at that point.</p>
+
+<p>Design Patterns are relevant for a code base that is already big and in the next 6-12 months is going to be bigger, your usual monolith. They can turn out to be &ldquo;extra baggage&rdquo; for a service that is 100s of lines of code now and will become 1000s of lines of code in the next 6-12 months. We never foresee it to be bigger than that because to do that other part we will have another microservice. So keep your microservice code fat free and well tested.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/baggage.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+
+<h2>Conclusion</h2>
+
+<p>If you still want to code your microservice like the last monolith you worked on maybe you are doing something wrong. Think of it again, if you go for a day trip you don&rsquo;t pack and carry things like you are going for a 2 weeks vacation. Think of code performance and maintainability, let the data speak for you and break the rules. Happy software engineering!</p>
+]]></content>
+  </entry>
+  
+</feed>

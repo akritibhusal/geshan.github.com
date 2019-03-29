@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Geshan's Blog]]></title>
+  <link href="http://geshan.com.np/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://geshan.com.np/"/>
+  <updated>2019-03-29T04:23:38+00:00</updated>
+  <id>http://geshan.com.np/</id>
+  <author>
+    <name><![CDATA[Geshan Manandhar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Don't just learn a new language/framework, implement it as a running open source project]]></title>
+    <link href="http://geshan.com.np/blog/2018/10/dont-just-learn-a-new-language-slash-framework/"/>
+    <updated>2018-10-08T04:27:26+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/10/dont-just-learn-a-new-language-slash-framework</id>
+    <content type="html"><![CDATA[<p>“For the things we have to learn before we can do them, we learn by doing them.” ― Aristotle, The Nicomachean Ethics. Imagine you already read 3 books about cycling. Then someone gave you a cycle and asked to ride it, will you be able to ride it? The simple answer is &ldquo;No&rdquo;. It is not about how much have you read about cycling or how many videos did you watch about it. It is about getting on a cycle, balancing on it, learning the feet, hands and eye co-ordination. Same goes for learning a new tech skill, a new language or framework.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/language-framework-learn/cycle.jpg" title="Dont just learn a new language framework, implement it as a running open source project" alt="Dont just learn a new language framework, implement it as a running open source project"></p>
+
+<!-- more -->
+
+
+<p>Now if you think how will I do this new project I don&rsquo;t even know language &lsquo;X&rsquo; or framework &lsquo;Y&rsquo; stop complaining. Maybe you are a new starter in tech or coding but you need to know how to learn new things. The best way to learn something new is by doing it.</p>
+
+<blockquote><p>This post will focus on getting some common things right. It will help you get from I want to learn &lsquo;X&rsquo; to I have a project running in &lsquo;X&rsquo;, so follow on.</p></blockquote>
+
+<p>If you are convinced about doing a project to learn something new, open source it. Github is the de facto service to host your open source projects. Then you can leverage lots of services for free. This post will be equally useful for coding new starters as well as experienced software engineers.</p>
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Write a project to learn that language/framework, open source it then leverage services for free. Don&rsquo;t just watch courses, read the docs and then find solutions. Learn by doing. Use git and implement docker in your project. Code correctly add a code quality check service to be aware of the best practices, deploy your project to get a working URL for it.</p></blockquote>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/language-framework-learn/lang-framework-learn.jpg" title="Dont just learn a new language framework, implement it as a running open source project" alt="Dont just learn a new language framework, implement it as a running open source project"></p>
+
+<h2>Don&rsquo;t just watch courses, read the docs and find solutions</h2>
+
+<p>Nowadays, there are a plethora of choices to learn new things. Still, video courses are one of the most popular media. You can learn something new on <a href="https://www.udemy.com">Udemy</a>, <a href="https://www.pluralsight.com/">Pluralsight</a> or even <a href="https://youtube.com">Youtube</a>.</p>
+
+<blockquote><p>Until you learn by doing, watching the videos is only going to help to a certain level. It is better for you to go through the official documentation.</p></blockquote>
+
+<p>For instance, reading the React JS docs is better than only going through a React JS course. You find out the creators&#8217; perspective. The reason behind creating another Javascript framework/library helping you find proper solutions.</p>
+
+<h2>Learn Git to collaborate</h2>
+
+<p>&ldquo;No man is an island&rdquo;, especially in tech you generally don&rsquo;t work alone. You are part of a team. So even when learning something new try to find someone who you can collaborate with.</p>
+
+<blockquote><p>Git is immensely <a href="https://trends.google.com/trends/explore?q=git,svn,mercurial,bazaar">popular</a> compared to any of its competition. It is beneficial when there is more than 1 person writing code for a project.</p></blockquote>
+
+<p>You should learn git by doing, check the Github <a href="https://try.github.io/">tutorial</a>. I would highly recommend the learn by doing section. After you push it to Github anyone can potentially contribute to it.</p>
+
+<h2>Implement docker, get over works on my machine syndrome</h2>
+
+<p>In 2018, if you want to make your application more accessible, use <a href="https://www.docker.com/">Docker</a>. This will also help a lot in increasing contribution for your open source project. Running your project locally with docker compose will be like executing 2 commands.</p>
+
+<blockquote><p>Docker has many advantages. For a beginner, it is a way to make sure your app runs the same way on your machine, your friend&rsquo;s machine.</p></blockquote>
+
+<p>It will also be the same on the server you deploy your app to. As long as it runs on Docker well, you can rest assured it will run without issues on any environment.</p>
+
+<h2>Add code quality check</h2>
+
+<p>Just making it work should not be your priority. Writing quality should also be in your priority. Add code quality checks for the open source project you created for learning. Depending on the language/framework you could choose any service.</p>
+
+<blockquote><p>I would highly recommend <a href="https://codeclimate.com/quality/">Code Climate</a>. Code Climate supports a wide array of languages from Javascript to PHP and from Java/Kotlin to Swift for mobile developers.</p></blockquote>
+
+<p>With the new <a href="https://codeclimate.com/browser-extension/">browser plugin</a>, you get insights about your code in a Github pull request screen. You just connect it once to your Github repo and start seeing your code quality report. You can then better your code quality too. You can have a look at this <a href="https://codeclimate.com/github/geshan/currency-api/src/exchangeRates.js/source">example</a>.</p>
+
+<h2>Deploy your project</h2>
+
+<p>Now you are writing a new project to learn your favorite &lsquo;X&rsquo; or &lsquo;Y&rsquo;. You have written some parts of it, you are collaborating with Git and have the code open source on Github. You have Docker in place and code quality checks run on each push, great! But you can&rsquo;t show it to your friend who is living in a different city/country right? Wrong!</p>
+
+<p>You can use different services to deploy your web application. With a URL you can show it to your friend, a recruiter or anyone who knows the URL.</p>
+
+<blockquote><p>You can deploy it for free to services like <a href="https://www.heroku.com">Heroku</a> or <a href="https://zeit.co/now">Zeit Now</a>. If you have Dockerized your open source app I would recommend Zeit Now.</p></blockquote>
+
+<p>With the recent <a href="https://zeit.co/github">Github integration</a>, Zeit Now will give a new URL to each pull request. This makes testing a breeze. You can check an example on a demo <a href="https://github.com/geshan/currency-api/pull/9">currency converter API</a> app I wrote.</p>
+
+<h2>Conclusion</h2>
+
+<blockquote><p>To conclude, learning by doing is the best way to learn a new thing. Your aim should be to not only make it work but do it following the best practices. That is where code quality comes into play. If you can add automated tests and continuous integration it will be icing on the cake for a starter. Wish you all the best for learning by doing!</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PHP Developers Nepal Meetup #16 a round up and my talk on simpilfied gitflow with slides]]></title>
+    <link href="http://geshan.com.np/blog/2016/06/php-developers-nepal-meetup-number-16-a-round-up-and-my-simpilfied-gitflow-talk/"/>
+    <updated>2016-06-25T11:50:35+00:00</updated>
+    <id>http://geshan.com.np/blog/2016/06/php-developers-nepal-meetup-number-16-a-round-up-and-my-simpilfied-gitflow-talk</id>
+    <content type="html"><![CDATA[<p>I had given a talk in the PHP Developers Nepal meetup #14 in Aug 2014 about <a href="http://geshan.com.np/blog/2014/08/basic-overview-of-message-queues-rabbit/">Rabbit Mq and Symfony</a>.
+This time the <a href="http://developers-nepal.github.io/php/meetups/25-Jun-2016/">meetup</a> took place at
+Prime College today. There were 2 regular talks for this meetup and one 5 minute lightening
+talk about the community. For this 16th installment, we did an open discussion for the first time.
+The topic of open discussion was &ldquo;Does automated deployment and DevOps add value to the organization?&rdquo;.
+It was the highlight of the event.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/php-dev-meetup-16/php-dev-meetup-16.jpg" title="PHP Dev Meetup 16 Open Panel discussion on DevOps" alt="PHP Dev Meetup 16 Open Panel discussion on DevOps"></p>
+
+<!-- more -->
+
+
+<h2>How did it all unfold</h2>
+
+<p>The first talk was given by Amrit GC on &ldquo;Ansible for PHP Developers&rdquo;, then I presented my talk on &ldquo;Simplified Gitflow&rdquo;.
+After those two regular talks we had a lightening talk presented by Manish Jung Thapa (MJT) on PHP Developers Nepal Community.
+Last part of the program was an open discussion on &ldquo;Does automated deployment and DevOps add value to the organization?&rdquo; which
+got a lot of questions from the audience. It was great to moderate the open discussion. Overall, it was an amazing meetup. I guess
+there were around 100 participants which makes it one of the biggest PHP Developers meetup in terms of audience size.</p>
+
+<h2>My Talk on Simplified Gitflow</h2>
+
+<p>This is not the first time I presented this talk :). I had already given this talk at <a href="http://geshan.com.np/blog/2015/09/how-to-use-simplified-gitflow-branching-model-video/">YIPL in Mar 2015</a>.
+This time I changed the slides and made it more general. I hope it was helpful to the audience.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/php-dev-meetup-16/simplified-gitflow-talk.jpg" title="PHP Dev Meetup 16 My talk on simplified gitflow" alt="PHP Dev Meetup 16 My talk on simplified gitflow"></p>
+
+<h2>Slides of Simplified Gitflow</h2>
+
+<script async class="speakerdeck-embed" data-id="acdf3ecb8fd84007b33113d906e5dd3c" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<h2>Video of my talk on Simplified Gitflow</h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jznORrhoV-M?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+<p>More vidoes of the full event in this <a href="https://www.youtube.com/playlist?list=PLhTqkNYfkucxGk2OssIseNLMF9jPXYoHC">playlist</a>.</p>
+
+<h2>Hope to see more meetups</h2>
+
+<blockquote><p>Hope there will be a Developers Nepal meetup which is language agnostic soon. Kudos.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[3 simple rules for less or no git conflicts]]></title>
+    <link href="http://geshan.com.np/blog/2016/04/3-simple-rules-for-less-or-no-git-conflicts/"/>
+    <updated>2016-04-28T06:14:43+00:00</updated>
+    <id>http://geshan.com.np/blog/2016/04/3-simple-rules-for-less-or-no-git-conflicts</id>
+    <content type="html"><![CDATA[<p>Do you write at least 10 lines of code a day in any programming language? Do you work alone or in a team?
+If your answer is yes to both questions, you need to learn <code>git</code> even if you work alone in a project.
+<a href="https://git-scm.com/">Git</a> is the most popular versions control system and it has become a must have
+software engineer skill.</p>
+
+<p>I have seen teams fall into this trap of git conflicts when they start using git and some type of
+<a href="http://geshan.com.np/blog/2014/12/do-you-git-your-code-follow-this-simplified-gitflow-model/">gitflow</a>.
+Merging branches to the main branch becomes a pain when there are git conflicts.
+In this post I am going to reveal 3 simple rules to avoid git conflicts.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-rules-git-conflict/git-conflict.png" title="3 simple rules for less or no git conflicts" alt="3 simple rules for less or no git conflicts"></p>
+
+<!-- more -->
+
+
+<h2>Assumption</h2>
+
+<p>You have some working knowledge of git. You follow a git branching model like gitflow or simplified gitflow.</p>
+
+<h2>Rule 1: Keep your changes small</h2>
+
+<p>This is the golden rule to avoid git conflicts in teams. Conflicts occurs when 2 team members make changes
+around the same line of code. Like John changes like 5-10 in readme.md. Jack changes like 7-15 in the same
+readme.md file on a different branch. Have a rule of thumb that each pull request can have at most 20 files
+changed with 200 line addition. If changes are less there is less chances of having things overlapped. As a
+side effect, it will make deploying and testing changes easy too.</p>
+
+<h2>Rule 2: Rebase with your main branch (generally master) when it changes</h2>
+
+<p>When your main branch changes, rebase the branch you are working on with it. Usually <code>master</code> is the
+main branch so it will be best if you rebase with master at least once a day. This saves you from bringing
+in lots of changes done by other team member late. Its the same concept as above, get small changes step by
+step many times than getting it all at once. At the end of the day always do the following, given
+you are on your working branch</p>
+
+<pre><code>git checkout master
+git fetch
+git pull --rebase origin master
+git checkout -
+git rebase master
+</code></pre>
+
+<p>You get the latest master. Then you go back to your previous branch and rebase your branch with latest master.</p>
+
+<h2>Rule 3: Review pull requests faster and merge them to main branch</h2>
+
+<p>As I have stated earlier &ldquo;An open pull request (PR) is a liability in at least 2 ways. 1 it’s a feature/fix not
+shipped to customers. 2 it will invite code conflicts soon.&rdquo; Have a rule, pull requests need action by 3 days of
+opening them. You can review code, if code is ok deploy and merge or review code, fix issues then deploy and merge.
+This will help the team ship things faster as well as not have pull requests open unattended for weeks.</p>
+
+<h3>Useful Tip</h3>
+
+<p>You followed the above rules, still landed in a git conflict situation? Use <code>git cherry-pick</code>. If you have more
+than one commit in your working branch first <a href="http://geshan.com.np/blog/2014/07/4-git-tips-beyond-basics/">squash</a>
+it to one commit. Then create a new branch out of master/your main branch and do <code>git cherry-pick &lt;sha-of-your-squashed-commit&gt;</code>.<br/>
+Given you have only 1 commit on your working branch <code>feature11</code> and you are on <code>feature11</code> right now, do the following:</p>
+
+<pre><code>git checkout master; git fetch &amp;&amp; git pull --rebase origin master
+git checkout -b feature-11-new
+git cherry-pick 249bd9b150fdb1e6fc9e58af9823f70cc52579a3
+</code></pre>
+
+<p>In the above example <code>249bd9b150fdb1e6fc9e58af9823f70cc52579a3</code> is used for demo only. You can know your SHA hash with <code>git log -1</code>
+being on branch <code>feature11</code></p>
+
+<h2>Conclusion</h2>
+
+<p>There is no silver bullet to avoid git conflicts all the time. You will face it now and then.
+If you run into git conflicts everyday the process and system needs to change.
+Be logical, if you have a PR with 50 files changed and 700 new lines you will face conflicts.</p>
+
+<blockquote><p>I hope you face less git conflicts or even completely avoid them.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to use simplified gitflow branching model [Video]]]></title>
+    <link href="http://geshan.com.np/blog/2015/09/how-to-use-simplified-gitflow-branching-model-video/"/>
+    <updated>2015-09-25T13:16:23+00:00</updated>
+    <id>http://geshan.com.np/blog/2015/09/how-to-use-simplified-gitflow-branching-model-video</id>
+    <content type="html"><![CDATA[<p>Just knowing git and all team members pushing code to the main branch (master) is not a good practice.
+To leverage the most out of git, it is a good idea to do feature branching and follow a branching model.
+GitFlow is one of the options for doing a feature branching model but it is not so straight forward,
+In this blog post with a video and presentation I would elaborate on how a team can use <code>simplified gitflow</code>
+and get the most out of using git.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/simplified-gitflow/simple-git-flow.jpg" title="Simplified git-flow" alt="Simplified git-flow"></p>
+
+<!-- more -->
+
+
+<h2>Slides</h2>
+
+<center><iframe src="//www.slideshare.net/slideshow/embed_code/42503092" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe></center>
+
+
+<p>You can also view the <a href="http://bit.ly/1KzaNbj">interactive slides</a>.</p>
+
+<h2>Video</h2>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/nwM2U-38JP8" frameborder="0" allowfullscreen></iframe></center>
+
+
+<p>I talk about git flow for the first 15-16 minutes then I start answering questions on git and gitflow. Then
+I explain about other things in git which can be helpful. I did this presentation at <a href="http://yipl.com.np">YIPL</a>
+on 11-Mar-2015. I know its a late post its like a part 2 of <a href="http://bit.ly/s-git-flow">Do you git your code? Follow this simplified gitflow branching model to improve productivity</a>.</p>
+
+<blockquote><p>Hope you learn something new about git and simplified gitflow from this video.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Software Engineering Practices in Nepal Infographics Part 2 includes Git, VCS Hosting, Code Review Culture etc]]></title>
+    <link href="http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-2-includes-git/"/>
+    <updated>2015-05-22T02:40:58+00:00</updated>
+    <id>http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-2-includes-git</id>
+    <content type="html"><![CDATA[<p>I hope life is slowly going back to normal in Nepal though the news of aftershocks is not encouraging. My prayers are with the
+people of Nepal and I hope they get the positive energy to resume with their normal work.</p>
+
+<p>Below is the Part 2 of the Software Engineering Practices in Nepal Infographics. This time the graphical information covers
+popularity of Versioin Control System (VCS), VCS hosting, Operating System (OS), Coding Standard, Code Reviews and other
+interesting facts from the survey.</p>
+
+<p>Again special thanks to <a href="http://bit.ly/ashish-singh-blog">Ashish Singh</a> for helping
+me clean up and compile the data in a better way. And this time even <a href="http://bit.ly/ansu-blog">Ansubha Manandhar</a> rolled up
+her sleeves and helped us group and compile the data into percentages, thank you for that.</p>
+
+<p><strong>Data for this infographics is taken from this <a href="http://bit.ly/nep-dev-survey">survey</a>, I kindly request you to fill it.</strong></p>
+
+<!-- more -->
+
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part02/Software_Engineering_Nepal_Mid_2015_Part02.png" title="Software Engineering Practices in Nepal Infographics Part 2" alt="Software Engineering Practices in Nepal Infographics Part 2"></p>
+
+<p>You can view this infographics in <a href="http://bit.ly/1R8EfHQ">interactive</a> mode too.</p>
+
+<p><strong>If you enjoyed viewing the infographics, I again request to fill up the <a href="http://bit.ly/nep-dev-survey">survey</a> if you have not filled it up yet.</strong></p>
+
+<blockquote><p>Thanks to everyone filling up the survey even in such conditions in Nepal.
+I hope to get some more responses so that the next infographics in this series will have more data.
+I will make the survey open till 2015 Q3 and post the final results in Oct 2015. #prayForNepal #stayStrongNepal #rebuildNepal</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

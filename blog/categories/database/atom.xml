@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: database | Geshan's Blog]]></title>
+  <link href="http://geshan.com.np/blog/categories/database/atom.xml" rel="self"/>
+  <link href="http://geshan.com.np/"/>
+  <updated>2019-03-29T04:23:38+00:00</updated>
+  <id>http://geshan.com.np/</id>
+  <author>
+    <name><![CDATA[Geshan Manandhar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[You can do it in SQL, stop writing extra code for that]]></title>
+    <link href="http://geshan.com.np/blog/2018/12/you-can-do-it-in-sql/"/>
+    <updated>2018-12-14T08:30:54+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/12/you-can-do-it-in-sql</id>
+    <content type="html"><![CDATA[<p>“SQL, Lisp, and Haskell are the only programming languages that I’ve seen where one spends more time thinking than typing.&ldquo; - Philip Greenspun</p>
+
+<p>Even with thinking more than typing SQL (Structured Query Language) we software engineers use it as a way to pull data only.</p>
+
+<blockquote><p>We usually don&rsquo;t leverage SQL&rsquo;s power of data manipulation and do the needed changes in code.</p></blockquote>
+
+<p>This is quite prevalent in software engineers who work in web applications. This post aims to enlighten you about the powers of SQL you might know but generally don&rsquo;t use.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/tea-lights.jpg" title="You can do it in SQL, stop writing extra code for that" alt="You can do it in SQL, stop writing extra code for that"></p>
+
+<!-- more -->
+
+
+<h2>TLDR;</h2>
+
+<blockquote><p>Use SQL to do math like sum, average etc. Utilize it for grouping one to many relational values like getting categories of product. Leverage SQL for string manipulation like using CONCAT_WS for concating first name and last name. Exploit SQL to sort by a custom priority formula. Examples below&hellip;</p></blockquote>
+
+<h2>The Example</h2>
+
+<p>It will be easier to explain the superpowers of SQL putting it in action on an example. Below is a basic schema with 2 tables in MYSQL for a refunds microservice:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/refund-schema.png" title="You can do it in SQL- refund schema" alt="You can do it in SQL - refund schema example"></p>
+
+<p>There are 2 refunds and 7 related payments as example <a href="http://sqlfiddle.com/#!9/b242d/5" title="Try the example in sql fiddle">data</a>.</p>
+
+<h3>Some assumptions</h3>
+
+<p>For the refunds microservice example schema and applications following assumptions are made:</p>
+
+<ol>
+<li>Refunds microservice and data structure store the fk_item (the id of the ordered/delivered item), but it is not a hard foreign key.</li>
+<li>Item can be refunded in either cash or credit for the amount paid for the same.</li>
+<li>Items can be refunded many times as long as remaining balance can cover requested refund amount for each cash and credit. For example, item was paid 50 in cash and 50 in credit. 2 refunds of 20 cash and 20 credit can be done. So after these transactions balance will be 10 cash and 10 credit for that item (50-20-20).</li>
+<li>Each refund can have multiple items payment. Each payment can be of type either cash or credit.</li>
+<li>All amounts are stored in cents so they are integers.</li>
+</ol>
+
+
+<p>Now let&rsquo;s use some SQL powers. You can find the example with related queries running on <a href="http://sqlfiddle.com/#!9/b242d/5">SQL Fiddle</a>.</p>
+
+<h3>Do the math in SQL</h3>
+
+<p>As software engineers, let&rsquo;s say if we need to find the total cash and credit amount refunded for an item what would we do? We would run something like:</p>
+
+<pre><code>SELECT fk_item, fk_refund, amount, is_cash 
+FROM payment WHERE fk_item=2001;
+</code></pre>
+
+<p>With current data, it will give 3 rows like below:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/01result-without-group.png" title="Result without grouping and aggregate function sum" alt="Result without grouping and aggregate function sum"></p>
+
+<p>With these 3 rows, we would loop over them. If it is cash accumulate it to cashBalance variable, if not sum it up to creditBalace variable. Rather than that it would be a lot easier (probably faster) to do in SQL like:</p>
+
+<pre><code>SELECT fk_item, SUM(amount) AS total_paid, 
+IF(is_cash = 1, 'cash', 'credit') as type
+FROM payment 
+WHERE fk_item = 2001 
+GROUP BY fk_item, is_cash;
+</code></pre>
+
+<p>Resulting in:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/02result-with-grouping.png" title="Result with grouping and aggregate function sum" alt="Result with grouping and aggregate function sum"></p>
+
+<p>The result is easy now if you need the total refund for the item just change the GROUP BY to be on fk_item and it&rsquo;s done. For 2 and 3 records it won&rsquo;t feel significant. If there were say 20 refunds for that item, the first solution with a loop is writing more code with no gain.  Like sum, other SQL functions can be used too. Simple math operations like <a href="https://www.w3schools.com/sql/func_mysql_sum.asp" title="Sum in mysql">sum</a>, multiply, <a href="https://www.w3schools.com/sql/func_mysql_avg.asp" title="Average function in mysql">average</a> etc can be easy with SQL. This means no more loops.</p>
+
+<h3>Use GROUP_CONCAT to fetch related 1:m relation values</h3>
+
+<p><a href="http://www.mysqltutorial.org/mysql-group_concat/">Group concat</a> is a powerful operation in SQL databases. It is very useful when you need to get data from one to many relationship. For instance, you want to get all tags for a blog post or you want to get all categories of a product. Concerning this refunds example, one item can be refunded multiple times. So we will get all the refunds associated with the item id. To get this we will run only 1 query and get it without any loops in the code like below:</p>
+
+<pre><code>SELECT fk_item, 
+GROUP_CONCAT(DISTINCT fk_refund) refund_ids FROM payment
+WHERE fk_item = 2001;
+</code></pre>
+
+<p>This results in:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/03result-group-concat.png" title="Result with group_concat" alt="Result with group_concat"></p>
+
+<p>Now we know that item 2001 has been refunded twice for 2 refunds. It will be easy to explode the refund Ids with <code>,</code> and proceed with any related operation.</p>
+
+<h3>String manipulation</h3>
+
+<p>Many <a href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html" title="Mysql string functions">string manipulation</a> tasks like substring, concatenation, change case, and string compare can be done in SQL. With this example, I am going to show the usage of <code>CONCAT_WS</code>. It is concat with a separator. It can also be used to select for instance first_name and last_name with space in between.</p>
+
+<blockquote><p>In case of having an optional middle name <code>COALESCE</code> can be used with <code>CONCAT_WS</code>. That is something for you to explore :).</p></blockquote>
+
+<p>In this example, I will select refund_nr with it&rsquo;s related reason:</p>
+
+<pre><code>SELECT CONCAT_WS("-", refund_nr, reason) AS refund_nr_with_reason
+FROM refund;
+</code></pre>
+
+<p>Resulting in:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/04result-concat-ws.png" title="Result with concat_ws" alt="Result with concat_ws"></p>
+
+<p>If this needs to be shown on the credit note document, for example, no extra code is needed to join the values again. SQL makes it one step easier again.</p>
+
+<h3>Sorting with a custom formula</h3>
+
+<p>All software engineers know you can sort based on a column. But if you are given a custom priority formula to sort, what would you do? Probably again resort back to code and loop to sort. So lets set the priority formula rules for above example:</p>
+
+<ol>
+<li>Premium customer refunds get the highest priority (we hack it with a priority of 9999999999)</li>
+<li>Other than premium customers cash refunds get a priority of amount * 25 for credit it is amount * 20.</li>
+</ol>
+
+
+<p>As per above rules it is decided that premium customers and priority above 50000 (in cents) will be processed first. Then other refunds will be processes. Let&rsquo;s get the priority refunds as below:</p>
+
+<pre><code>SELECT r.refund_nr, r.reason, p.fk_item, p.amount, p.is_cash, 
+IF(p.premium_customer = 1, 9999999999, p.amount * (IF(is_cash = 1, 25, 20))) AS priority FROM 
+refund AS r INNER JOIN payment AS p ON r.id = p.fk_refund
+HAVING priority &gt; 50000
+ORDER BY priority DESC
+</code></pre>
+
+<p>The results are below:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/05result-priority-formula.png" title="Result with sorting based on custom formula" alt="Result with sorting based on custom formula"></p>
+
+<p>With proper use of IF in SQL sorting by a custom priority formula is a lot easier than trying to do it with loops in code. Notice that even smaller amounts like 7.5 (750 cents) and 9.0 (900 cents) came to highest priority as these refund payment amounts were associated with premium customers.</p>
+
+<blockquote><p>Use the superpowers of SQL to make your life easier as a software engineer.</p></blockquote>
+
+<p>You can play with the example and run your own queries on <a href="http://sqlfiddle.com/#!9/b242d/5" title="The full example with queries in sql fiddle">SQL fiddle</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>There are other tricks of SQL that can help you as a software engineer. Like <code>UPDATE</code> with <code>INSERT</code> using <code>ON DUPLICATE KEY UPDATE</code>. Whenever you have an itch of doing some manipulation for data pulled in from database in code with loops, think again. The main takeaway from this story is:</p>
+
+<blockquote><p>Exploit the power of SQL to write less code because &ldquo;the best code is the code that was never written&rdquo;. If it is not written there is no need to maintain it.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to do a zero downtime database (DB) migration (schema change) with a practical example]]></title>
+    <link href="http://geshan.com.np/blog/2018/04/how-to-do-a-zero-downtime-database-db-migration-schema-change-with-a-practical-example/"/>
+    <updated>2018-04-30T18:00:41+00:00</updated>
+    <id>http://geshan.com.np/blog/2018/04/how-to-do-a-zero-downtime-database-db-migration-schema-change-with-a-practical-example</id>
+    <content type="html"><![CDATA[<p>Database migration on a production database is never simple. Depending on the volume of requests some teams schedule database migration to off hours. You can run your alter statements with zero or minimal downtime following the steps mentioned below with a practical example.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/db-migration.png" title="How to do a zero downtime database" alt="How to do a zero downtime database"></p>
+
+<!-- more -->
+
+
+<h2>Example</h2>
+
+<p>As an example for this post, let&rsquo;s assume you work for an E-commerce company which has both recurring and new customers. You have partners who publicize a discount code valid for a given date range and get a percent of the order&rsquo;s total tracked by their discount code. Below is the schema for the partner and coupon code. Below is the initial schema before any change:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/schema-01.png" title="Initial DB schema" alt="Initial DB Schema"></p>
+
+<p>Now the new requirement is to track different commission percent for the new and recurring customer. New and recurring customers are evaluated by a different system/microservice and it is also responsible for commission calculation based on order total which is out of the scope of this focused example.</p>
+
+<p>To do commission tracking by customer type we would decide to add 2 new columns commission_percent_new_customer, commission_percent_recurring_customer, the difficult question is how to roll it out without downtime.</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/schema-02.png" title="Updated schema with 2 new columns" alt="Updated schema with 2 new columns"></p>
+
+<h3>Migration script (DB schema alter statement)</h3>
+
+<p>The following migration script will update the DB schema to be in the above state for MYSQL DB:</p>
+
+<pre><code>ALTER TABLE `partner_discount_code` ADD `commission_percent_new_customer` DECIMAL NULL AFTER `commission_percent`,
+ADD `commission_percent_recurring_customer` DECIMAL NULL AFTER `commission_percent_new_customer`, 
+,algorithm=inplace,lock=none;
+</code></pre>
+
+<p>Notice the <code>algorithm=inplace,lock=none</code> it is discussed below.</p>
+
+<h2>Evaluating Downtime</h2>
+
+<p>In the above example there can be 2 types of downtime as follows:</p>
+
+<ol>
+<li>Tables locked while migration runs</li>
+<li>Downtime because of newly introduced columns and code not matching to it</li>
+</ol>
+
+
+<p>For the first downtime issue depending on the database, it can be mitigated to a significant level with executing proper alter SQL statements. For example in MYSQL if <code>,algorithm=inplace, lock=none</code> is suffixed with your alter it will run with 0 to minimum table lock allowing reads and writes while the migration runs. This is especially important when altering tables with millions of rows as the alter can take minutes depending on the structure and data volume of the tables involved.</p>
+
+<p>For the second issue, if db alter and code release is deployed in a specific sequence it can be handled much better. The deployment steps are listed below:</p>
+
+<h2>Deployment Steps</h2>
+
+<ol>
+<li>Add the two new columns to the partner_discount_code, let&rsquo;s say the code is in v 1.1 now</li>
+<li>Deploy code v 1.2 which adds and edits all 3 columns - commission_percent, commission_percent_new_customer and commission_percent_recurring_customer.</li>
+<li>Test that all the things work as expected, even if you need to roll back nothing breaks and it&rsquo;s fully backward compatible</li>
+<li>When everything is fine, deploy code v 1.3 that adds or edits only on the 2 new columns</li>
+<li>Test it for a day or two, then as per need you can drop the commission_percent column on the partner_discount_code table as it&rsquo;s not used anymore</li>
+</ol>
+
+
+<h3>Final schema after dropping commission_percent column</h3>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/db-migration/schema-03.png" title="Updated schema with 1 column less" alt="Updated schema with 1 column less"></p>
+
+<h2>Things to consider</h2>
+
+<ul>
+<li>Always be careful with database migration. It&rsquo;s is surely safe to take a backup of the table you will run the alter statement on before executive it.</li>
+<li>Don&rsquo;t deploy the code first that write to new columns then run the migration, it will result in errors as the code will try to access non-existing column(s).</li>
+<li>Always think of backward compatibility usually without a revert migration. Generally, access to production database is only given to a select few.</li>
+<li>Run drop or rename columns only after you are fully satisfied that the new changes are not breaking anything.</li>
+<li>It is better to run migrations (alter SQL) manually than part of the deployment to keep things segregated and more predictable.</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>Database migration is not difficult if it is done the right way. Hope this post helps you run your DB migrations in a smoother fashion.</p>
+]]></content>
+  </entry>
+  
+</feed>

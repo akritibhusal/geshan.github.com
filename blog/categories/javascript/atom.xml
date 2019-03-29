@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript | Geshan's Blog]]></title>
+  <link href="http://geshan.com.np/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://geshan.com.np/"/>
+  <updated>2019-03-29T04:23:38+00:00</updated>
+  <id>http://geshan.com.np/</id>
+  <author>
+    <name><![CDATA[Geshan Manandhar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting started with debugging nodeJs applications with ndb]]></title>
+    <link href="http://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb/"/>
+    <updated>2019-01-06T00:02:36+00:00</updated>
+    <id>http://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb</id>
+    <content type="html"><![CDATA[<p>NodeJs was released almost 9 years ago. The <a href="https://nodejs.org/api/debugger.html" title="Default nodejs debugging process">default debugging process</a> of NodeJs (read Node.js) is quite clumsy. You are already aware of the need to add <code>--inspect</code> to the node script with node inspector. It is also dependent on chrome. Then look at the proper web socket connection which is hard and debug using chrome node debugger. To be honest, it is a pain in the neck.</p>
+
+<p>Finally, Google chrome labs has released ndb, which they say is &ldquo;An improved debugging experience for Node.js, enabled by Chrome DevTools&rdquo;. It is a boon to debug a nodejs app.</p>
+
+<p>I am going to show a step by step process of debugging nodejs application with <a href="https://github.com/GoogleChromeLabs/ndb" title="ndb github page">ndb</a>. In other words, you will learn how to debug a nodejs application using ndb. Below you can see it in action, let&rsquo;s roll up your sleeves and get started:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/00ndb.png"></p>
+
+<!-- more -->
+
+
+<h2>Prerequisites for debugging nodejs application</h2>
+
+<p>Below are some prerequisites before you get started:</p>
+
+<ol>
+<li>You have nodejs installed on your system (a no-brainer but still worth a mention)</li>
+<li>You have general knowledge of running node scripts and working with nodejs apps.</li>
+<li>You have prior debugging experience with nodejs or any other language.</li>
+</ol>
+
+
+<p>For debugging nodejs application in place of just another script I will use a full nodejs express application. It is an open source application I used for a demo on testing nodejs application.</p>
+
+<h2>Debugging nodejs express application as a demo</h2>
+
+<p>I am using my opensource <a href="https://github.com/geshan/currency-api" title="Currency API app on github">currency API</a> for this step-by-step getting started of debugging a nodejs application. It is built using express js framework. You can also check the running app hosted on <a href="https://currency-api-nodejs.now.sh/api/convert/USD/AUD/2019-01-01" title="Currency API app hosted on Zeit now">Zeit Now</a> to see the USD to AUD rate of 2019-01-10 as an example.</p>
+
+<p>The idea of the application is simple. If the conversion rate is available in the database it will fetch it from the database. If not it will fetch it from another API and send it back to the user also saving the rate in the database at the same time (async) for later use.</p>
+
+<p>You can clone the application from github and run <code>npm install</code> to get it ready for debugging. This is a very simple application with most of the logic in <code>exchangeRates.js</code> <a href="https://github.com/geshan/currency-api/blob/master/src/exchangeRates.js" title="You can have a look at the code on github">file</a>. It has mocha <a href="https://github.com/geshan/currency-api/blob/master/test/exchnageRatesTest.js" title="You can check the test too">tests</a> too as it was a demo for testing nodejs application.</p>
+
+<h3>1. Getting started, install ndb</h3>
+
+<p>Installing ndb is very easy. All you need to do to get started with debugging your nodejs application is to install <a href="https://github.com/GoogleChromeLabs/ndb#installation" title="ndb installation instructions on github">ndb</a>. I would suggest to install it globally with:</p>
+
+<pre><code># with npm
+npm install -g ndb
+
+#with yarn
+yarn global add ndb
+</code></pre>
+
+<p>You can also install and use it locally per app if you want. One thing I had to fix was to get the latest version of chrome as I saw some permission issues.</p>
+
+<h3>2. Run the app with ndb (not node or nodemon)</h3>
+
+<p>For debugging nodejs applications using ndb you can directly run the nodejs app script with it rather than node. For example, if you were used to doing <code>node index.js</code> or <code>nodemon index.js</code> in development. To debug your app you can run:</p>
+
+<pre><code>ndb index.js
+</code></pre>
+
+<p>Notice that you don&rsquo;t need to put any <code>-- inspect</code> so the experience is a lot smoother.</p>
+
+<blockquote><p>You don&rsquo;t need to remember a different port or go to chrome devtools and open up a different inspector window to debug. Such a relief!</p></blockquote>
+
+<p>ndb opens up a screen like below when you do <code>ndb .</code> or <code>ndb index.js</code>:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/01ndb-index.png"></p>
+
+<p>Please add a breakpoint on line 46. As you ran the application with ndb it will run in debug mode and stop at the breakpoint like below when you hit <code>http://localhost:8080/api/convert/USD/AUD/2019-01-01</code> on the browser. I have set the breakpoint on exchangeRates.js like 46 in the screenshot below:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Pausing at the break-point while debugging" alt="debugging nodejs" data-echo="/images/debugging-node-js/02ndb-pause.png"></p>
+
+<p>ndb allows you to run any script for debugging. For example, I can run <code>ndb npm start</code> and it will use the nodemon run. This means I can debug the application while changing the code which is great.</p>
+
+<blockquote><p>As an example it can be run with <code>ndb npm start</code> to debug this nodejs express application.</p></blockquote>
+
+<p>You can also debug your test with a command like <code>ndb npm test</code>.</p>
+
+<h3>3. Let&rsquo;s debug some code</h3>
+
+<p>As the debugger is working I can place more break points or run through the code at my speed and convenience.</p>
+
+<blockquote><p>The essential shortcuts are <code>F10</code> to step over function call and <code>F11</code> to step into a function.</p></blockquote>
+
+<p>The usual debugging workflow I assume you are familiar with. below I have advanced to line 52:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Continuing further the break-point while debugging" alt="debugging node.js" data-echo="/images/debugging-node-js/03ndb-continue.png"></p>
+
+<h2>More debugging nodejs things</h2>
+
+<p>As any other debugger with ndb you can:</p>
+
+<ol>
+<li>Add watches</li>
+<li>Check the call stack trace</li>
+<li>Check the process</li>
+</ol>
+
+
+<blockquote><p>The console tab is also helpful if you want to some quick nodejs code in the context.</p></blockquote>
+
+<p>Read more about what you can do with it in the official <a href="https://github.com/GoogleChromeLabs/ndb#what-can-i-do" title="ndb readme what can I do section">readme</a>. Below is a screenshot of the useful console:</p>
+
+<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="ndb console is useful for debugging nodejs apps" alt="ndb console is useful for debugging nodejs apps" data-echo="/images/debugging-node-js/04ndb-console.png"></p>
+
+<h2>Conclusion (TLDR)</h2>
+
+<p>Debugging nodejs application with ndb is a better developer experience compared to the default debugger. To debug the currency API nodejs express app with it you run do the following commands give you have node > 8 installed:</p>
+
+<ol>
+<li>npm install -g ndb</li>
+<li>git clone git@github.com:geshan/currency-api.git</li>
+<li>cd currency-api</li>
+<li>npm install</li>
+<li>ndb npm start</li>
+<li>After the ndb debugger opens up add a breakpoint at line 46 of src/exchangeRates.js</li>
+<li>Then open <code>http://localhost:8080/api/convert/USD/AUD/2019-01-01</code> in the browser</li>
+<li>Now as the app should pause at the breakpoint, Enjoy! and continue debugging.</li>
+</ol>
+
+
+<p>If it works for this app, you can debug any of your nodejs application with this approach.</p>
+
+<blockquote><p>Welcome to the new way of debugging nodejs application that is browser independent and a lot more smoother than the default experience. Step up your debugging nodejs application game.</p></blockquote>
+
+<p>I hope this post has helped you debug your nodejs application better. If you have any other things to share about debugging nodejs apps or better usage of ndb please comment below!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ingredients of a great front end application with AngularJs]]></title>
+    <link href="http://geshan.com.np/blog/2014/02/ingredients-of-great-front-end/"/>
+    <updated>2014-02-07T05:32:00+00:00</updated>
+    <id>http://geshan.com.np/blog/2014/02/ingredients-of-great-front-end</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div dir="ltr" style="text-align: left;" trbidi="on">In the past 12 months the popularity of AngularJs has exploded, which clearly hints that applications are being built following the multi-tire architecture. A good back-end API with a front end consumer application surely makes a capable duo that can handle any requirements of the application. If you have a multi-tire architecture then you don&#8217;t need to rebuild the back-end for serving data for other applications like a mobile application or any data requirement.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-cR5rMFn2Eho/UvRkqrXlCDI/AAAAAAAAnes/JZThI0jhcS4/s1600/Selection_005.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://1.bp.blogspot.com/-cR5rMFn2Eho/UvRkqrXlCDI/AAAAAAAAnes/JZThI0jhcS4/s1600/Selection_005.png" height="369" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Popularity of Angular JS, source <a href="http://www.google.com/trends/explore#q=angularjs%2C%20emberjs%2C%20backbonejs&amp;date=today%2012-m&amp;cmpt=q" target="_blank">Google Trends</a></td></tr></tbody></table><div class="separator" style="clear: both; text-align: center;"></div><!-- more --><br /><h3 style="text-align: left;">Why Front-end applications?</h3>Front end applications with java-script run on the user&#8217;s browser, when the data interaction is moved to models and services supported by a framework it makes the front end application very powerful. This also enables the concept of <a href="http://en.wikipedia.org/wiki/Single-page_application" target="_blank">Single Page Application</a> (SPA). Below are the <b>7 ingredients</b> of a great front end application with <b>Angularjs</b> being the main ingredient.<br /><h3 style="text-align: left;">AngularJs</h3><a href="http://angularjs.org/" target="_blank">AngularJs</a> is a &#8220;Superheroic JavaScript MVW Framework&#8221; by Google which lets the developers abstract out the model view controller on front end (user browser) level. Its amazing <a href="http://sporto.github.io/blog/2013/04/12/comparison-angular-backbone-can-ember/" target="_blank">features</a> include two way data binding, routing and directives to name some. Angular with its <a href="http://code.tutsplus.com/tutorials/5-awesome-angularjs-features--net-25651" target="_blank">features</a> and flexibility might be your safest bet if you want to develop a front end application consuming data from a back-end API service.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-US25BlWq9Z8/UvRkyib883I/AAAAAAAAne4/a8AmMj7gORQ/s1600/angular_home.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-US25BlWq9Z8/UvRkyib883I/AAAAAAAAne4/a8AmMj7gORQ/s1600/angular_home.jpg" height="321" width="640" /></a></div><br /><h3 style="text-align: left;">YeoMan</h3><a href="http://yeoman.io/" target="_blank">Yeoman</a> is a scaffolding which provides generators that can speed up the application development process. It supports Angular, when combined with other great applications it helps you build your front end application with ease. It does the heavy lifting for you so that you can focus on the code better. As mentioned:<br /><blockquote>Yeoman is a robust and opinionated client-side stack, comprising tools and frameworks that can help developers quickly build beautiful web applications. We take care of providing everything needed to get started without any of the normal headaches associated with a manual setup.</blockquote><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-erIDXTqhAAE/UvRn2ftJlGI/AAAAAAAAnfA/K529macB_34/s1600/yeoMan.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-erIDXTqhAAE/UvRn2ftJlGI/AAAAAAAAnfA/K529macB_34/s1600/yeoMan.jpg" height="446" width="640" /></a></div><h3 style="text-align: left;">Bower</h3><div><a href="http://bower.io/search/" target="_blank">Bower</a> is a package manager for javascript projects. <a href="https://getcomposer.org/" target="_blank">Composer</a> is the main dependency and package manger for PHP, similarly bower is the dependency manager for Javascript. It has a lot of packages which can be used for your project and managing the dependencies is matter of just one bower.json file on your project. You just do a bower install and all the dependencies are downloaded for you.</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-jqH0ALKrubw/UvRqdUkoNAI/AAAAAAAAnfM/2fif9_dsIsk/s1600/bower.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-jqH0ALKrubw/UvRqdUkoNAI/AAAAAAAAnfM/2fif9_dsIsk/s1600/bower.jpg" height="318" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><h3 style="text-align: left;">GruntJs</h3><div><a href="http://gruntjs.com/" target="_blank">Grunt</a> is a javascript task runner, it can automate tasks so that you can focus more on the development. In relation with AngularJs it can be used to start the server, check file changes to compile with the new changes and perform auto reload, check for JSLint, run your tests etc. You can configure the tasks in a grunt file and utilize its powerful API to create your own tasks.</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-smmph9DImZs/UvRqdhJFmOI/AAAAAAAAnfk/NSDyhxvQIVQ/s1600/gruntjs.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-smmph9DImZs/UvRqdhJFmOI/AAAAAAAAnfk/NSDyhxvQIVQ/s1600/gruntjs.jpg" height="340" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><h3 style="text-align: left;">Jade</h3><div>Now you have a good separation of your front and and you are coding some javascript model, services and controller. How would you manage the view/template part of the application. There are many options like <a href="http://handlebarsjs.com/" target="_blank">Handelbars</a>, <a href="http://paularmstrong.github.io/swig/" target="_blank">Swig</a>&nbsp;(similar to <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>&nbsp;in php) but using <a href="http://jade-lang.com/" target="_blank">Jade</a> might be easier.&nbsp;Jade is like a compressed version of HTML which makes writing templates much easier and faster. Jade files can be compiled to output as HTML with a grunt task.</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-9XOB_4jdzFE/UvRqeLf0hZI/AAAAAAAAnfo/KnnmSRPq3JA/s1600/jade-html.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-9XOB_4jdzFE/UvRqeLf0hZI/AAAAAAAAnfo/KnnmSRPq3JA/s1600/jade-html.jpg" height="338" width="640" /></a></div><div><br /></div><h3 style="text-align: left;">Compass CSS</h3><div><a href="http://compass-style.org/" target="_blank">Compass</a> is a open source CSS authoring framework that use <a href="http://sass-lang.com/" target="_blank">Sass</a> to make writing CSS logical, easy and painless. It is like making CSS programmable with variables, nesting styles and other features which helps on making CSS code reusable and maintainable. Easy to <a href="http://compass-style.org/install/" target="_blank">install</a> and easier to get started with Compass will change the way you write CSS.&nbsp;</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-U4t6ljJWUPk/UvRqddaqmcI/AAAAAAAAnfg/OUDogJvvPds/s1600/compass-css.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-U4t6ljJWUPk/UvRqddaqmcI/AAAAAAAAnfg/OUDogJvvPds/s1600/compass-css.jpg" height="426" width="640" /></a></div><div><br /></div><h3 style="text-align: left;">JasmineJs&nbsp;</h3><div>Now you have great java-script code a well managed front end with Jade and Compass, how about some testing. <a href="http://jasmine.github.io/" target="_blank">JasmineJs</a> is a behavior driven development framework for testing javascirpt code. Test suites describe the tests and match the output. You can even use a custom solution with other libraries like <a href="http://phantomjs.org/" target="_blank">PhantomJs</a>. Still Jasmine can be a very <a href="http://www.tuesdaydeveloper.com/2013/06/angularjs-testing-with-karma-and-jasmine/" target="_blank">good option</a> for testing AngularJs application.</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-UjLwCDcW6EU/UvRqeAztAPI/AAAAAAAAnfw/Ml3JK2VP0X4/s1600/jasmine-js.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-UjLwCDcW6EU/UvRqeAztAPI/AAAAAAAAnfw/Ml3JK2VP0X4/s1600/jasmine-js.png" height="308" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><h3 style="text-align: left;">Conclusion</h3><div>Using the right tools and technology to do your job will always benefit you, it will save time and effort maximizing productivity. A good mix and match of all the ingredients would yield desired results, I hope these you will use these tools when you think of developing a new front end application.</div></div></div>
+
+]]></content>
+  </entry>
+  
+</feed>

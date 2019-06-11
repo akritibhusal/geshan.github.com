@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: infographics | Geshan's Blog]]></title>
-  <link href="http://geshan.com.np/blog/categories/infographics/atom.xml" rel="self"/>
-  <link href="http://geshan.com.np/"/>
-  <updated>2019-03-29T04:23:38+00:00</updated>
-  <id>http://geshan.com.np/</id>
+  <link href="https://geshan.com.np/blog/categories/infographics/atom.xml" rel="self"/>
+  <link href="https://geshan.com.np/"/>
+  <updated>2019-06-11T07:17:06+00:00</updated>
+  <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Different types of web hosting compared to types of housing [Infographics]]]></title>
-    <link href="http://geshan.com.np/blog/2016/11/different-types-of-web-hosting-compared-to-types-of-housing/"/>
+    <link href="https://geshan.com.np/blog/2016/11/different-types-of-web-hosting-compared-to-types-of-housing/"/>
     <updated>2016-11-29T11:28:50+00:00</updated>
-    <id>http://geshan.com.np/blog/2016/11/different-types-of-web-hosting-compared-to-types-of-housing</id>
+    <id>https://geshan.com.np/blog/2016/11/different-types-of-web-hosting-compared-to-types-of-housing</id>
     <content type="html"><![CDATA[<p>Looking for the right web hosting provider for your website/app idea? It is like finding a housing for yourself. You have to first agree on the type like you want an apartment in a building, your own house/villa or may be a mansion. It will also depend on your budget and what you want to do in your housing. A similar process applies for your web hosting. You can go for a shared host or dedicated host or some cloud Infrastructure As A Service (IAAS ) provider.</p>
 
 <p>In the infographics below I will do a basic comparison between shared host, dedicated host and cloud provider. They are roughly comparable to an apartment, house or a mansion. I am over simplifying things grouping Virtual Private Server (VPS) and dedicated hosting together.</p>
@@ -25,7 +25,7 @@
 <!-- more -->
 
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/web-host-as-housing/web-host-as-housing-med.png" title="Different types of web hosting compared to types of housing" alt="Different types of web hosting compared to types of housing"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/web-host-as-housing/web-host-as-housing-med.png" title="Different types of web hosting compared to types of housing" alt="Different types of web hosting compared to types of housing"></p>
 
 <blockquote><p>I hope this helps you to make the right choice about your hosting provider.</p></blockquote>
 ]]></content>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Software Engineering Practices in Nepal Infographics Part 4 includes PM Methodology and Software, testing frameworks and mobile apps]]></title>
-    <link href="http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-4-includes-project-management/"/>
+    <link href="https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-4-includes-project-management/"/>
     <updated>2015-05-29T03:07:59+00:00</updated>
-    <id>http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-4-includes-project-management</id>
+    <id>https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-4-includes-project-management</id>
     <content type="html"><![CDATA[<p>It has already been a month that the devastating earthquake hit Nepal. I hope life is coming back to normal now and
 people in Nepal are optimistic, positive and hopeful. I hope everyone will do what they are best doing with sincerity
 as its one of the best ways you can help in rebuilding Nepal.</p>
@@ -52,7 +52,7 @@ this edition too, for your help in data normalization, filtering and grouping.</
 <!-- more -->
 
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part04/Software_Engineering_Nepal_Mid_2015_Part04.png" title="Software Engineering Practices in Nepal Infographics Part 4" alt="Software Engineering Practices in Nepal Infographics Part 4"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part04/Software_Engineering_Nepal_Mid_2015_Part04.png" title="Software Engineering Practices in Nepal Infographics Part 4" alt="Software Engineering Practices in Nepal Infographics Part 4"></p>
 
 <p>You can view this infographics in <a href="http://bit.ly/1Fk3WxK">interactive</a> mode too.</p>
 
@@ -65,9 +65,9 @@ I will make the survey open till 2015 Q3 and post the final results in Oct 2015.
   
   <entry>
     <title type="html"><![CDATA[Software Engineering Practices in Nepal Infographics Part 3 includes devOps, deployment, CI, logs monitoring etc]]></title>
-    <link href="http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-3-includes-devops/"/>
+    <link href="https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-3-includes-devops/"/>
     <updated>2015-05-23T05:36:02+00:00</updated>
-    <id>http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-3-includes-devops</id>
+    <id>https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-3-includes-devops</id>
     <content type="html"><![CDATA[<p>Let rebuild #Nepal, do what you can. As a software professional from past 6 years I think this is how I can help, informing
 fellow Nepali software engineers about the latest software engineering practices. Lets step up and help as you can.</p>
 
@@ -84,7 +84,7 @@ us group and compile the data into percentages, thank you for that.</p>
 <!-- more -->
 
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part03/Software_Engineering_Nepal_Mid_2015_Part03.png" title="Software Engineering Practices in Nepal Infographics Part 3" alt="Software Engineering Practices in Nepal Infographics Part 3"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part03/Software_Engineering_Nepal_Mid_2015_Part03.png" title="Software Engineering Practices in Nepal Infographics Part 3" alt="Software Engineering Practices in Nepal Infographics Part 3"></p>
 
 <p>You can view this infographics in <a href="http://bit.ly/1IUFBmA">interactive</a> mode too.</p>
 
@@ -98,9 +98,9 @@ I will make the survey open till 2015 Q3 and post the final results in Oct 2015.
   
   <entry>
     <title type="html"><![CDATA[Software Engineering Practices in Nepal Infographics Part 2 includes Git, VCS Hosting, Code Review Culture etc]]></title>
-    <link href="http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-2-includes-git/"/>
+    <link href="https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-2-includes-git/"/>
     <updated>2015-05-22T02:40:58+00:00</updated>
-    <id>http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-2-includes-git</id>
+    <id>https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-2-includes-git</id>
     <content type="html"><![CDATA[<p>I hope life is slowly going back to normal in Nepal though the news of aftershocks is not encouraging. My prayers are with the
 people of Nepal and I hope they get the positive energy to resume with their normal work.</p>
 
@@ -117,7 +117,7 @@ her sleeves and helped us group and compile the data into percentages, thank you
 <!-- more -->
 
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part02/Software_Engineering_Nepal_Mid_2015_Part02.png" title="Software Engineering Practices in Nepal Infographics Part 2" alt="Software Engineering Practices in Nepal Infographics Part 2"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part02/Software_Engineering_Nepal_Mid_2015_Part02.png" title="Software Engineering Practices in Nepal Infographics Part 2" alt="Software Engineering Practices in Nepal Infographics Part 2"></p>
 
 <p>You can view this infographics in <a href="http://bit.ly/1R8EfHQ">interactive</a> mode too.</p>
 
@@ -131,9 +131,9 @@ I will make the survey open till 2015 Q3 and post the final results in Oct 2015.
   
   <entry>
     <title type="html"><![CDATA[Software Engineering Practices in Nepal Infographics Part 1 includes Languages, Frameworks, IDEs etc]]></title>
-    <link href="http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-1-includes-languages/"/>
+    <link href="https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-1-includes-languages/"/>
     <updated>2015-05-17T12:26:29+00:00</updated>
-    <id>http://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-1-includes-languages</id>
+    <id>https://geshan.com.np/blog/2015/05/software-engineering-practices-in-nepal-infographics-part-1-includes-languages</id>
     <content type="html"><![CDATA[<p>A big earthquake hit Nepal on 25-Apr-2015 and another big one was felt on 12-May-2015. The <a href="http://seismonepal.gov.np/">aftershocks</a> till now have been around 250. I pray that all the people in Nepal have the strength and positive energy to endure this difficult time. Rather than pitying on themselves, people have already started to work and this is a positive sign. Moreover, instead of spreading false news and rumors I would suggest people to focus on positive things, stay alert and cautious.</p>
 
 <p>I had some time so I setup a survey to know the software engineering practices used in Nepal and in the past 2 weeks there are 90 responses from the survey.  Below is the first infographics in the series to showcase the software engineering practices used in Nepal ranging from Computer Languages, Project Management technique and software to Deployment practices.</p>
@@ -145,7 +145,7 @@ I will make the survey open till 2015 Q3 and post the final results in Oct 2015.
 <!-- more -->
 
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part01/Software_Engineering_Nepal_Mid_2015_Part01.png" title="Software Engineering Practices in Nepal Infographics Part 1" alt="Software Engineering Practices in Nepal Infographics Part 1"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/sw-eng-np-infographics-part01/Software_Engineering_Nepal_Mid_2015_Part01.png" title="Software Engineering Practices in Nepal Infographics Part 1" alt="Software Engineering Practices in Nepal Infographics Part 1"></p>
 
 <p>You can view this infographics in <a href="http://bit.ly/1EPE37N">interactive</a> mode too.</p>
 

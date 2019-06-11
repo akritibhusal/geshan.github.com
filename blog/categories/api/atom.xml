@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: api | Geshan's Blog]]></title>
-  <link href="http://geshan.com.np/blog/categories/api/atom.xml" rel="self"/>
-  <link href="http://geshan.com.np/"/>
-  <updated>2019-03-29T04:23:38+00:00</updated>
-  <id>http://geshan.com.np/</id>
+  <link href="https://geshan.com.np/blog/categories/api/atom.xml" rel="self"/>
+  <link href="https://geshan.com.np/"/>
+  <updated>2019-06-11T07:17:06+00:00</updated>
+  <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
     
@@ -15,16 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[Building your next product, get your HTTP API working first]]></title>
-    <link href="http://geshan.com.np/blog/2015/08/building-you-next-product/"/>
+    <link href="https://geshan.com.np/blog/2015/08/building-you-next-product/"/>
     <updated>2015-08-22T10:00:22+00:00</updated>
-    <id>http://geshan.com.np/blog/2015/08/building-you-next-product</id>
+    <id>https://geshan.com.np/blog/2015/08/building-you-next-product</id>
     <content type="html"><![CDATA[<p>We have seen many technology software products coming, some coming up as the next big thing, some
 a multi-tenant Software As A Service (SAAS). Sometimes I see lots of new, useful and innovative
 products on <a href="http://www.producthunt.com/">Product Hunt</a> and think how would they have planned such
 amazing products. If you are planning to build your software product, this post will unfold why
 you should make your web Application Programming Interface (API) working first.</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/product-http-api/rest-json.jpg" title="JSON APIs" alt="JSON APIs"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/product-http-api/rest-json.jpg" title="JSON APIs" alt="JSON APIs"></p>
 
 <!-- more -->
 

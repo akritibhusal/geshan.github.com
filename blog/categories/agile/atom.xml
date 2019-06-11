@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: agile | Geshan's Blog]]></title>
-  <link href="http://geshan.com.np/blog/categories/agile/atom.xml" rel="self"/>
-  <link href="http://geshan.com.np/"/>
-  <updated>2019-03-29T04:23:38+00:00</updated>
-  <id>http://geshan.com.np/</id>
+  <link href="https://geshan.com.np/blog/categories/agile/atom.xml" rel="self"/>
+  <link href="https://geshan.com.np/"/>
+  <updated>2019-06-11T07:17:06+00:00</updated>
+  <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
     
@@ -15,12 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[5 signs that reveal your software development process is agile only on paper and solutions for them]]></title>
-    <link href="http://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them/"/>
+    <link href="https://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them/"/>
     <updated>2018-11-20T09:00:22+00:00</updated>
-    <id>http://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them</id>
+    <id>https://geshan.com.np/blog/2018/11/5-signs-that-reveal-your-software-development-process-is-agile-only-on-paper-and-solutions-for-them</id>
     <content type="html"><![CDATA[<p>Agility comes with practice not putting big words on paper. Using Jira does not make your software development process agile. Saying we do &ldquo;scrum&rdquo; is not being agile. Being agile is having an agile mindset and putting it into practice everyday. It is about thinking about the value you deliver to the customer and how to do it better.  This post will also unveil these 5 signs and how to solve these issues. The signs and solutions will concern multiple roles like Product Manager, Software engineer etc.</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/board.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/board.jpg"></p>
 
 <!-- more -->
 
@@ -59,7 +59,7 @@
 
 <p>Agile software development is always about delivering value to the customer. The value in the form of working software not a pile of documents. If there a story like &ldquo;As a customer service manager I need to know who created a refund so that I can track and audit refunds in future&rdquo;. This task might entail adding a &ldquo;created_by&rdquo; field in the refunds table for instance. But this should not result in having a &ldquo;story&rdquo; that says &ldquo;Add created_by field in the refunds table&rdquo;. Of course, it can be a task/subtask as part of the main story. The main story delivers value but this database task is something that aids the process.</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/story.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="5 signs that reveal your company is agile only on paper and solutions for them" alt="5 signs that reveal your company is agile only on paper and solutions for them" data-echo="/images/5-signs-agile-on-paper/story.jpg"></p>
 
 <h3>Solution</h3>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: technology | Geshan's Blog]]></title>
-  <link href="http://geshan.com.np/blog/categories/technology/atom.xml" rel="self"/>
-  <link href="http://geshan.com.np/"/>
-  <updated>2019-03-29T04:23:38+00:00</updated>
-  <id>http://geshan.com.np/</id>
+  <link href="https://geshan.com.np/blog/categories/technology/atom.xml" rel="self"/>
+  <link href="https://geshan.com.np/"/>
+  <updated>2019-06-11T07:17:06+00:00</updated>
+  <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Logging best practices to get the most out of application level logging -- Slides]]></title>
-    <link href="http://geshan.com.np/blog/2019/03/follow-these-logging-best-practices-to-get-the-most-out-of-application-level-logging-slides/"/>
+    <link href="https://geshan.com.np/blog/2019/03/follow-these-logging-best-practices-to-get-the-most-out-of-application-level-logging-slides/"/>
     <updated>2019-03-26T09:02:43+00:00</updated>
-    <id>http://geshan.com.np/blog/2019/03/follow-these-logging-best-practices-to-get-the-most-out-of-application-level-logging-slides</id>
+    <id>https://geshan.com.np/blog/2019/03/follow-these-logging-best-practices-to-get-the-most-out-of-application-level-logging-slides</id>
     <content type="html"><![CDATA[<p>Logs from the application level are the only way your application talks back to you. Having proper logs with commendable search capabilities is like having a torch in a dark room.</p>
 
 <p>Fully exploiting logs in case of any issues is very underrated. We as software engineers can utilize logs from the application to resolve issues as well as know the general health of the application.</p>
@@ -26,7 +26,7 @@
 
 <p>I had written about <a href="https://geshan.com.np/blog/2015/08/importance-of-logging-in-your-applications/">logging</a> some years back too. This post is focused on best practices you can follow when logging from the application level and how it can help you as a software engineer.</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/logging-best-practices/logging-bp.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/logging-best-practices/logging-bp.jpg"></p>
 
 <!-- more -->
 
@@ -74,14 +74,14 @@
   
   <entry>
     <title type="html"><![CDATA[Things tech recruiters look for in your resume and the first interview]]></title>
-    <link href="http://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for/"/>
+    <link href="https://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for/"/>
     <updated>2019-01-17T10:20:29+00:00</updated>
-    <id>http://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for</id>
+    <id>https://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for</id>
     <content type="html"><![CDATA[<p>Have you ever applied to many tech jobs that suit your experience and skill but never heard back? Does it feel like you are sending your resume to a black hole? Then this is something you absolutely must read. In this post, 3 tech recruiters in Sydney, Australia answer what they look for in a resume/candidate profile. They also open up about top 3 things they evaluate while conducting the first interview.</p>
 
 <blockquote><p>After you know what the tech recruiters are looking for you can tailor your resume that lands you an interview.</p></blockquote>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/tech-recruitment-aus/for-hire.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/tech-recruitment-aus/for-hire.jpg"></p>
 
 <!-- more -->
 
@@ -123,7 +123,7 @@
 
 <h3>Cloë Stanbridge (Safety Culture) looks for tech and soft skills</h3>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Cloe from Safety Culture" alt="Cloe from Safety Culture" data-echo="/images/tech-recruitment-aus/cloe.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="Cloe from Safety Culture" alt="Cloe from Safety Culture" data-echo="/images/tech-recruitment-aus/cloe.jpg"></p>
 
 <p><a href="https://www.linkedin.com/in/cloestanbridge/" title="Cloë on LinkedIn">Cloë Stanbridge</a> has been working for <a href="https://safetyculture.com/" title="Safety culture website">Safety Culture</a> for almost 2 years now. She is currently the Talent Acquisition manager there. Safety Culture&rsquo;s mission is &ldquo;to help companies achieve safer and higher quality workplaces all around the world through innovative, low-cost mobile first products.&rdquo;</p>
 
@@ -154,7 +154,7 @@
 
 <h3>James Richardson (Quantium) seeks alignment to JD and aptitude</h3>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="James, currently working at Quantium" alt="James, currently working at Quantium" data-echo="/images/tech-recruitment-aus/james.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="James, currently working at Quantium" alt="James, currently working at Quantium" data-echo="/images/tech-recruitment-aus/james.jpg"></p>
 
 <p><a href="https://www.linkedin.com/in/jamesrichardsonrecruitment/" title="James on LinkedIn">James</a> has been associated with <a href="https://www.quantium.com/" title="Quantium website">Quantium</a> for almost 2 and a half years. Currently, he is the &ldquo;Lead Recruitment Business Partner&rdquo; at Quantium, he is also the co-organizer of <a href="https://www.meetup.com/node-sydney/" title="Node Sydney Meetup group">Node Sydney Meetup</a>. Quantium is a consulting firm working in multiple domains and has multiple products, with a focus on Data Science and Artificial Intelligence. With 4 office location in Australia, Quantium has a total of 9 offices all over the world.</p>
 
@@ -193,7 +193,7 @@
 
 <h3>Kevin Yoon values experience and ability to change</h3>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Kevin, currently employed at Siteminder" alt="Kevin, currently employed at Siteminder" data-echo="/images/tech-recruitment-aus/kevin.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="Kevin, currently employed at Siteminder" alt="Kevin, currently employed at Siteminder" data-echo="/images/tech-recruitment-aus/kevin.jpg"></p>
 
 <p><a href="https://www.linkedin.com/in/simplified/" title="Kevin Yoon on LinkedIn">Kevin</a> has been employed at <a href="https://www.siteminder.com/" title="SiteMinder website">SiteMinder</a> for the past 4 months as the &ldquo;Talent Acquisition Lead - Tech &amp; Product&rdquo;. SiteMinder is a SaaS company working in the hospitality industry with a focus on online booking and related things.</p>
 
@@ -242,16 +242,16 @@
   
   <entry>
     <title type="html"><![CDATA[Getting started with debugging nodeJs applications with ndb]]></title>
-    <link href="http://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb/"/>
+    <link href="https://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb/"/>
     <updated>2019-01-06T00:02:36+00:00</updated>
-    <id>http://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb</id>
+    <id>https://geshan.com.np/blog/2019/01/getting-started-with-debugging-nodejs-applications-with-ndb</id>
     <content type="html"><![CDATA[<p>NodeJs was released almost 9 years ago. The <a href="https://nodejs.org/api/debugger.html" title="Default nodejs debugging process">default debugging process</a> of NodeJs (read Node.js) is quite clumsy. You are already aware of the need to add <code>--inspect</code> to the node script with node inspector. It is also dependent on chrome. Then look at the proper web socket connection which is hard and debug using chrome node debugger. To be honest, it is a pain in the neck.</p>
 
 <p>Finally, Google chrome labs has released ndb, which they say is &ldquo;An improved debugging experience for Node.js, enabled by Chrome DevTools&rdquo;. It is a boon to debug a nodejs app.</p>
 
 <p>I am going to show a step by step process of debugging nodejs application with <a href="https://github.com/GoogleChromeLabs/ndb" title="ndb github page">ndb</a>. In other words, you will learn how to debug a nodejs application using ndb. Below you can see it in action, let&rsquo;s roll up your sleeves and get started:</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/00ndb.png"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/00ndb.png"></p>
 
 <!-- more -->
 
@@ -303,11 +303,11 @@ yarn global add ndb
 
 <p>ndb opens up a screen like below when you do <code>ndb .</code> or <code>ndb index.js</code>:</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/01ndb-index.png"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="debugging nodeJs applications" alt="debugging nodeJs applications" data-echo="/images/debugging-node-js/01ndb-index.png"></p>
 
 <p>Please add a breakpoint on line 46. As you ran the application with ndb it will run in debug mode and stop at the breakpoint like below when you hit <code>http://localhost:8080/api/convert/USD/AUD/2019-01-01</code> on the browser. I have set the breakpoint on exchangeRates.js like 46 in the screenshot below:</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Pausing at the break-point while debugging" alt="debugging nodejs" data-echo="/images/debugging-node-js/02ndb-pause.png"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="Pausing at the break-point while debugging" alt="debugging nodejs" data-echo="/images/debugging-node-js/02ndb-pause.png"></p>
 
 <p>ndb allows you to run any script for debugging. For example, I can run <code>ndb npm start</code> and it will use the nodemon run. This means I can debug the application while changing the code which is great.</p>
 
@@ -323,7 +323,7 @@ yarn global add ndb
 
 <p>The usual debugging workflow I assume you are familiar with. below I have advanced to line 52:</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="Continuing further the break-point while debugging" alt="debugging node.js" data-echo="/images/debugging-node-js/03ndb-continue.png"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="Continuing further the break-point while debugging" alt="debugging node.js" data-echo="/images/debugging-node-js/03ndb-continue.png"></p>
 
 <h2>More debugging nodejs things</h2>
 
@@ -340,7 +340,7 @@ yarn global add ndb
 
 <p>Read more about what you can do with it in the official <a href="https://github.com/GoogleChromeLabs/ndb#what-can-i-do" title="ndb readme what can I do section">readme</a>. Below is a screenshot of the useful console:</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="ndb console is useful for debugging nodejs apps" alt="ndb console is useful for debugging nodejs apps" data-echo="/images/debugging-node-js/04ndb-console.png"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="ndb console is useful for debugging nodejs apps" alt="ndb console is useful for debugging nodejs apps" data-echo="/images/debugging-node-js/04ndb-console.png"></p>
 
 <h2>Conclusion (TLDR)</h2>
 
@@ -368,12 +368,12 @@ yarn global add ndb
   
   <entry>
     <title type="html"><![CDATA[2018 in review: 5 most viewed posts of this year]]></title>
-    <link href="http://geshan.com.np/blog/2018/12/2018-in-review-5-most-viewed-posts-of-this-year/"/>
+    <link href="https://geshan.com.np/blog/2018/12/2018-in-review-5-most-viewed-posts-of-this-year/"/>
     <updated>2018-12-25T07:55:50+00:00</updated>
-    <id>http://geshan.com.np/blog/2018/12/2018-in-review-5-most-viewed-posts-of-this-year</id>
+    <id>https://geshan.com.np/blog/2018/12/2018-in-review-5-most-viewed-posts-of-this-year</id>
     <content type="html"><![CDATA[<p>I have never done this in the past 11 years of blogging, this time it is going to be different. I am listing the 5 most viewed posts from this blog in 2018. All posts are not from 2018 but they have been viewed more than the others. I am using my Google Analytics stats to compile this list. So, here I present the most popular blog posts of 2018 on <a href="https://geshan.com.np" title="Geshan blog">Geshan.com.np</a>:</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/top-5-2018/everest.jpg" title="5 most viewed posts of 2018 a recap" alt="5 most viewed posts of 2018 a recap"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/top-5-2018/everest.jpg" title="5 most viewed posts of 2018 a recap" alt="5 most viewed posts of 2018 a recap"></p>
 
 <!-- more -->
 
@@ -384,7 +384,7 @@ yarn global add ndb
 
 <blockquote><p>Use SQL to do math like sum, average etc. Utilize it for grouping one to many relational values like getting categories of product. Leverage SQL for string manipulation like using CONCAT_WS for concating first name and last name. Exploit SQL to sort by a custom priority formula.</p></blockquote>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/tea-lights.jpg" title="You can do it in SQL, stop writing extra code for that" alt="You can do it in SQL, stop writing extra code for that"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/do-it-in-sql/tea-lights.jpg" title="You can do it in SQL, stop writing extra code for that" alt="You can do it in SQL, stop writing extra code for that"></p>
 
 <h2>2. <a href="https://geshan.com.np/blog/2018/12/4-ways-docker-changed-the-way-software-engineers-work-in-past-half-decade/" title="Story about how docker has changed software engineering in past 5 years">4 Ways Docker Changed the Way Software Engineers Work in Past Half Decade</a></h2>
 
@@ -392,7 +392,7 @@ yarn global add ndb
 
 <blockquote><p>With Docker, you ship the whole stack not only your code. Allocate minimum required resources to containers then scale them horizontally. With containers security generally already comes baked In. With Docker and Kubernetes you can get zero downtime and faster deployments leading to business profit.</p></blockquote>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/4-ways-docker/docker-whale.jpg" title="4 ways Docker changed the way software engineers work in past half decade" alt="4 ways Docker changed the way software engineers work in past half decade"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/4-ways-docker/docker-whale.jpg" title="4 ways Docker changed the way software engineers work in past half decade" alt="4 ways Docker changed the way software engineers work in past half decade"></p>
 
 <h2>3. <a href="https://geshan.com.np/blog/2017/05/how-to-use-docker-compose-with-virtual-hosts-and-services-like-db-for-dev-environment/" title="post on how to use docker compose with virtual hosts and shared services like a db for dev env">How to Use Docker Compose With Virtual Hosts and Shared Services (Like Db) for Dev Environment</a></h2>
 
@@ -400,7 +400,7 @@ yarn global add ndb
 
 <blockquote><p>Use docker and docker-compose with external_links to reuse services like a database across multiple projects. Using Ngnix proxy with virtual hosts can simplify multi-project setup and operation.</p></blockquote>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/docker-compose-vhost/docker-compose-vhost.jpg" title="Docker compose with vhost and shared services" alt="Docker compose with vhost and shared services"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/docker-compose-vhost/docker-compose-vhost.jpg" title="Docker compose with vhost and shared services" alt="Docker compose with vhost and shared services"></p>
 
 <h2>4. <a href="https://geshan.com.np/blog/2016/04/3-simple-rules-for-less-or-no-git-conflicts/" title="story about git conflicts and steps to avoid them">3 Simple Rules for Less or No Git Conflicts</a></h2>
 
@@ -408,7 +408,7 @@ yarn global add ndb
 
 <blockquote><p>Keep your changes small. Rebase your working branch with main branch often. And, review pull requests faster and merge them to main branch.</p></blockquote>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-rules-git-conflict/git-conflict.png" title="3 simple rules for less or no git conflicts" alt="3 simple rules for less or no git conflicts"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-rules-git-conflict/git-conflict.png" title="3 simple rules for less or no git conflicts" alt="3 simple rules for less or no git conflicts"></p>
 
 <h2>5. <a href="https://geshan.com.np/blog/2018/10/dont-code-your-microservice-like-a-monolith/" title="post on how to write microservices to keep it maintainable">Don’t Code Your Microservice Like a Monolith, Keep It Maintainable Not Over-engineered</a></h2>
 
@@ -416,7 +416,7 @@ yarn global add ndb
 
 <blockquote><p>Microservices are small software systems. You can safely ditch MVC. Say no to ORM and also not take the design pattern baggage for microservices. Focus on code performance, readability, and maintainability not some old rules and patterns. Those patterns were made when people were not doing microservices.</p></blockquote>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/lego.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/microservice-code/lego.jpg" title="Do not code your microservice like a monolith, keep it maintainable not over-engineered" alt="Do not code your microservice like a monolith, keep it maintainable not over-engineered"></p>
 
 <h2>Conclusion</h2>
 
@@ -426,12 +426,12 @@ yarn global add ndb
   
   <entry>
     <title type="html"><![CDATA[The most important tip for beginner software engineers is...]]></title>
-    <link href="http://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is/"/>
+    <link href="https://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is/"/>
     <updated>2018-12-21T08:47:44+00:00</updated>
-    <id>http://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is</id>
+    <id>https://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is</id>
     <content type="html"><![CDATA[<p>Most of the tutorials you have read or watched till now usually do one thing, spoon-feeding. This is &ldquo;OK&rdquo; to learn a new thing but not good when you need to <code>solve</code> a task. A task usually involves reaching a goal by overcoming a problem. This post unveils the most important &ldquo;tip&rdquo; for all beginner software engineers.</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="The most important tip for beginner software engineers is" alt="The most important tip for beginner software engineers is" data-echo="/images/tip-beginner-sw-eng/puzzle.jpg"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="The most important tip for beginner software engineers is" alt="The most important tip for beginner software engineers is" data-echo="/images/tip-beginner-sw-eng/puzzle.jpg"></p>
 
 <!-- more -->
 
@@ -458,7 +458,7 @@ yarn global add ndb
 
 <p>You have to do a task, it is to create a refund with payments. A refund always has a reason like damaged, late delivery etc and the payments for that item can be maximum of 2. One of type cash another of type credit (store credit). You are also given the database schema. This is a back-end task and you need to create a POST <code>/refunds</code> API that can create the refund and its related payments. The database structure is as below:</p>
 
-<p><img class="center" src="http://geshan.com.np/images/generic/loading.gif" title="refund schema v2" alt="refund schema v2" data-echo="/images/tip-beginner-sw-eng/refund-schema-v2.png"></p>
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="refund schema v2" alt="refund schema v2" data-echo="/images/tip-beginner-sw-eng/refund-schema-v2.png"></p>
 
 <p>You could discuss the API payload too with one of the team members and agreed on the below JSON payload:</p>
 

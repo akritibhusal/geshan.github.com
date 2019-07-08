@@ -4,7 +4,7 @@
   <title><![CDATA[Category: technology | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/technology/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-06-11T07:17:06+00:00</updated>
+  <updated>2019-07-08T05:46:17+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Podcasts Every Software Engineer/developer Should Subscribe To - Part 4]]></title>
+    <link href="https://geshan.com.np/blog/2019/07/podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-4/"/>
+    <updated>2019-07-08T04:58:14+00:00</updated>
+    <id>https://geshan.com.np/blog/2019/07/podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-4</id>
+    <content type="html"><![CDATA[<p>Podcasts are a great way to learn new things even for the lazy reader. If you are not fast at reading or don&rsquo;t like it very much podcasts can be your way to get the information with less effort. It is easier than reading. This is a part 4 in the series (do check part <a href="http://geshan.com.np/blog/2015/10/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to/">1</a> and
+<a href="http://geshan.com.np/blog/2016/05/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-2/">2</a> and <a href="https://geshan.com.np/blog/2017/01/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-3/">3</a>) of podcasts you must subscribe to and listen to as a software engineer. Same as the last 3 times the 3 podcasts listed below have great content and considerably good sound quality too. Below is the list:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/3-podcasts-sw-eng-part-04.jpg" title="3 podcasts every software engineer should subscribe to - part 4" alt="3 podcasts every software engineer should subscribe to - part 4"></p>
+
+<!-- more -->
+
+
+<h2><a href="https://spec.fm/podcasts/developer-tea">Developer Tea by Jonathan</a></h2>
+
+<p>Developer Tea is an exceptional podcast to listen to. Jonathan sometimes does interview and most of the times it is a discoure on a software engineering related topics. A recect episode on <a href="https://spec.fm/podcasts/developer-tea/302953">Mid-Year Resoulutions</a> was a strong reminder that half of the year is gone and in less than six months we will reach 2020.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/developer-tea.jpg" title="Developer Tea Podcast" alt="Developer Tea Podcast"></p>
+
+<h2><a href="http://agilenoir.biz/agilethoughts/">Agile Thoughts by Agile Noir</a></h2>
+
+<p>Simply put Agile thought is an unconventional podcast. Don&rsquo;t be scared by the unusual looking cover of the podcast, the content is good. Mostly converational with some characters, the episodes are short and address day to day issues. I remember episoide 29 <a href="https://agilenoir.biz/podcast/029-the-value-tdd-gives-to-leadership/">The value TDD gives to leadership</a> being an intriguing one.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/agile-thoughts.jpg" title="Agile Thoughts Podcast" alt="Agile Thoughts Podcast"></p>
+
+<h2><a href="https://www.intercom.com/blog/podcasts/">Inside Intercom</a></h2>
+
+<p>Inside intercom is a superb podcast focusing on the product side of things rather than just the technical aspects. The most recent episode on <a href="https://www.intercom.com/blog/podcasts/josh-seiden-on-why-product-teams-should-focus-on-outcome-vs-output/">why product teams should focus on outcomes over output</a> was an eye opener.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/inside-intercom.jpg" title="Inside Intercom Podcast" alt="Inside Intercom Podcast"></p>
+
+<h2>Conclusion</h2>
+
+<blockquote><p>I hope you continue your learining journey with the above interesting podcasts. Keep learning!</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Logging best practices to get the most out of application level logging -- Slides]]></title>
@@ -421,126 +458,6 @@ yarn global add ndb
 <h2>Conclusion</h2>
 
 <blockquote><p>Looks like docker has been a popular topic for this year. Probably I would blog more about it next year too. I have started cross-posting my posts to <a href="https://dev.to/geshan" title="me on dev.to">Dev.to</a> and medium publications like <a href="https://medium.freecodecamp.org/@geshan" title="my posts on freecodecamp">FreeCodeCamp</a> and <a href="https://hackernoon.com/@geshan" title="my stories on hackernoon">HackerNoon</a>. I hope these posts help more and more people.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The most important tip for beginner software engineers is...]]></title>
-    <link href="https://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is/"/>
-    <updated>2018-12-21T08:47:44+00:00</updated>
-    <id>https://geshan.com.np/blog/2018/12/the-most-important-tip-for-beginner-software-engineers-is</id>
-    <content type="html"><![CDATA[<p>Most of the tutorials you have read or watched till now usually do one thing, spoon-feeding. This is &ldquo;OK&rdquo; to learn a new thing but not good when you need to <code>solve</code> a task. A task usually involves reaching a goal by overcoming a problem. This post unveils the most important &ldquo;tip&rdquo; for all beginner software engineers.</p>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="The most important tip for beginner software engineers is" alt="The most important tip for beginner software engineers is" data-echo="/images/tip-beginner-sw-eng/puzzle.jpg"></p>
-
-<!-- more -->
-
-
-<h2>TL;DR</h2>
-
-<blockquote><p>First, solve the problem. Then, write the code. - John Johnson</p></blockquote>
-
-<p>In other words.</p>
-
-<blockquote><p>Work the solution out on paper in steps, then start writing the code for it. Don&rsquo;t get tangled in the code and software design.</p></blockquote>
-
-<h2>So what happens</h2>
-
-<p>Many times I have heard this from beginner or even junior software engineers. I could follow the tutorial well and thought I understood the concept. But, when I tried to do a similar thing on my pet project I could not do it. It happens mainly because of 2 reasons. First, you somewhere lost your train of thought and could not establish a chain. Second, you were so tangled in the code that the main problem you were trying to solve became out of focus.</p>
-
-<p>This problem also happens for Software Engineers and even Senior Software Engineers. The good thing is with experience you know when to stop or take a break. Then, come back to the problem with a different prescriptive and find a solution faster.</p>
-
-<blockquote><p>Many of you can relate to this that you were trying so hard to fix an issue for hours. You took a break or slept over it and next session the solution was there in minutes.</p></blockquote>
-
-<p>This is not magic this is looking at the problem from another viewpoint.</p>
-
-<h2>Let&rsquo;s illustrate with an example</h2>
-
-<p>You have to do a task, it is to create a refund with payments. A refund always has a reason like damaged, late delivery etc and the payments for that item can be maximum of 2. One of type cash another of type credit (store credit). You are also given the database schema. This is a back-end task and you need to create a POST <code>/refunds</code> API that can create the refund and its related payments. The database structure is as below:</p>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="refund schema v2" alt="refund schema v2" data-echo="/images/tip-beginner-sw-eng/refund-schema-v2.png"></p>
-
-<p>You could discuss the API payload too with one of the team members and agreed on the below JSON payload:</p>
-
-<pre><code>POST /refunds
-
-{
- reason: "damaged",
- premium_customer: true,
- payments: [
-  {
-     item_id: 20,
-     amount: 5000,
-     is_cash: true    
-  },
-  {
-     item_id: 20,
-     amount: 7250,
-     is_cash: false
-  }
- ]
-}
-
-//decide on the response format
-</code></pre>
-
-<h3>The usual scenario</h3>
-
-<p>What most beginner software engineers will do is start scanning the code base, if there is one. They will immediately start writing some code. If there is any testing culture in place maybe write some automated test code.</p>
-
-<blockquote><p>This is where most beginner and even some experienced software engineers slip. Don&rsquo;t write code when you have not solved the problem.</p></blockquote>
-
-<h3>The appropriate step</h3>
-
-<p>The most appropriate step, in my opinion, is to sit down and solve the problem on paper in steps. So you ask yourself to write <code>Refund</code> and its related <code>Payments</code> on the database what do I need to do. You come up with a plan in steps and tweak it.</p>
-
-<blockquote><p>If you have someone senior you can validate your steps and get feedback.</p></blockquote>
-
-<p>This will also decrease the code review time a lot as both of you have already agreed on the modality of the solution.</p>
-
-<h3>So how to do it</h3>
-
-<p>The task as mentioned earlier is to write a create/POST API where Refunds with payments can be created. Each refund can have max 2 payment one of type cash and another one of type credit. It can also be one refund with only one payment of either cash or credit. This is how I would have written the following steps on paper:</p>
-
-<ol>
-<li>Create a method to get the data from the controller sent by user</li>
-<li>Validate all the input for values, refund types, and reasons.</li>
-<li>If all validation passes, generate a random alphanumeric number of length 10 which is not existing in the refund table (recursive check)</li>
-<li>If validation fails to respond with a proper validation failure message, decide on response structure</li>
-<li>Start a database transaction
-
-<ol>
-<li>Insert the refund related values of refund_nr, reason_reason, is_premium_customer to the <code>refund</code> table</li>
-<li>On insert success, get the id of the last insert</li>
-<li>With the refund_id, insert payment related values of fk_refund, fk_item, amount, is_cash to the <code>payment</code> table</li>
-</ol>
-</li>
-<li>If all went well commit the database transaction</li>
-<li>If there was any issue rollback database transaction</li>
-<li>Respond with success or failure message depending on the databse transaction’s success with proper structure</li>
-<li>Wire up the controller and this method</li>
-</ol>
-
-
-<h3>Follow the plan in steps, now write code</h3>
-
-<p>After you have a step by step plan you can start writing code. Then,  you can go more in-depth on the method names, how to get the database connection and other details.</p>
-
-<blockquote><p>Depending on the language and framework you can also decide where should the validation code stay.</p></blockquote>
-
-<p>You could even write tests given the company and culture supports and encourages it.</p>
-
-<p>When your solution is evident in your mind and you have a step by step action plan on paper now you can write code.</p>
-
-<blockquote><p>You can even break up the parts in ways that will be easier to finish and wire up.</p></blockquote>
-
-<p>For example, the testing logic can be something that can be written separately and tested on its own. It is thinking about independent parts that can be wired up together to form the solution.</p>
-
-<h2>Conclusion</h2>
-
-<p>When you face your next task don&rsquo;t start writing code from the get-go. First, get a hold of the problem then devise a solution with steps best done away from a screen on paper. Then refine your solution and discuss with someone. When you are satisfied, translate that solution to code. This is a bit methodical but very effective.</p>
-
-<blockquote><p>Code is always a medium to the solution, not the solution itself.</p></blockquote>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Geshan's Blog]]></title>
   <link href="https://geshan.com.np/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-06-11T07:17:06+00:00</updated>
+  <updated>2019-07-08T05:46:17+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Podcasts Every Software Engineer/developer Should Subscribe To - Part 4]]></title>
+    <link href="https://geshan.com.np/blog/2019/07/podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-4/"/>
+    <updated>2019-07-08T04:58:14+00:00</updated>
+    <id>https://geshan.com.np/blog/2019/07/podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-4</id>
+    <content type="html"><![CDATA[<p>Podcasts are a great way to learn new things even for the lazy reader. If you are not fast at reading or don&rsquo;t like it very much podcasts can be your way to get the information with less effort. It is easier than reading. This is a part 4 in the series (do check part <a href="http://geshan.com.np/blog/2015/10/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to/">1</a> and
+<a href="http://geshan.com.np/blog/2016/05/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-2/">2</a> and <a href="https://geshan.com.np/blog/2017/01/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-3/">3</a>) of podcasts you must subscribe to and listen to as a software engineer. Same as the last 3 times the 3 podcasts listed below have great content and considerably good sound quality too. Below is the list:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/3-podcasts-sw-eng-part-04.jpg" title="3 podcasts every software engineer should subscribe to - part 4" alt="3 podcasts every software engineer should subscribe to - part 4"></p>
+
+<!-- more -->
+
+
+<h2><a href="https://spec.fm/podcasts/developer-tea">Developer Tea by Jonathan</a></h2>
+
+<p>Developer Tea is an exceptional podcast to listen to. Jonathan sometimes does interview and most of the times it is a discoure on a software engineering related topics. A recect episode on <a href="https://spec.fm/podcasts/developer-tea/302953">Mid-Year Resoulutions</a> was a strong reminder that half of the year is gone and in less than six months we will reach 2020.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/developer-tea.jpg" title="Developer Tea Podcast" alt="Developer Tea Podcast"></p>
+
+<h2><a href="http://agilenoir.biz/agilethoughts/">Agile Thoughts by Agile Noir</a></h2>
+
+<p>Simply put Agile thought is an unconventional podcast. Don&rsquo;t be scared by the unusual looking cover of the podcast, the content is good. Mostly converational with some characters, the episodes are short and address day to day issues. I remember episoide 29 <a href="https://agilenoir.biz/podcast/029-the-value-tdd-gives-to-leadership/">The value TDD gives to leadership</a> being an intriguing one.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/agile-thoughts.jpg" title="Agile Thoughts Podcast" alt="Agile Thoughts Podcast"></p>
+
+<h2><a href="https://www.intercom.com/blog/podcasts/">Inside Intercom</a></h2>
+
+<p>Inside intercom is a superb podcast focusing on the product side of things rather than just the technical aspects. The most recent episode on <a href="https://www.intercom.com/blog/podcasts/josh-seiden-on-why-product-teams-should-focus-on-outcome-vs-output/">why product teams should focus on outcomes over output</a> was an eye opener.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/inside-intercom.jpg" title="Inside Intercom Podcast" alt="Inside Intercom Podcast"></p>
+
+<h2>Conclusion</h2>
+
+<blockquote><p>I hope you continue your learining journey with the above interesting podcasts. Keep learning!</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Logging best practices to get the most out of application level logging -- Slides]]></title>
@@ -764,7 +801,7 @@ With current data, it will give 3 rows like below:</p>
 
 <h3><a href="https://hackernoon.com/">HackerNoon</a> - 403kK followers</h3>
 
-<p>HackerNoon is also another extremely popular publication. It is on Medium right now but it may not be there for long. They are going public with <a href="https://www.startengine.com/hackernoon">crowd sourcing</a>. From the content point of view, there is a sizable amount of content for software engineers. It also has lots of stories on cryptocurrencies. With 7 editors and 7K+ writers (includes me), this is a huge publication too. To write for them you need to send your draft to <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#83;&#x74;&#x6f;&#x72;&#105;&#x65;&#x73;&#64;&#x41;&#x4d;&#x69;&#x50;&#117;&#98;&#108;&#105;&#99;&#97;&#x74;&#x69;&#x6f;&#x6e;&#115;&#46;&#x63;&#x6f;&#109;&#x2e;">&#x53;&#x74;&#x6f;&#114;&#105;&#101;&#x73;&#64;&#x41;&#77;&#105;&#80;&#x75;&#x62;&#x6c;&#x69;&#99;&#x61;&#x74;&#105;&#111;&#110;&#x73;&#x2e;&#x63;&#x6f;&#x6d;&#46;</a> The wait time for each story is 1 week or more (I have already published 5 stories). It also has a writer&rsquo;s group on Facebook. You can include yourself as a &ldquo;Contributing Writer&rdquo; on <a href="https://www.linkedin.com/company/hackernoon/">LinkedIn</a> too.</p>
+<p>HackerNoon is also another extremely popular publication. It is on Medium right now but it may not be there for long. They are going public with <a href="https://www.startengine.com/hackernoon">crowd sourcing</a>. From the content point of view, there is a sizable amount of content for software engineers. It also has lots of stories on cryptocurrencies. With 7 editors and 7K+ writers (includes me), this is a huge publication too. To write for them you need to send your draft to <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#83;&#x74;&#x6f;&#114;&#x69;&#x65;&#115;&#x40;&#x41;&#x4d;&#x69;&#80;&#x75;&#x62;&#108;&#105;&#x63;&#97;&#x74;&#x69;&#x6f;&#110;&#115;&#x2e;&#x63;&#x6f;&#109;&#46;">&#x53;&#x74;&#111;&#x72;&#x69;&#x65;&#x73;&#64;&#65;&#77;&#x69;&#x50;&#x75;&#98;&#x6c;&#105;&#x63;&#x61;&#116;&#105;&#111;&#110;&#x73;&#x2e;&#99;&#x6f;&#109;&#46;</a> The wait time for each story is 1 week or more (I have already published 5 stories). It also has a writer&rsquo;s group on Facebook. You can include yourself as a &ldquo;Contributing Writer&rdquo; on <a href="https://www.linkedin.com/company/hackernoon/">LinkedIn</a> too.</p>
 
 <h3><a href="https://codeburst.io">CodeBurst.io</a> - 62K followers</h3>
 
@@ -1516,88 +1553,6 @@ make such kind a matrix on a team level then individual programmer.</p>
 So any team could score between 25-100 (25 is level 1 on each point and 100 is level 4 in each point). It should be an interesting exercise, <a href="https://docs.google.com/spreadsheets/d/1nenLo3uV3xN0PBt-heg0HLogLgHKw32QFeF4wj6Hdqs/edit?usp=sharing">here</a> is an example.</p>
 
 <blockquote><p>Hopefully you know where your tech competency/maturity stands on a team level better now.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to use docker compose with virtual hosts and shared services (like db) for dev environment]]></title>
-    <link href="https://geshan.com.np/blog/2017/05/how-to-use-docker-compose-with-virtual-hosts-and-services-like-db-for-dev-environment/"/>
-    <updated>2017-05-24T14:53:04+00:00</updated>
-    <id>https://geshan.com.np/blog/2017/05/how-to-use-docker-compose-with-virtual-hosts-and-services-like-db-for-dev-environment</id>
-    <content type="html"><![CDATA[<p>Docker as been immensely popular in the past years. If you are not using docker at least in your dev environment in 2017.
-You are surely missing out on some great advantages. Your new software engineer should start writing production-ready code
-in a matter of hours not days. All thanks to docker.  Along the same lines, this post will cover how you can set up
-docker for your dev environment with least friction and maximum productivity. It is an opinionated post. We migrated to this <code>external_links</code>
-<a href="https://docs.docker.com/compose/compose-file/#externallinks">approach</a> so that we could run multiple projects/microservices that use the same db/services shared among them.</p>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/docker-compose-vhost/docker-compose-vhost.jpg" title="Docker compose with vhost and shared services" alt="Docker compose with vhost and shared services"></p>
-
-<!-- more -->
-
-
-<h2>Context</h2>
-
-<ul>
-<li>This tutorial is generally agnostic of docker and docker-compose versions (I am using docker compose 1 syntax). I assume you have docker and docker-compose installed and know about them.</li>
-<li>It uses external images like Nginx proxy for virtual host per project. Mysql db as shared external service. It could also have been mongo or redis or even rabbit mq. The main point is to use it as <code>external_link</code> in the docker compose file, so that it can be shared among projects.</li>
-<li>It uses a demo app which emulates the page visit/hit counter popular decades back with a <a href="https://github.com/geshan/counter/blob/master/index.js">~30 liner Nodejs app</a> and Mysql db.</li>
-<li>I would like to keep the description as concise as possible and in points to make it simple and clear. You should read the code of <a href="https://github.com/geshan/counter">sample counter project</a> and sample mysql container&rsquo;s <a href="https://github.com/geshan/sample-mysql/blob/master/docker-compose.yml">docker-compose.yml</a> well.</li>
-<li>The goal is to grasp the concepts well and apply it to your current project. For example, you could start with replacing your local mysql install with a docker container.</li>
-</ul>
-
-
-<h2>Problems to solve</h2>
-
-<ol>
-<li>After I use docker and docker compose, the web server (nginx/apache etc) of project A takes up port 80 and I can&rsquo;t run project B on port 80 or have a virtual host for both projects.</li>
-<li>When I use my db (mysql/postgres) as a service in my docker compose for project A, It is cumbersome to use the same db for another project as its coupled with project A.</li>
-<li>I just want to run my mysql database, import some data and run some queries. I don&rsquo;t want to run my app for now.</li>
-</ol>
-
-
-<h2>Solution goals</h2>
-
-<ol>
-<li>To make services like db etc independent of projects and shared among projects similar to having a local install of mysql with multiple databases.</li>
-<li>Multiple projects should be able to run in parallel and each of them will have their own virtual host for easy accessibility.</li>
-</ol>
-
-
-<h2>Steps</h2>
-
-<ol>
-<li>Run the Nginx proxy to enable virtual hosts with <code>$ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy</code></li>
-<li>Add <code>127.0.0.1 counter.local.dev</code> to your hosts file (on unix based system it is <code>/etc/hosts</code> file)</li>
-<li>Create an empty folder db in your home (<code>~/db</code>), to save your mysql data</li>
-<li>Clone mysql repo from <a href="https://github.com/geshan/sample-mysql">here</a> maybe at <code>~/projects/mysql</code></li>
-<li>In <code>~/projects/mysql</code> run docker-compose up to run mysql, it will create <a href="https://github.com/geshan/sample-mysql/blob/master/init-dump/counter.sql">counter db, counts table with one row</a>.</li>
-<li>Clone the sample counter app from <a href="https://github.com/geshan/counter">here</a> to maybe <code>~/projects/counter</code>.</li>
-<li>In <code>~/projects/counter</code> run <code>docker-compose up</code></li>
-<li>Then go to <code>http://counter.local.dev</code> on your browser you should see <code>Page visited 1 times</code>, refresh it, it should say <code>Page visited 2 times</code></li>
-</ol>
-
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/docker-compose-vhost/page-visited.png" title="All working you should see this" alt="All working you should see this"></p>
-
-<p>Virtual host has been possible in above setup as we ran the nginx proxy and configured <code>VIRTUAL_HOST</code> and <code>VIRTUAL_PORT</code> parameters correctly
-in the docker-compose.yml of the sample counter project. Mysql was already running before the project even started to run and it was <code>external_links</code>,
-the IP of the mysql container was automatically added to the <code>/etc/hosts</code> of the counter project container which enabled us to use the host for mysql db
-as <a href="https://github.com/geshan/counter/blob/master/index.js#L4">mysql</a> in the connection config we passed to the mysql library.</p>
-
-<p>Steps for running dependent services like nginx proxy, mysql can surely be automated for speed and efficiency.</p>
-
-<h2>Takeaways</h2>
-
-<ol>
-<li>You can plan a step by step migration like first get your db/queue migrated from local install to docker then the app.</li>
-<li>Use <code>external_links</code> for all the services like db/queue/redis/solr anything that needs to be shared among projects.</li>
-<li>Use <a href="https://github.com/jwilder/nginx-proxy">nginx proxy</a> to enable virtual host per project with two simple env variables <code>VIRTUAL_HOST</code> and <code>VIRTUAL_PORT</code> in the project&rsquo;s <a href="https://github.com/geshan/counter/blob/master/docker-compose.yml#L8-L9">docker-compose</a> file. <code>VIRTUAL_PORT</code> is 8080 because application is <a href="https://github.com/geshan/counter/blob/master/index.js#L27">running</a> on port 8080 and same port is exposed from the <a href="https://github.com/geshan/counter/blob/master/Dockerfile#L10">dockerfile</a>.</li>
-<li>Run all your dependencies before hand and then run <code>docker-compose up</code> on your project(s). Dependencies can be run with <code>docker-compose up -d</code> to put it in the background. You can use <code>docker-compose -f logs</code> to follow logs and check if the service is running fine.</li>
-<li>In this way, you can run multiple projects sharing the same db instance and each project can have its own virtual host.</li>
-</ol>
-
-
-<blockquote><p>Hope you found this helpful. For more clarity, please read the <a href="https://github.com/geshan/counter/blob/master/Dockerfile">Dockerfile</a>, <a href="https://github.com/geshan/counter/blob/master/docker-compose.yml">docker-compose.yml</a> and <a href="https://github.com/geshan/counter/blob/master/index.js">index.js</a> of the sample counter project thoroughly.</p></blockquote>
 ]]></content>
   </entry>
   

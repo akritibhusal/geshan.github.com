@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/programming/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-06-11T07:17:06+00:00</updated>
+  <updated>2019-07-08T05:46:17+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Podcasts Every Software Engineer/developer Should Subscribe To - Part 4]]></title>
+    <link href="https://geshan.com.np/blog/2019/07/podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-4/"/>
+    <updated>2019-07-08T04:58:14+00:00</updated>
+    <id>https://geshan.com.np/blog/2019/07/podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-4</id>
+    <content type="html"><![CDATA[<p>Podcasts are a great way to learn new things even for the lazy reader. If you are not fast at reading or don&rsquo;t like it very much podcasts can be your way to get the information with less effort. It is easier than reading. This is a part 4 in the series (do check part <a href="http://geshan.com.np/blog/2015/10/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to/">1</a> and
+<a href="http://geshan.com.np/blog/2016/05/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-2/">2</a> and <a href="https://geshan.com.np/blog/2017/01/3-podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-3/">3</a>) of podcasts you must subscribe to and listen to as a software engineer. Same as the last 3 times the 3 podcasts listed below have great content and considerably good sound quality too. Below is the list:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/3-podcasts-sw-eng-part-04.jpg" title="3 podcasts every software engineer should subscribe to - part 4" alt="3 podcasts every software engineer should subscribe to - part 4"></p>
+
+<!-- more -->
+
+
+<h2><a href="https://spec.fm/podcasts/developer-tea">Developer Tea by Jonathan</a></h2>
+
+<p>Developer Tea is an exceptional podcast to listen to. Jonathan sometimes does interview and most of the times it is a discoure on a software engineering related topics. A recect episode on <a href="https://spec.fm/podcasts/developer-tea/302953">Mid-Year Resoulutions</a> was a strong reminder that half of the year is gone and in less than six months we will reach 2020.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/developer-tea.jpg" title="Developer Tea Podcast" alt="Developer Tea Podcast"></p>
+
+<h2><a href="http://agilenoir.biz/agilethoughts/">Agile Thoughts by Agile Noir</a></h2>
+
+<p>Simply put Agile thought is an unconventional podcast. Don&rsquo;t be scared by the unusual looking cover of the podcast, the content is good. Mostly converational with some characters, the episodes are short and address day to day issues. I remember episoide 29 <a href="https://agilenoir.biz/podcast/029-the-value-tdd-gives-to-leadership/">The value TDD gives to leadership</a> being an intriguing one.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/agile-thoughts.jpg" title="Agile Thoughts Podcast" alt="Agile Thoughts Podcast"></p>
+
+<h2><a href="https://www.intercom.com/blog/podcasts/">Inside Intercom</a></h2>
+
+<p>Inside intercom is a superb podcast focusing on the product side of things rather than just the technical aspects. The most recent episode on <a href="https://www.intercom.com/blog/podcasts/josh-seiden-on-why-product-teams-should-focus-on-outcome-vs-output/">why product teams should focus on outcomes over output</a> was an eye opener.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-4/inside-intercom.jpg" title="Inside Intercom Podcast" alt="Inside Intercom Podcast"></p>
+
+<h2>Conclusion</h2>
+
+<blockquote><p>I hope you continue your learining journey with the above interesting podcasts. Keep learning!</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[3 Podcasts Every Software Engineer/developer Should Subscribe To - Part 3]]></title>
@@ -257,58 +294,6 @@ of any solid software application. Happy testing hope your tests run in seconds 
 <h3>Disclaimer</h3>
 
 <p>Not all of the above quotes are created by me, some of them are inspired/adapted from things I read online and podcasts I listen to. Thanks.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[3 weeklies every software engineer/developer should subscribe to]]></title>
-    <link href="https://geshan.com.np/blog/2015/11/3-weeklies-every-software-engineer-slash-developer-should-subscribe-to/"/>
-    <updated>2015-11-13T09:39:35+00:00</updated>
-    <id>https://geshan.com.np/blog/2015/11/3-weeklies-every-software-engineer-slash-developer-should-subscribe-to</id>
-    <content type="html"><![CDATA[<p>Being updated is an important need for all technology professionals. These days, there are many ways to get updated and we are at times overwhelmed with the things we read. To help this situations, and get a rundown of a curated list of links to read for any topic is subscribe to a weekly.</p>
-
-<p>Weeklies are compact and organized list of links with articles, podcasts, videos etc. They are focused to a related to a topic, technology, language or framework delivered to you email inbox each week. This post curates a list of 3 weeklies for all software engineer/developers. The main 3 weeklies are language and framework agnostic. Towards the end there is mention of some language, framework and CMS specific weeklies.</p>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-weeklies/3-weeklies-sw-eng.jpg" title="3 weeklies every software engineer should subscribe to" alt="3 weeklies every software engineer should subscribe to">
-(Background image shot by me.)</p>
-
-<!-- more -->
-
-
-<h2>Weeklies</h2>
-
-<p>3 great weeklies you should subscribe to are:</p>
-
-<h3>Changelog Weekly</h3>
-
-<p><a href="http://bit.ly/1WQnesg">Changelog Weekly</a> comes out every Saturday. It give you a well balanced rundown of all things open source. It covers major headlines, projects and repos, videos. It also includes pings posted on its <a href="https://github.com/thechangelog/ping">ping</a> repository. So you can try a ping too :)  ChangeLog weekly is a great way to stay updated. It covers all new open source news and repositories.</p>
-
-<h3>StakeShare Weekly</h3>
-
-<p><a href="http://bit.ly/1N19Mx0">StackShare Weekly</a> is released every Friday/Saturday. It includes a post on how one company scaled or improved its stack. For example last week it covered how ProLeads moved from <a href="http://stackshare.io/proleads/how-we-moved-from-heroku-to-containers-with-no-docker-experience">Heroku to Docker</a>. Then it summarizes new and top 10 tools, products or services. Stack Share has a great listing of many services, products and tools categorized well. Their newsletter is super helpful to get up to date with the latest tools and services.</p>
-
-<h3>DevOps Weekly</h3>
-
-<p><a href="http://bit.ly/1NugCFO">DevOps Weekly</a> is released every Sunday. It recaps the major news, events and tools from the devops fraternity.  As software engineers/developers we are going more full stack. This implies that we should also be aware of the system side of things. DevOps Weekly includes condensed links from docker and containers to  monitoring, performance and security.</p>
-
-<h3>Other Weeklies</h3>
-
-<p>Some of the other weeklies I am subscribed to are:</p>
-
-<ul>
-<li><p><a href="http://www.phpweekly.com/">PHP Weekly</a></p></li>
-<li><p><a href="https://www.docker.com/newsletter-subscription">Docker Weekly</a></p></li>
-<li><p><a href="http://javascriptweekly.com/">Javascript Weekly</a></p></li>
-<li><p><a href="http://nodeweekly.com/">NodeJs Weekly</a></p></li>
-<li><p><a href="http://www.theweeklydrop.com/">Drupal Newsletter</a></p></li>
-</ul>
-
-
-<h2>Conclusion</h2>
-
-<p>If you are working with <a href="http://rubyweekly.com/">Ruby</a>, <a href="http://www.pythonweekly.com/">python</a>,  <a href="http://androidweekly.net/">Android</a>, <a href="https://iosdevweekly.com/">IOS</a>/<a href="http://swiftweekly.com/">Swift</a> or even <a href="http://golangweekly.com/">go lang</a>. The only thing you need to do is Google <code>&lt;your language/framework/CMS here&gt; weekly</code> and subscribe to it. I think you will like the curated links you get each week.</p>
-
-<blockquote><p>Weeklies have helped me get updated on the technology/language/framework/CMS I use or know. I hope it helps you in the same way. Happy weekly subscribing.</p></blockquote>
 ]]></content>
   </entry>
   

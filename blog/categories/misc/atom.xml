@@ -4,7 +4,7 @@
   <title><![CDATA[Category: misc | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/misc/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-10-21T05:08:49+00:00</updated>
+  <updated>2019-10-21T05:19:01+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -285,7 +285,7 @@ Laravel app running like below:</p>
 
 <p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/10laravel-running-gcr.jpg" title="Hit the given URL to see its running" alt="Hit the given URL to see its running"></p>
 
-<p>What just happned above is:</p>
+<p>What just happened above is:</p>
 
 <ol>
 <li>After choosing the region, the script built a docker container image from the <code>Dockerfile</code> in the repo</li>

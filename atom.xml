@@ -4,7 +4,7 @@
   <title><![CDATA[Geshan's Blog]]></title>
   <link href="https://geshan.com.np/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-10-21T02:52:53+00:00</updated>
+  <updated>2019-10-21T05:08:49+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -50,6 +50,8 @@
 
 <h2>Steps to deploy</h2>
 
+<p>Below are the steps to set up and deploy Laravel 6 on Cloud Run:</p>
+
 <h3>1. Clone Laravel or new Laravel project</h3>
 
 <p>Start by cloning Laravel or using composer or the Laravel CLI as indicated in the official <a href="https://laravel.com/docs/5.8/installation">installation</a> guide. I am using composer to get the latest Laravel as below:</p>
@@ -65,7 +67,7 @@
 
 <p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/01install-laravel.jpg" title="Installing Laravel with composer" alt="Installing Laravel with composer"></p>
 
-<h3>2. Test it was ok</h3>
+<h3>2. Test it locally first</h3>
 
 <p>Then run <code>cd laravel6-on-google-cloud-run</code> then <code>php artisan serve</code> to see if it is working, for me it was fine when I went to <code>http://localhost:8000</code> on a web browser. I had PHP 7.2 installed locally.</p>
 
@@ -99,11 +101,11 @@ run the following commands on your cli:</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>After running the above commands I had this on my github repo.</h4>
+<h4>After running the above commands I had this on my github repo</h4>
 
 <p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/04initial-push.jpg" title="After the first push, repo looks like this" alt="After the first push, repo looks like this"></p>
 
-<h3>5. Add whole app, open PR</h3>
+<h3>5. Add full Laravel, open PR</h3>
 
 <p>Now let&rsquo;s add the whole app as a PR to the Github repo by executing the following commands:</p>
 
@@ -123,7 +125,7 @@ do I need a PR? Well, it is always better to do things methodically even if it i
 
 <p>After that merge your pull request.</p>
 
-<h3>6. Setup tests with GitHub actions</h3>
+<h3>6. Setup tests with <a href="https://github.com/features/actions">GitHub actions</a></h3>
 
 <p>Not some fun part, after you merged your PR now Github knows that this is a Laravel project. Click on  <code>Actions</code> tab on your repo page and you should be able to see something like below:</p>
 
@@ -137,7 +139,7 @@ do I need a PR? Well, it is always better to do things methodically even if it i
 
 <h3>7. Add docker and docker-compose to run app locally</h3>
 
-<p>Now let&rsquo;s add docker and docker-compose to run the app locally without PHP or artisan serve. We will need the container to run Laravel on Google Cloud Run too. This part is inspired by <a href="https://nsirap.com/posts/010-laravel-on-google-cloud-run/">Laravel on Google Cloud Run</a> post by Nicolas.</p>
+<p>Now let&rsquo;s add docker and docker-compose to run the app locally without PHP or artisan serve. We will need the container to run Laravel on Google Cloud Run too. This part is inspired by <a href="https://nsirap.com/posts/010-laravel-on-google-cloud-run/">Laravel on Google Cloud Run</a> post by Nicolas. If you want to learn more about <a href="https://www.docker.com/">Docker</a> and Laravel please refer to this <a href="https://geshan.com.np/blog/2015/10/getting-started-with-laravel-mariadb-mysql-docker/">post</a>.</p>
 
 <p>Run the following commands first to get your master up to date as we added the <code>workflow</code> file from Github interface:</p>
 
@@ -355,9 +357,9 @@ For production-ready apps do turn of the debugging and other dev related things.
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Be careful and replace the last part with your repo&rsquo;s <code>HTTPs</code> URL, for example, if your repo is at <code>https://github.com/ghaleroshan/laravel6-on-google-cloud-run</code> it will be <code>ttps://github.com/ghaleroshan/laravel6-on-google-cloud-run.git</code>, then commit and push. Your PR should look something like <a href="https://github.com/geshan/laravel6-on-google-cloud-run/pull/3/files">this</a> one.</p>
+<p>Be careful and replace the last part with your repo&rsquo;s <code>HTTPs</code> URL, for example, if your repo is at <code>https://github.com/ghaleroshan/laravel6-on-google-cloud-run</code> it will be <code>https://github.com/ghaleroshan/laravel6-on-google-cloud-run.git</code>, then commit and push. Your PR should look something like <a href="https://github.com/geshan/laravel6-on-google-cloud-run/pull/3/files">this</a> one.</p>
 
-<h3>9. Deploy on Google cloud run</h3>
+<h3>9. Deploy on Google Cloud Run</h3>
 
 <p>After you merge your Pull Request (PR), then go to your repo page and click on the <code>Run on Google Cloud</code> button.</p>
 
@@ -377,11 +379,22 @@ Laravel app running like below:</p>
 
 <p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/10laravel-running-gcr.jpg" title="Hit the given URL to see its running" alt="Hit the given URL to see its running"></p>
 
+<p>What just happned above is:</p>
+
+<ol>
+<li>After choosing the region, the script built a docker container image from the <code>Dockerfile</code> in the repo</li>
+<li>Then it pushed the built image to <a href="https://cloud.google.com/container-registry/">Google Container Registry</a></li>
+<li>After that using the <a href="https://cloud.google.com/sdk/gcloud/">gcloud</a> CLI it deployed the built image to Cloud Run, which gave back the URL.</li>
+</ol>
+
+
 <h3>10. Hurray, your app is working</h3>
 
 <p>After you git the URL you should see your app working on Google Cloud Run like below:</p>
 
 <p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/11laravel-url.jpg" title="Laravel Running on Google Cloud Run" alt="Laravel Running on Google Cloud Run"></p>
+
+<p>If you want to deploy another version you can merge your PR to master and click the button again to deploy.</p>
 
 <h2>More about Google Cloud Run</h2>
 
@@ -1205,7 +1218,7 @@ With current data, it will give 3 rows like below:</p>
 
 <h3><a href="https://hackernoon.com/">HackerNoon</a> - 403kK followers</h3>
 
-<p>HackerNoon is also another extremely popular publication. It is on Medium right now but it may not be there for long. They are going public with <a href="https://www.startengine.com/hackernoon">crowd sourcing</a>. From the content point of view, there is a sizable amount of content for software engineers. It also has lots of stories on cryptocurrencies. With 7 editors and 7K+ writers (includes me), this is a huge publication too. To write for them you need to send your draft to <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x53;&#x74;&#x6f;&#114;&#x69;&#x65;&#115;&#x40;&#65;&#x4d;&#x69;&#80;&#x75;&#98;&#x6c;&#105;&#99;&#x61;&#x74;&#105;&#111;&#110;&#x73;&#46;&#99;&#111;&#x6d;&#x2e;">&#x53;&#116;&#111;&#x72;&#x69;&#101;&#x73;&#64;&#x41;&#x4d;&#x69;&#80;&#117;&#98;&#108;&#x69;&#x63;&#x61;&#x74;&#x69;&#111;&#110;&#115;&#46;&#x63;&#x6f;&#x6d;&#x2e;</a> The wait time for each story is 1 week or more (I have already published 5 stories). It also has a writer&rsquo;s group on Facebook. You can include yourself as a &ldquo;Contributing Writer&rdquo; on <a href="https://www.linkedin.com/company/hackernoon/">LinkedIn</a> too.</p>
+<p>HackerNoon is also another extremely popular publication. It is on Medium right now but it may not be there for long. They are going public with <a href="https://www.startengine.com/hackernoon">crowd sourcing</a>. From the content point of view, there is a sizable amount of content for software engineers. It also has lots of stories on cryptocurrencies. With 7 editors and 7K+ writers (includes me), this is a huge publication too. To write for them you need to send your draft to <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x53;&#x74;&#x6f;&#x72;&#x69;&#101;&#x73;&#x40;&#65;&#x4d;&#x69;&#80;&#117;&#x62;&#108;&#x69;&#x63;&#97;&#116;&#105;&#111;&#110;&#115;&#46;&#x63;&#x6f;&#109;&#46;">&#x53;&#116;&#111;&#x72;&#105;&#x65;&#115;&#x40;&#65;&#x4d;&#105;&#80;&#x75;&#x62;&#108;&#x69;&#x63;&#97;&#116;&#105;&#x6f;&#110;&#115;&#x2e;&#99;&#111;&#x6d;&#46;</a> The wait time for each story is 1 week or more (I have already published 5 stories). It also has a writer&rsquo;s group on Facebook. You can include yourself as a &ldquo;Contributing Writer&rdquo; on <a href="https://www.linkedin.com/company/hackernoon/">LinkedIn</a> too.</p>
 
 <h3><a href="https://codeburst.io">CodeBurst.io</a> - 62K followers</h3>
 

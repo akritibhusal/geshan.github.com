@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/programming/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-07-10T00:10:46+00:00</updated>
+  <updated>2019-10-21T02:46:18+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -12,6 +12,316 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Set up Laravel 6 on Google Cloud Run step by step with Continuous Integration (CI)]]></title>
+    <link href="https://geshan.com.np/blog/2019/10/get-laravel-6-running-on-google-cloud-run-step-by-step-with-ci/"/>
+    <updated>2019-10-21T08:03:29+00:00</updated>
+    <id>https://geshan.com.np/blog/2019/10/get-laravel-6-running-on-google-cloud-run-step-by-step-with-ci</id>
+    <content type="html"><![CDATA[<p>Laravel has <a href="https://trends.google.com/trends/explore?date=2014-10-22%202019-10-21&amp;q=laravel,symfony">soared</a> in popularity in the last few years. The Laravel community even says that Laravel has made writing PHP enjoyable than a pain. Laravel 6 has some interesting new <a href="https://laracasts.com/series/whats-new-in-laravel-6">features</a>. Getting a super scaleable working URL for your application take hours if not days. Setting up something like Kubernetes is a huge task. This is where Google Cloud Run shines, you can get a working HTTPs URL for any of your containerized app in minutes.</p>
+
+<p><a href="https://cloud.google.com/run/">Google Cloud Run</a> is serverless and fully managed by Google, you get super scale, billing by the second, HTTPs URL and your own domain mapping. If you want to run stateless containers Cloud run is hands down the easiest way to do it. In this post, I will detail how to get your Laravel 6 app working on Google cloud run with Continous Integration (CI).</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/00laravel6-on-gcr.jpg" title="Get Laravel 6 running on Google cloud run in minutes with CI" alt="Get Laravel 6 running on Google cloud run in minutes with CI"></p>
+
+<!-- more -->
+
+
+<h2>Prerequisites</h2>
+
+<ul>
+<li>You are familiar with PHP/Composer and aware of Laravel (if you&rsquo;ve landed here you are I suppose)</li>
+<li>You know how to use Git from the CLI</li>
+<li>Your code is hosted on GitHub for CI/CD and you are familiar with GitHub</li>
+<li>Know a fair bit of docker, maybe even multi-stage build</li>
+<li>Have a working Google cloud account (they give you $300 credit free for 1 yr, no reasons not to have an account)</li>
+</ul>
+
+
+<h2>Why is Cloud Run a great option for beginners</h2>
+
+<p>For two reasons as mentioned below</p>
+
+<ol>
+<li>Learn about the best practices and software like docker and CI/CD</li>
+<li>Getting the basics going is click a button, select 2 things wait for 5 mins you get a working HTTPs URL. Can it be any easier than this :)</li>
+</ol>
+
+
+<h2>Steps to deploy</h2>
+
+<h3>1. Clone Laravel or new Laravel project</h3>
+
+<p>Start by cloning Laravel or using composer or the Laravel CLI as indicated in the official <a href="https://laravel.com/docs/5.8/installation">installation</a> guide. I am using composer to get the latest Laravel as below:</p>
+
+<h4>Command</h4>
+
+<p>I ran the following command to get the latest laravel:</p>
+
+<pre><code class="bash">composer create-project --prefer-dist laravel/laravel laravel6-on-google-cloud-run
+</code></pre>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/01install-laravel.jpg" title="Installing Laravel with composer" alt="Installing Laravel with composer"></p>
+
+<h3>2. Test it was ok</h3>
+
+<p>Then run <code>cd laravel6-on-google-cloud-run</code> then <code>php artisan serve</code> to see if it is working, for me it was fine when I went to <code>http://localhost:8000</code> on a web browser. I had PHP 7.2 installed locally.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/02running-laravel.jpg" title="Running Laravel locally" alt="Running Laravel locally"></p>
+
+<h3>3. Create a new GitHub repo</h3>
+
+<p>Create a new repository on Github like below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/03github-repo.jpg" title="Creating a repo for Laravel on Github" alt="Creating a repo for Laravel on Github"></p>
+
+<p>You can use any Git hosting provider, for this example I will be using <a href="https://github.com/features/actions">Github Actions</a> to run tests and Github is the most popular git hosting too.</p>
+
+<h3>4. Add repo, push readme</h3>
+
+<p>Now after you have the repo created, add it to your local Laravel copy and push the Readme file. To do this
+run the following commands on your cli:</p>
+
+<pre><code>git init
+code . # I used VS code to change the readme
+git add readme.md
+git commit -m "Initial commit -- App Readme"
+git remote add origin git@github.com:geshan/laravel6-on-google-cloud-run.git
+git push -u origin master
+</code></pre>
+
+<h4>After running the above commands I had this on my github repo.</h4>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/04initial-push.jpg" title="After the first push, repo looks like this" alt="After the first push, repo looks like this"></p>
+
+<h3>5. Add whole app, open PR</h3>
+
+<p>Now let&rsquo;s add the whole app as a PR to the Github repo by executing the following commands:</p>
+
+<pre><code class="bash">git checkout -b laravel6-full-app
+git add .gitignore 
+git commit -m "Add the whole Laravel 6 app"
+git push origin laravel6-full-app
+</code></pre>
+
+<p>After that go and open a Pull Request (PR), on the repo like <a href="https://github.com/geshan/laravel6-on-google-cloud-run/pull/1">this</a> one. You might be thinking I am the only one working on this, why
+do I need a PR? Well, it is always better to do things methodically even if it is just one person working on the project :).</p>
+
+<p>After that merge your pull request.</p>
+
+<h3>6. Setup tests with GitHub actions</h3>
+
+<p>Not some fun part, after you merged your PR now Github knows that this is a Laravel project. Click on  <code>Actions</code> tab on your repo page and you should be able to see something like below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/05github-actions.jpg" title="Click Actions tab to view options" alt="Click Actions tab to view options"></p>
+
+<p>Click the <code>Set up this workflow</code> under <code>Laravel</code> then on the next page click <code>Start commit</code> button on the top right. After that add a commit message like below and click <code>Commit new file</code>.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/06gh-actions-ci.jpg" title="Add Laravel tests action" alt="Add Laravel tests action"></p>
+
+<p>There you go, you have your CI setup. Laravel default tests will run on each git push now. Wasn&rsquo;t that easy? Thank Github for this great intelligence. No more creating <code>.myCIname.yml</code> file anymore :).</p>
+
+<h3>7. Add docker and docker-compose to run app locally</h3>
+
+<p>Now let&rsquo;s add docker and docker-compose to run the app locally without PHP or artisan serve. We will need the container to run Laravel on Google Cloud Run too. This part is inspired by <a href="https://nsirap.com/posts/010-laravel-on-google-cloud-run/">Laravel on Google Cloud Run</a> post by Nicolas.</p>
+
+<p>Run the following commands first to get your master up to date as we added the <code>workflow</code> file from Github interface:</p>
+
+<pre><code>git checkout master
+git fetch
+git pull --rebase origin master # as we added the workflow file from github interface
+git checkout -b docker
+</code></pre>
+
+<p>Add a key to the <code>.env.example</code> file, copy it from <code>.env</code> file like below:</p>
+
+<pre><code>APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:DJkdj8L5Di3rUkUOwmBFCrr5dsIYU/s7s+W52ClI4AA=
+APP_DEBUG=true
+APP_URL=http://localhost
+</code></pre>
+
+<p>As this is just a demo this is ok to do, for a real app always be careful with secrets.
+For production-ready apps do turn of the debugging and other dev related things.</p>
+
+<p>Add the following <code>Dockerfile</code> on the project root:</p>
+
+<pre><code>FROM composer:1.9.0 as build
+WORKDIR /app
+COPY . /app
+RUN composer global require hirak/prestissimo &amp;&amp; composer install
+
+FROM php:7.3-apache-stretch
+RUN docker-php-ext-install pdo pdo_mysql
+
+EXPOSE 8080
+COPY --from=build /app /var/www/
+COPY docker/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY .env.example /var/www/.env
+RUN chmod 777 -R /var/www/storage/ &amp;&amp; \
+    echo "Listen 8080" &gt;&gt; /etc/apache2/ports.conf &amp;&amp; \
+    chown -R www-data:www-data /var/www/ &amp;&amp; \
+    a2enmod rewrite
+</code></pre>
+
+<p>Then add the following file at <code>docker/000-default.conf</code></p>
+
+<pre><code>&lt;VirtualHost *:8080&gt;
+
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/public/
+
+    &lt;Directory /var/www/&gt;
+      AllowOverride All
+      Require all granted
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>After that add the following <code>docker-compose.yml</code></p>
+
+<pre><code>version: '3'
+services:
+  app:
+    build:
+      context: ./
+    volumes:
+      - .:/var/www
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_ENV=local
+</code></pre>
+
+<h4>Boil down to main things</h4>
+
+<p>If you try to understand everything here it might be overwhelming, let me boil down the main parts:</p>
+
+<ol>
+<li>We are using the official PHP Apache docker image to run Laravel, it has PHP version 7.3.</li>
+<li>We are using multistage build to get the dependencies with Composer then copying them to the main docker image that has PHP 7.3 and Apache.</li>
+<li>As Google Cloud Run requires the web-server to be listening to port <code>8080</code> we are using <code>000-default.conf</code> to configure this</li>
+<li>To make things easy to run with single command <code>docker-compose up</code> we are using docker-compose.</li>
+<li>Now as you have read this far, run <code>docker-compose up</code> on your root and then after everything runs go to <code>http://localhost:8080</code> to see that Laravel 6 is running locally on Docker. Below is my <code>docker-compose up</code> output towards the end:</li>
+</ol>
+
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/07docker-compose-output.jpg" title="Docker compose running Laravel with PHP 7.3 and Apache" alt="Docker compose running Laravel with PHP 7.3 and Apache"></p>
+
+<p>As Laravel is running fine with Docker, let&rsquo;s open a PR like <a href="https://github.com/geshan/laravel6-on-google-cloud-run/pull/2/files">this</a> one to add Docker to our project. I ran the following commands on the root of the project before opening the Pull Request (PR):</p>
+
+<pre><code>git status
+</code></pre>
+
+<p>It should give you something like below:</p>
+
+<pre><code>On branch docker
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    Dockerfile
+    docker-compose.yml
+    docker/
+
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+
+<p>Now run the following commands:</p>
+
+<pre><code>git add .
+git commit -m "Add docker and docker compose"
+git push origin docker
+</code></pre>
+
+<p>As a bonus it will run the Laravel default test on the push, like you can see below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/08test-running-gh.jpg" title="On each push PHP unit test will run" alt="On each push PHP unit tests will run"></p>
+
+<p>Only the owner of the repo has access to the <code>Actions</code> tab so other people don&rsquo;t necessarily need to know the results of your test builds :).</p>
+
+<h3>8. Add deploy to Google Cloud button</h3>
+
+<p>Now let&rsquo;s deploy this Laravel setup to Google Cloud Run the easy way. Given you have merged your PR from the <code>docker</code> branch. Let&rsquo;s run the following commands:</p>
+
+<pre><code>git checkout master
+git fetch
+git pull --rebase origin master
+git checkout -b cloud-run-button
+</code></pre>
+
+<p>Then add the following to your <code>readme.md</code> file:</p>
+
+<pre><code>### Run on Google cloud run
+
+[![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&amp;cloudshell_image=gcr.io/cloudrun/button&amp;cloudshell_git_repo=https://github.com/geshan/laravel6-on-google-cloud-run.git)
+</code></pre>
+
+<p>Be careful and replace the last part with your repo&rsquo;s <code>HTTPs</code> URL, for example, if your repo is at <code>https://github.com/ghaleroshan/laravel6-on-google-cloud-run</code> it will be <code>ttps://github.com/ghaleroshan/laravel6-on-google-cloud-run.git</code>, then commit and push. Your PR should look something like <a href="https://github.com/geshan/laravel6-on-google-cloud-run/pull/3/files">this</a> one.</p>
+
+<h3>9. Deploy on Google cloud run</h3>
+
+<p>After you merge your Pull Request (PR), then go to your repo page and click on the <code>Run on Google Cloud</code> button.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/09cloud-run-button.jpg" title="Click on the blue button to deploy the app" alt="Click on the blue button to deploy the app"></p>
+
+<p>After that, given you are logged into your Google account and have Google cloud setup with 1 project, click &ldquo;Proceed&rdquo;. You might need to wait a bit, Then</p>
+
+<ol>
+<li>Choose the project &ndash; <code>Choose a project to deploy this application</code></li>
+<li>Choose the region &ndash; <code>Choose a region to deploy this application</code>, I usually go with <code>us-central-1</code></li>
+<li>Then wait for the container to be built and deployed, you can see my process below:</li>
+</ol>
+
+
+<p>If everything goes fine on your <code>Google Cloud Shell</code>, you will see HTTPs URL you can hit to see your
+Laravel app running like below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/10laravel-running-gcr.jpg" title="Hit the given URL to see its running" alt="Hit the given URL to see its running"></p>
+
+<h3>10. Hurray, your app is working</h3>
+
+<p>After you git the URL you should see your app working on Google Cloud Run like below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/11laravel-url.jpg" title="Laravel Running on Google Cloud Run" alt="Laravel Running on Google Cloud Run"></p>
+
+<h2>More about Google Cloud Run</h2>
+
+<p>The <a href="https://cloud.google.com/run/pricing">pricing</a> for Google Cloud Run is very generous. You can run any containerized app or web app on Google cloud run. I ran a pet project that got ~ 1 request per minute and I did not have to pay anything.</p>
+
+<p>Behind the scenes, it is using <a href="https://cloud.google.com/knative/">Knative</a> and <a href="https://kubernetes.io/">Kubernetes</a>. It can also be run on your Kubernetes cluster but who would choose to manage a K8s cluster if you can just push and get scaleable serverless fully managed app :).</p>
+
+<h2>TLDR</h2>
+
+<p>To run Laravel 6 on Google Cloud Run quickly follow the steps below:</p>
+
+<ol>
+<li>Make sure you are logged into your <a href="https://console.cloud.google.com/">Google Cloud Account</a></li>
+<li>Go to <a href="https://github.com/geshan/laravel6-on-google-cloud-run">https://github.com/geshan/laravel6-on-google-cloud-run</a></li>
+<li>Click the &ldquo;Run On Google Cloud&rdquo; blue button</li>
+<li>Select your project</li>
+<li>Select your region</li>
+<li>Wait and get the URL of your Laravel App as below, Enjoy!</li>
+</ol>
+
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/10laravel-running-gcr.jpg" title="Hit the given URL to see its running" alt="Hit the given URL to see its running"></p>
+
+<hr />
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laravel6-on-google-cloud-run/11laravel-url.jpg" title="Laravel Running on Google Cloud Run" alt="Laravel Running on Google Cloud Run"></p>
+
+<h2>Conclusion</h2>
+
+<p>There you go running a Laravel app on Google cloud run was pretty easy. You have even got test running on Github with Github actions. Hope it helps. To do a CI/CD approach you can check this <a href="https://medium.com/google-cloud/simplifying-continuous-deployment-to-cloud-run-with-cloud-build-including-custom-domain-setup-ssl-22d23bed5cd6">post</a>, it shows deployment using Cloud build. As the same container is running for local and production (Google Cloud Run) environment you don&rsquo;t need to learn a new framework to go Serverless.</p>
+
+<blockquote><p>Any containerized web app can be run on Google Cloud Run, it is a great service.</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Podcasts Every Software Engineer/developer Should Subscribe To - Part 4]]></title>
@@ -204,96 +514,6 @@ project, to test checkout with offline payment method on the browser.</p>
 
 <p>Testing is super important for a robust software application. Automated testing + CI is one of the <a href="http://geshan.com.np/blog/2015/10/4-pillars-of-a-solid-software-application-and-tools-to-support-it/">four pillars</a>
 of any solid software application. Happy testing hope your tests run in seconds not minutes.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[10 software engineering proverbs/quotes I wrote in the past months]]></title>
-    <link href="https://geshan.com.np/blog/2016/03/10-software-engineering-proverbs-slash-quotes-i-wrote-in-the-past-months/"/>
-    <updated>2016-03-14T11:30:20+00:00</updated>
-    <id>https://geshan.com.np/blog/2016/03/10-software-engineering-proverbs-slash-quotes-i-wrote-in-the-past-months</id>
-    <content type="html"><![CDATA[<p>In the past months, I was tweeting some insightful and enlightening software engineering proverbs. Like the one below</p>
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">There is no pill to convert yourself as a good <a href="https://twitter.com/hashtag/programmer?src=hash">#programmer</a>, it takes lots of reading, learning and practice. So start now :) <a href="https://twitter.com/hashtag/code?src=hash">#code</a> <a href="https://twitter.com/hashtag/software?src=hash">#software</a></p>&mdash; Geshan Manandhar (@geshan) <a href="https://twitter.com/geshan/status/707796907582726145">March 10, 2016</a></blockquote>
-
-
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>I browsed through my twitter timeline and collected them in one place.</p>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/code-html-small.jpg" title="10 software engineering proverbs-quotes I came up with in past months" alt="10 software engineering proverbs-quotes I came up with in past months"></p>
-
-<h2>Here are the quotes with visuals :</h2>
-
-<!-- more -->
-
-
-<hr />
-
-<h3>There is no pill to convert yourself as a good programmer, it takes lots of reading, learning and practice. So start now.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/01pills.jpg" title="There is no pill to convert yourself as a good programmer, it takes lots of reading, learning and practice. So start now." alt="There is no pill to convert yourself as a good programmer, it takes lots of reading, learning and practice. So start now."></p>
-
-<hr />
-
-<h3>An open pull request (PR) is a liability in at least 2 ways. 1 it&rsquo;s a feature/fix not shipped to customers. 2 it will invite code conflicts soon.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/02PR.jpg" title="An open pull request is a liability in at least 2 ways. 1 it is a feature-fix not shipped to customers. 2 it will invite code conflicts soon." alt="An open pull request is a liability in at least 2 ways. 1 it is a feature-fix not shipped to customers. 2 it will invite code conflicts soon."></p>
-
-<hr />
-
-<h3>Talking about automated testing and Continuous Integration(CI) is easy, balancing it with delivery and cost as a web shop manager is hard.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/03test-ci-balance.jpg" title="Talking about automated testing and Continuous Integration(CI) is easy, balancing it with delivery and cost as a web shop manager is hard." alt="Talking about automated testing and Continuous Integration(CI) is easy, balancing it with delivery and cost as a web shop manager is hard."></p>
-
-<hr />
-
-<h3>Having automated tests but no Continuous Integration(CI) is like having a sword but letting it rot.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/04test-ci-sword.jpg" title="Having automated tests but no Continuous Integration(CI) is like having a sword but letting it rot." alt="Having automated tests but no Continuous Integration(CI) is like having a sword but letting it rot."></p>
-
-<hr />
-
-<h3>You cannot follow everything by the book. It&rsquo;s generally an ish implementation like Agileish, Kanbanish and RESTish.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/05follow-book.jpg" title="You cannot follow everything by the book. It is generally an ish implementation like agileish, kanbanish and RESTish." alt="You cannot follow everything by the book. It is generally an ish implementation like agileish, kanbanish and RESTish."></p>
-
-<hr />
-
-<h3>If you are thinking of a software product idea, make a pain killer people can&rsquo;t live without not an optional vitamin people can and will skip.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/06pain-killer.jpg" title="If you are thinking of a software product idea, make a pain killer people can not live without not an optional vitamin people can and will skip." alt="If you are thinking of a software product idea, make a pain killer people can not live without not an optional vitamin people can and will skip."></p>
-
-<hr />
-
-<h3>Software engineers have power to create great solutions but the best software to solve the least important problem is of no use.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/07solution-importance.jpg" title="Software engineers have power to create great solutions but the best software to solve the least important problem is of no use." alt="Software engineers have power to create great solutions but the best software to solve the least important problem is of no use."></p>
-
-<hr />
-
-<h3>Programmers/developers need to become software engineers. Think of solution then technology to implement it. Think of abstractions then code.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/08solution-abstract.jpg" title="Programmers-developers need to become software engineers. Think of solution then technology to implement it. Think of abstractions then code." alt="Programmers-developers need to become software engineers. Think of solution then technology to implement it. Think of abstractions then code."></p>
-
-<hr />
-
-<h3>Software developers are solution providers first, engineers second. Solution should have business value than using the latest tech fad.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/09solution-value.jpg" title="Software developers are solution providers first, engineers second. Solution should have business value than using the latest tech fad." alt="Software developers are solution providers first, engineers second. Solution should have business value than using the latest tech fad."></p>
-
-<hr />
-
-<h3>If you don&rsquo;t sharpen your axe then it will take more time and effort to cut the tree. Same goes for software development.</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/10-quotes/10axe.jpg" title="If you don't sharpen your axe then it will take more time and effort to cut the tree. Same goes for software development." alt="If you don't sharpen your axe then it will take more time and effort to cut the tree. Same goes for software development."></p>
-
-<hr />
-
-<h3>Disclaimer</h3>
-
-<p>Not all of the above quotes are created by me, some of them are inspired/adapted from things I read online and podcasts I listen to. Thanks.</p>
 ]]></content>
   </entry>
   

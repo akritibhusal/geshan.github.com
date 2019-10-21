@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>https://geshan.com.np/blog/2019/10/get-laravel-6-running-on-google-cloud-run-step-by-step-with-ci/</loc>
+    
+    <lastmod>2019-10-21T08:03:29+00:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>https://geshan.com.np/blog/2019/07/podcasts-every-software-engineer-slash-developer-should-subscribe-to-part-4/</loc>
     
     <lastmod>2019-07-08T04:58:14+00:00</lastmod>
@@ -1501,21 +1509,21 @@
   
   <url>
     <loc>https://geshan.com.np/blog/</loc>
-    <lastmod>2019-07-10T00:10:46+00:00</lastmod>
+    <lastmod>2019-10-21T02:46:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://geshan.com.np/</loc>
-    <lastmod>2019-07-10T00:10:46+00:00</lastmod>
+    <lastmod>2019-10-21T02:46:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://geshan.com.np/blog/archives/</loc>
-    <lastmod>2019-07-10T00:10:46+00:00</lastmod>
+    <lastmod>2019-10-21T02:46:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

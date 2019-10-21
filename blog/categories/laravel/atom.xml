@@ -4,7 +4,7 @@
   <title><![CDATA[Category: laravel | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/laravel/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-10-21T21:55:49+00:00</updated>
+  <updated>2019-10-21T22:26:44+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -101,7 +101,8 @@ git push -u origin master
 <p>Now let&rsquo;s add the whole app as a PR to the Github repo by executing the following commands:</p>
 
 <pre><code class="bash">git checkout -b laravel6-full-app
-git add .gitignore 
+git add .gitignore
+git add .
 git commit -m "Add the whole Laravel 6 app"
 git push origin laravel6-full-app
 </code></pre>

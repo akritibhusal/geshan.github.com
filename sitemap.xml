@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>https://geshan.com.np/blog/2019/11/laracon-au-2019-overall-a-good-experience/</loc>
+    
+    <lastmod>2019-11-01T09:01:15+00:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>https://geshan.com.np/blog/2019/10/get-laravel-6-running-on-google-cloud-run-step-by-step-with-ci/</loc>
     
     <lastmod>2019-10-21T08:03:29+00:00</lastmod>
@@ -1509,21 +1517,21 @@
   
   <url>
     <loc>https://geshan.com.np/blog/</loc>
-    <lastmod>2019-10-22T22:07:22+00:00</lastmod>
+    <lastmod>2019-10-31T23:16:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://geshan.com.np/</loc>
-    <lastmod>2019-10-22T22:07:22+00:00</lastmod>
+    <lastmod>2019-10-31T23:16:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://geshan.com.np/blog/archives/</loc>
-    <lastmod>2019-10-22T22:07:22+00:00</lastmod>
+    <lastmod>2019-10-31T23:16:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

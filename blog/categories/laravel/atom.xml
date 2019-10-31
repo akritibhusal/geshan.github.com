@@ -4,7 +4,7 @@
   <title><![CDATA[Category: laravel | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/laravel/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-10-22T22:07:22+00:00</updated>
+  <updated>2019-10-31T23:14:42+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Laracon AU 2019 overall a good experience]]></title>
+    <link href="https://geshan.com.np/blog/2019/11/laracon-au-2019-overall-a-good-experience/"/>
+    <updated>2019-11-01T09:01:15+00:00</updated>
+    <id>https://geshan.com.np/blog/2019/11/laracon-au-2019-overall-a-good-experience</id>
+    <content type="html"><![CDATA[<p>This is my second Laracon, the first one was <a href="https://geshan.com.np/blog/2016/08/number-laraconeu-2016-was-a-great-experience-overall/">Laracon EU 2016</a> which was one of the best conferences I have ever attended and spoken at. This blog post is a rundown of the talks of the first day of Laracon AU 2019 with slides from my talk, carry on reading…</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laracon-au-2019/01-laracon-au-2019.jpg" title="Laracon AU 2019 stage" alt="Laracon AU 2019 stage"></p>
+
+<!-- more -->
+
+
+<h2>Day 1</h2>
+
+<p>This is the second <a href="https://laracon.com.au/">Laracon</a> in Australia, the first one was in 2018. There were just over 200 people who attended the first day. The speaker line up looked pretty interesting with more than a couple of first-time conference speakers. TBH, no one seemed like they were taking the conference stage for the first time</p>
+
+<h2>Talks were great</h2>
+
+<p>The day was started by <a href="https://freek.dev/">Freek</a>, it was great meeting him after Laracon EU 2016. His talk was titled “A way to structure a large Laravel app” which is very good. The pointers on using typescript and creating a domain (kinda sub-apps) inside your Laravel were the highlights for me.</p>
+
+<p>Then <a href="https://twitter.com/michael_timbs">Michael Tims</a> took on the stage to show how to test fronted Javascript Apps. The highlight for me was “Contract testing” in this talk as I was familiar with the regular forms of testing like unit, integration and even mutation testing. After him, <a href="https://blog.maxsnow.me/">Max Snow</a> showed us his Laravel API boilerplate and how it makes creating APIs on Laravel easy. Then it was me on stage and details about my talk “Are logs a software engineer’s best friend? Yes &ndash; follow these best practices” are below.</p>
+
+<p>After lunch, <a href="https://jessarcher.com/">Jess Archer</a> spread her knowledge of SPAs, the highlight for me was using JWT token in cookies. As I have done it in the past it was easier for me to relate to the concept. Then <a href="https://samgreenwood.me/">Sam</a> took the stage to show us the need for strict types and tools in PHP to do it. I liked the multiple tools he mentioned like <a href="http://psalm.dev">Psalm</a>. After him, <a href="https://jessbudd.com">Jess Budd</a> showed us how to write semantic HTML to build apps accessible with screen readers. The main takeaway for me here was semantic HTML not only improves accessibility but also add more SEO juice to your website.</p>
+
+<p>After the break, <a href="https://amyskapers.tech/">Amy</a> took on the stage to show us the magic of CSS grids. The main highlight for me was it helped me demystify the seemingly magical CSS grids. Last but not least was <a href="https://jasonmccreary.me/">JMac</a> (creater of Laravel <a href="https://laravelshift.com/">Shift</a>)giving us important pointers to “Creating maintainable Laravel applications”. He had 10 points to do so. My main takeaway was “grok the framework” if I was writing Laravel every day that is something I would remember and follow :)</p>
+
+<p>You can follow all the tweets/images at <a href="https://twitter.com/search?q=%23laraconau">#laraconau</a> on twitter. Special thanks to Shane Smith for his amazing threads. I don’t know how he is tweeting, listening and taking pictures at the same time :).</p>
+
+<h2>My talk</h2>
+
+<p>I think my talk went pretty well too. There was no time or provision to ask a question which is Ok. Some people came in later to ask their queries about logging and how to get started. I consider that the talk was warmly received by the audience with some laughs and a lot of attention.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/laracon-au-2019/02-laracon-au-2019.jpg" title="My talk about Logging at Laracon AU 2019" alt="My talk about Logging at Laracon AU 2019"></p>
+
+<h2>Slides</h2>
+
+<p>Below are the slides from my talk:</p>
+
+<script async class="speakerdeck-embed" data-id="4f33e89002cc4a29926808ef42457fc2" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>The slides are on <a href="https://www.slideshare.net/geshan/are-logs-a-software-engineers-best-friend-yes-follow-these-best-practices">slide share</a> too.</p>
+
+<h2>Day 2</h2>
+
+<p>Today is day 2 and let&rsquo;s see how it goes. <a href="https://twitter.com/marcusamoore">Marcus</a> is going to start the day.</p>
+
+<h2>Conclusion</h2>
+
+<p>Day 1 was good overall. One thing I noticed was the number of female attendees was quite low. This is something the organizers can work on else the venue, organization of the speakers and attendees was commendable. Thanks to <a href="https://twitter.com/michaeldyrynda">Michael</a> and the team for putting up such a great tech conference in Sydney bringing together like-minded technologists under the same roof. Cheers!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Set up Laravel 6 on Google Cloud Run step by step with Continuous Integration (CI)]]></title>

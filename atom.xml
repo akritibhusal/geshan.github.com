@@ -4,7 +4,7 @@
   <title><![CDATA[Geshan's Blog]]></title>
   <link href="https://geshan.com.np/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-11-01T00:23:21+00:00</updated>
+  <updated>2019-11-01T00:45:12+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -37,9 +37,9 @@
 
 <p>After lunch, <a href="https://jessarcher.com/">Jess Archer</a> spread her knowledge of SPAs, the highlight for me was using JWT token in cookies. As I have done it in the past it was easier for me to relate to the concept. Then <a href="https://samgreenwood.me/">Sam</a> took the stage to show us the need for strict types and tools in PHP to do it. I liked the multiple tools he mentioned like <a href="http://psalm.dev">Psalm</a>. After him, <a href="https://jessbudd.com">Jess Budd</a> showed us how to write semantic HTML to build apps accessible with screen readers. The main takeaway for me here was semantic HTML not only improves accessibility but also add more SEO juice to your website.</p>
 
-<p>After the break, <a href="https://amyskapers.tech/">Amy</a> took on the stage to show us the magic of CSS grids. The main highlight for me was it helped me demystify the seemingly magical CSS grids. Last but not least was <a href="https://jasonmccreary.me/">JMac</a> (creater of Laravel <a href="https://laravelshift.com/">Shift</a>)giving us important pointers to “Creating maintainable Laravel applications”. He had 10 points to do so. My main takeaway was “grok the framework” if I was writing Laravel every day that is something I would remember and follow :)</p>
+<p>After the break, <a href="https://amyskapers.tech/">Amy</a> took on the stage to show us the magic of CSS grids. The main highlight for me was it helped me demystify the seemingly magical CSS grids. Last but not least was <a href="https://jasonmccreary.me/">JMac</a> (creater of Laravel <a href="https://laravelshift.com/">Shift</a>) giving us important pointers to “Creating maintainable Laravel applications”. He had 10 points to do so. My main takeaway was “grok the framework” if I was writing Laravel every day that is something I would remember and follow :)</p>
 
-<p>You can follow all the tweets/images at <a href="https://twitter.com/search?q=%23laraconau">#laraconau</a> on twitter. Special thanks to Shane Smith for his amazing threads. I don’t know how he is tweeting, listening and taking pictures at the same time :).</p>
+<p>You can follow all the tweets/images at <a href="https://twitter.com/search?q=%23laraconau">#laraconau</a> on twitter. Special thanks to <a href="https://twitter.com/shanesmithau">Shane Smith</a> for his amazing threads on twitter. I don’t know how he is tweeting, listening and taking pictures at the same time :).</p>
 
 <h2>My talk</h2>
 
@@ -1273,7 +1273,7 @@ With current data, it will give 3 rows like below:</p>
 
 <h3><a href="https://hackernoon.com/">HackerNoon</a> - 403kK followers</h3>
 
-<p>HackerNoon is also another extremely popular publication. It is on Medium right now but it may not be there for long. They are going public with <a href="https://www.startengine.com/hackernoon">crowd sourcing</a>. From the content point of view, there is a sizable amount of content for software engineers. It also has lots of stories on cryptocurrencies. With 7 editors and 7K+ writers (includes me), this is a huge publication too. To write for them you need to send your draft to <a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x53;&#x74;&#x6f;&#114;&#105;&#x65;&#115;&#x40;&#65;&#x4d;&#x69;&#x50;&#117;&#98;&#108;&#105;&#x63;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x73;&#46;&#x63;&#x6f;&#x6d;&#46;">&#83;&#116;&#111;&#x72;&#x69;&#101;&#x73;&#64;&#x41;&#x4d;&#x69;&#x50;&#x75;&#98;&#x6c;&#x69;&#x63;&#x61;&#x74;&#105;&#111;&#110;&#x73;&#x2e;&#99;&#111;&#x6d;&#x2e;</a> The wait time for each story is 1 week or more (I have already published 5 stories). It also has a writer&rsquo;s group on Facebook. You can include yourself as a &ldquo;Contributing Writer&rdquo; on <a href="https://www.linkedin.com/company/hackernoon/">LinkedIn</a> too.</p>
+<p>HackerNoon is also another extremely popular publication. It is on Medium right now but it may not be there for long. They are going public with <a href="https://www.startengine.com/hackernoon">crowd sourcing</a>. From the content point of view, there is a sizable amount of content for software engineers. It also has lots of stories on cryptocurrencies. With 7 editors and 7K+ writers (includes me), this is a huge publication too. To write for them you need to send your draft to <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#83;&#116;&#111;&#114;&#105;&#101;&#x73;&#64;&#65;&#77;&#x69;&#x50;&#117;&#98;&#108;&#105;&#99;&#x61;&#x74;&#105;&#111;&#x6e;&#115;&#46;&#x63;&#111;&#109;&#46;">&#83;&#x74;&#x6f;&#x72;&#x69;&#x65;&#x73;&#x40;&#x41;&#77;&#x69;&#80;&#117;&#98;&#x6c;&#105;&#x63;&#x61;&#x74;&#x69;&#111;&#110;&#x73;&#46;&#x63;&#111;&#109;&#46;</a> The wait time for each story is 1 week or more (I have already published 5 stories). It also has a writer&rsquo;s group on Facebook. You can include yourself as a &ldquo;Contributing Writer&rdquo; on <a href="https://www.linkedin.com/company/hackernoon/">LinkedIn</a> too.</p>
 
 <h3><a href="https://codeburst.io">CodeBurst.io</a> - 62K followers</h3>
 

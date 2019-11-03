@@ -4,7 +4,7 @@
   <title><![CDATA[Category: technology | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/technology/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-11-01T00:45:12+00:00</updated>
+  <updated>2019-11-03T04:32:31+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -12,6 +12,87 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to run Symfony on Google Cloud Run with the demo app [Step-by-Step Guide]]]></title>
+    <link href="https://geshan.com.np/blog/2019/11/how-to-run-symfony-on-google-cloud-run-with-the-demo-app-step-by-step-guide/"/>
+    <updated>2019-11-03T14:22:00+00:00</updated>
+    <id>https://geshan.com.np/blog/2019/11/how-to-run-symfony-on-google-cloud-run-with-the-demo-app-step-by-step-guide</id>
+    <content type="html"><![CDATA[<p>Symfony is without doubts one of the most <a href="https://raygun.com/blog/top-php-frameworks/">popular</a> PHP frameworks. It has amazing flexibility and is written in an applaudable modular fashion. Some Symfony components even <a href="https://symfony.com/projects/laravel">power</a> other prominent frameworks like Laravel. Running Symfony is a bit tricky at times, especially the <a href="https://symfony.com/doc/current/setup/file_permissions.html">permissions</a> of the cache and logs folder, this blog post demystifies running the Symfony <a href="https://github.com/symfony/demo">Demo App</a> in a docker container and hosting it serverless on <a href="https://cloud.google.com/run/">Google Cloud Run</a>.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/00symfony-on-gcr.jpg" title="Get Symfony running on Google Cloud Run with the demo app" alt="Get Symfony running on Google Cloud Run with the demo app"></p>
+
+<!-- more -->
+
+
+<h2>Prerequisites</h2>
+
+<ol>
+<li>You have done at least one project with Symfony (of course you are comfortable with PHP and composer)</li>
+<li>You have a good working knowledge of git and Github</li>
+<li>Know a fair bit of <a href="https://geshan.com.np/blog/categories/docker/">docker</a>, maybe even multi-stage build</li>
+<li>Have a working Google cloud account (they give you <a href="https://cloud.google.com/free/">$300 credit</a> free for 1 yr, no reasons not to have an account)</li>
+</ol>
+
+
+<p>This post is not going to be a detailed one like the last one about <a href="https://geshan.com.np/blog/2019/10/get-laravel-6-running-on-google-cloud-run-step-by-step-with-ci/">Laravel on Google Cloud Run</a>. If you are fairly new Git or Docker, please do read the above-mentioned post thoroughly.</p>
+
+<h2>Steps</h2>
+
+<p>Before going to the steps, the repo is hosted on my <a href="https://github.com/geshan/symfony-demo-google-cloud-run">Github</a> and it is open-source of course. It might look insanely easy but we will go through some details after the steps. So let’s get started now:</p>
+
+<h3>1. Go to the repo</h3>
+
+<p>Navigate to the open-source <a href="https://github.com/geshan/symfony-demo-google-cloud-run">Github</a> repo. That is a very easy step, isn’t it? :)</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/01github-repo.jpg" title="Github repo with Symfony demo app dockerized and ready for Google Cloud Run" alt="Github repo with Symfony demo app dockerized and ready for Google Cloud Run"></p>
+
+<h3>2. Click on the Google Cloud button</h3>
+
+<p>Then click on the <code>Run on Google Cloud</code> blue button, as shown below: 02google-cloud-button</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/02google-cloud-button.jpg" title="Just click the Google Cloud button and see it roll" alt="Just click the Google Cloud button and see it roll"></p>
+
+<h3>3. Choose correct settings on Google cloud CLI</h3>
+
+<p>After that, given you are logged into your Google account and have Google cloud setup with 1 or more projects, click <code>Proceed</code>. You might need to wait a bit, after that</p>
+
+<ol>
+<li>Choose the project – <code>Choose a project to deploy this application</code></li>
+<li>Choose the region – <code>Choose a region to deploy this application</code>, I usually choose <code>us-central-1</code></li>
+</ol>
+
+
+<p>Then wait for the container to be built and deployed, you can see my process below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/03deploy-symfony.jpg" title="Steps to deploy Symfony on Google Cloud Run" alt="Steps to deploy Symfony on Google Cloud Run"></p>
+
+<p>If everything goes fine on your Google Cloud Shell, you will see HTTPs URL you can go to in order to see your Symfony demo app running like below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/04symfony-running.jpg" title="Symfony running on Google Cloud Run" alt="Symfony running on Google Cloud Run"></p>
+
+<p>One issue with this setup is that data will not be saved if you click around and add new posts. This happens because the data is saved in the SQLite file, as it is not persisted new containers get the old file and you get the same data pushed in the repo.</p>
+
+<h2>So what just happened?</h2>
+
+<p>There are some things you need to consider for this automagic deployment of the Symfony App. Let’s look at what just happened above:</p>
+
+<ol>
+<li>The Symfony Demo app has been dockerized, have a look at this <a href="https://github.com/geshan/symfony-demo-google-cloud-run/blob/master/Dockerfile">Dockerfile</a> and the <a href="https://github.com/geshan/symfony-demo-google-cloud-run/blob/master/docker/000-default.conf">Apache config</a> too. The Dockerfile uses multistage build, on stage to install dependencies with composer and another one with Apache to run the application.</li>
+<li>If you want to run it locally, just run <code>docker-compose up</code> then go to <code>http://localhost:8080</code>. <a href="https://cloud.google.com/run/docs/reference/container-contract">8080</a> is the required port needed for Google Cloud Run.</li>
+<li>Thanks to the <a href="https://cloud.google.com/blog/products/serverless/introducing-cloud-run-button-click-to-deploy-your-git-repos-to-google-cloud">Google Cloud Run button</a> and the Cloud Shell script that does the automagic deployment.</li>
+</ol>
+
+
+<p>To make the most out of this tutorial, you can fork the <a href="https://github.com/geshan/symfony-demo-google-cloud-run">repo</a>, add your own button then explore more with it.</p>
+
+<h2>Conclusion</h2>
+
+<p>Running Symfony entails some tricky configuration :) so the Dockerized version is a breeze to run. I really believe that Google Cloud Run is a superior product if you know how to dockerize your web app and run it on port 8080 you can get amazing scalability with unparallel ease to make it run.</p>
+
+<blockquote><p>I would recommend Cloud Run for any pet project or even production application.</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Laracon AU 2019 overall a good experience]]></title>
@@ -483,174 +564,6 @@ Laravel app running like below:</p>
 <blockquote><p>If a dog is a man’s best friend, logs are software engineer&rsquo;s best friend.</p></blockquote>
 
 <p>Use logs to the fullest to get the most out of it and keep in mind the best practices about logging.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Things tech recruiters look for in your resume and the first interview]]></title>
-    <link href="https://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for/"/>
-    <updated>2019-01-17T10:20:29+00:00</updated>
-    <id>https://geshan.com.np/blog/2019/01/things-tech-recruiters-look-for</id>
-    <content type="html"><![CDATA[<p>Have you ever applied to many tech jobs that suit your experience and skill but never heard back? Does it feel like you are sending your resume to a black hole? Then this is something you absolutely must read. In this post, 3 tech recruiters in Sydney, Australia answer what they look for in a resume/candidate profile. They also open up about top 3 things they evaluate while conducting the first interview.</p>
-
-<blockquote><p>After you know what the tech recruiters are looking for you can tailor your resume that lands you an interview.</p></blockquote>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="what recruiters look for" alt="what recruiters look for" data-echo="/images/tech-recruitment-aus/for-hire.jpg"></p>
-
-<!-- more -->
-
-
-<p>2019 started less than 3 weeks ago and I have seen many new tech roles open up. You can also read through <a href="https://geshan.com.np/blog/2018/09/7-practical-steps-to-land-your-first-tech-job/" title="Steps to land your first tech job">practical step to land a tech job</a> and get an edge over your competition on your job hunt. I have also compiled a <a href="https://github.com/geshan/au-companies-providing-work-visa-sponsorship" title="Companies in Austalia providing visa sponsorship for tech roles">list</a> of companies in Australia that provide work visa sponsorship. Of course, it depends a lot on the role and the candidate too.</p>
-
-<h2>Purpose of the CV/Resume</h2>
-
-<p>What is the purpose of your resume? In my opinion, the main purpose of your resume is to land you the first interview.</p>
-
-<blockquote><p>So, craft your resume to cater your audience very well. Then it is up to you to prove yourself worthy for the second interview up-to-the job offer stage.</p></blockquote>
-
-<p>For initial review, you can run your CV through <a href="https://cvcompiler.com/" title="Tech CV review powered by NLP and data insights">CVCompiler.com</a> (has a free or paid version). I have found it to be quite helpful for tech-related CVs.</p>
-
-<h2>Initial interview</h2>
-
-<p>Initial screening interview by a tech recruiter is generally done over phone or audio/video conference. This helps filter out candidates that are not the best cultural fit or even small things like &ldquo;Can the candidate speak good English?&rdquo;.</p>
-
-<blockquote><p>First interviews are generally short and not technical.</p></blockquote>
-
-<p>It is like the entry of the funnel and getting past the initial interview should not be that difficult.</p>
-
-<h2>What recruiters look for?</h2>
-
-<p>I asked 3 internal tech recruiters in Sydney, Australia the following 3 simple questions:</p>
-
-<ol>
-<li>How many resumes/candidate profiles do you go through in a day usually?</li>
-<li>What are the things you look for in a resume sent for a technical role?</li>
-<li>What are the top 3 things you evaluate in a candidate when conducting the first interview?</li>
-</ol>
-
-
-<p>Read on to find out what they had to say about tech recruitment as an internal tech recruiter:</p>
-
-<h2>The Answers</h2>
-
-<p>I asked the above 3 questions to Cloë Stanbridge (Safety Culture), James Richardson (Quantium) and Kevin Yoon (SiteMinder). Below are their answers:</p>
-
-<h3>Cloë Stanbridge (Safety Culture) looks for tech and soft skills</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="Cloe from Safety Culture" alt="Cloe from Safety Culture" data-echo="/images/tech-recruitment-aus/cloe.jpg"></p>
-
-<p><a href="https://www.linkedin.com/in/cloestanbridge/" title="Cloë on LinkedIn">Cloë Stanbridge</a> has been working for <a href="https://safetyculture.com/" title="Safety culture website">Safety Culture</a> for almost 2 years now. She is currently the Talent Acquisition manager there. Safety Culture&rsquo;s mission is &ldquo;to help companies achieve safer and higher quality workplaces all around the world through innovative, low-cost mobile first products.&rdquo;</p>
-
-<blockquote><p>Safety Culture has multiple <a href="https://safetyculture.com/jobs/" title="Jobs at safety culture">open roles</a> as of now.</p></blockquote>
-
-<p>It has 5 offices around the world with 2 of them in Australia. Cloë expressed her point of view about the above question the following way:</p>
-
-<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
-
-<p>This can vary due to the volume of roles I have on hand but on an <strong>average about 10 a day</strong>.</p>
-
-<h4>What are the things you look for in a resume sent for a technical role?</h4>
-
-<p>Education, longevity and <strong>growth in their career</strong> is something I focus on. I also look into if the candidate has <strong>worked for a product/SaaS company</strong>. This helps me evaluate that they are used to iterating, Continuous Integration (CI) and <strong>are focused on quality rather than being constrained by budget or time.</strong></p>
-
-<p>Candidates who have worked in cross-functional teams is a plus. They don&rsquo;t need to have all of these things but scoring on most of them would warrant them an interview. Grammar/spelling mistakes is also a <strong>big no</strong>.</p>
-
-<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
-
-<ol>
-<li><strong>Communication</strong>: This is not just the ability to speak English but being able to explain technical terms to a non-technical person earns brownie points for the candidate.</li>
-<li><strong>Passion and interest for their craft</strong>: I would check if they have a side project. Learning something new in their free time would result in a better rating. The questions they ask hints to me about their passion for what they do.</li>
-<li><strong>How interested are they in the problems that we are solving</strong>: I would also evaluate if they just want &ldquo;a&rdquo; job or do they actually want to work for this company. This would also include being excited for the learning opportunity they would get at work.</li>
-</ol>
-
-
-<p>She was quite precise about the things she would look for in the CV and the candidate in the first interview.</p>
-
-<h3>James Richardson (Quantium) seeks alignment to JD and aptitude</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="James, currently working at Quantium" alt="James, currently working at Quantium" data-echo="/images/tech-recruitment-aus/james.jpg"></p>
-
-<p><a href="https://www.linkedin.com/in/jamesrichardsonrecruitment/" title="James on LinkedIn">James</a> has been associated with <a href="https://www.quantium.com/" title="Quantium website">Quantium</a> for almost 2 and a half years. Currently, he is the &ldquo;Lead Recruitment Business Partner&rdquo; at Quantium, he is also the co-organizer of <a href="https://www.meetup.com/node-sydney/" title="Node Sydney Meetup group">Node Sydney Meetup</a>. Quantium is a consulting firm working in multiple domains and has multiple products, with a focus on Data Science and Artificial Intelligence. With 4 office location in Australia, Quantium has a total of 9 offices all over the world.</p>
-
-<blockquote><p>They are also <a href="https://www.quantium.com/careers/" title="Quantium careers page">looking</a> for talented tech people like you.</p></blockquote>
-
-<p>James answered the above questions as follows:</p>
-
-<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
-
-<p>It really varies. In peak times, I could be screening anywhere between 50-250 per day depending on the role. For software orientated roles, these numbers reduce sharply. Looking at my current data,
-<strong>a recurring Backend role that is constantly advertised will attract around 40 applications per week</strong>, with a spike on Tuesdays.</p>
-
-<h4>What are the things you look for in a resume sent for a technical role?</h4>
-
-<p>It all depending on the nature of the vacancy. <strong>I tend to align to the JD “as much as possible”</strong>. The wishlist on the JD usually turns out to be just a &ldquo;wishlist&rdquo;. I’ll focus on the core of the position. Generally, I’m looking for the following things:
-  * Right to work in Australia: <strong>If this is a role we can sponsor/relocate, then usually I just blast straight past this.</strong></p>
-
-<ul>
-<li><p>Experience in tech: <strong>A huge amount of newbies will apply for senior/lead roles and I will typically refer them to our graduate entry.</strong> If they have some experience, I’ll log them under potential future candidate for a more junior position. I pay attention to what they have delivered previously.</p></li>
-<li><p>Last company: This helps boost the candidate&rsquo;s ranking. <strong>Anyone working for a top tier engineering company is going to get a lot of attention.</strong> The best first stage assessment confidence bearing is having another reputable company do that assessment. If I find a candidate working for a company with strong engineering credibility, it is going to give me a high degree of confidence in them.</p></li>
-<li><p>Tech relevance: I would check if have they been working in the tech stack we use? For instance functional programming vs web dev. <strong>It will be hard to argue for a JS dev applying for a backend Scala functional role without significant side projects/open source work</strong> (yes this happens).</p></li>
-<li><p>Meeting in person: Do I know them or have I met them counts too. If I Know people at their company that helps as well. <strong>Have I met them at a meetup?</strong></p></li>
-</ul>
-
-
-<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
-
-<ol>
-<li><strong>Attitude</strong>: A positive attitude always leaves a good impression.</li>
-<li><strong>Aptitude</strong>: How well does the candidate understand concepts and processes. I don’t have the skills to check code but they should have the ability to code well.</li>
-<li><strong>Communication</strong>: I would evaluate how easy is it to talk to the candidate. Their ability to understand new things matter as well. Another deciding factor is would I be excited to meet this candidate in person?</li>
-</ol>
-
-
-<p>He adds &ldquo;Essentially, being an in-house recruiter is about credibility. We LOVE hiring people, it’s what drives us to do the job. <strong>We also need to establish that internal credibility to be successful.</strong>&rdquo; I must add he was pretty elaborate with his answers :) especially the 2nd question.</p>
-
-<h3>Kevin Yoon values experience and ability to change</h3>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" title="Kevin, currently employed at Siteminder" alt="Kevin, currently employed at Siteminder" data-echo="/images/tech-recruitment-aus/kevin.jpg"></p>
-
-<p><a href="https://www.linkedin.com/in/simplified/" title="Kevin Yoon on LinkedIn">Kevin</a> has been employed at <a href="https://www.siteminder.com/" title="SiteMinder website">SiteMinder</a> for the past 4 months as the &ldquo;Talent Acquisition Lead - Tech &amp; Product&rdquo;. SiteMinder is a SaaS company working in the hospitality industry with a focus on online booking and related things.</p>
-
-<blockquote><p>They have a physical presence in <a href="https://www.siteminder.com/contact/" title="SiteMinder contact page">5 continents</a> and are hiring for multiple <a href="https://www.siteminder.com/jobs/" title="SiteMinder jobs page">roles</a>. It includes some tech roles too.</p></blockquote>
-
-<p>Kevin shared his opinions the following way:</p>
-
-<h4>How many resumes/candidate profiles do you go through in a day usually?</h4>
-
-<p>I review all applicant and referral CVs that have come through overnight. This <strong>varies between 20 to 50 CVs per day</strong> depending on the number of roles we have publicly advertised and announced internally.</p>
-
-<h4>What are the things you look for in a resume sent for a technical role?</h4>
-
-<p>First, it is <strong>matched against the job description and the job briefing</strong>. For mid-level and senior engineers, I focus on the most recent <strong>3 to 5 years of work experience</strong> and any relevant personal projects or initiatives in that period.</p>
-
-<p>Any mentoring or hackathons attended are good signs. If the candidate has given talks at meetups or conferences that is a plus too. I also look for coaching experiences in the past 3 to 5 years. I evaluate the actual tech stacks used by the candidate and the context it was utilized in.</p>
-
-<p>I take a deeper look at how the candidate built solutions with the tools available. The candidate’s role in the projects done as an individual contributor or within a team context is important too. <strong>Changes in tech used in each role/project</strong> through their progression also catches my eye.</p>
-
-<h4>What are the top 3 things you evaluate in a candidate when conducting the first interview?</h4>
-
-<ol>
-<li>I would seek their <strong>motivation for change</strong> in relation to the salary they command in their respective roles. I try to elicit factors that inspire them for a change in addition to money.</li>
-<li>I also look for the candidate&rsquo;s ability to handle <strong>rapid change and criticism</strong> of their skills.</li>
-<li>Finally, I attempt to find out their <strong>expectation from their manager</strong>. I also intend to assess the environment which brings out their best performance.</li>
-</ol>
-
-
-<p>Kevin was to the point and expressed his views concisely. He has highlighted some things that would generally skip your mind as a person applying for a tech position. Be ready to explain your motivation for a job change in your next interview.</p>
-
-<h2>Conclusion</h2>
-
-<p>I would like to thank all 3 internal tech recruiters for their time and the valuable information they have provided. I hope you have extracted out the &ldquo;inside stuff&rdquo; from the above answers. Now, I think you will start editing your CVs to mention the impact and craft it to be a tool to land more interviews.</p>
-
-<blockquote><p>Similarly, you can also be well prepared for the first interview and ace it.</p></blockquote>
-
-<p>Wish you all the best for your job hunt in Australia!</p>
-
-<p>Share your thoughts and experience of finding a job in Australia. Have you found a role that makes you career high?</p>
-
-<hr />
-
-<p>PS: I might do a part 2 of this :)</p>
 ]]></content>
   </entry>
   

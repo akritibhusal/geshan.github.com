@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Geshan's Blog]]></title>
   <link href="https://geshan.com.np/blog/categories/programming/atom.xml" rel="self"/>
   <link href="https://geshan.com.np/"/>
-  <updated>2019-11-01T00:45:12+00:00</updated>
+  <updated>2019-11-03T04:32:31+00:00</updated>
   <id>https://geshan.com.np/</id>
   <author>
     <name><![CDATA[Geshan Manandhar]]></name>
@@ -12,6 +12,87 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to run Symfony on Google Cloud Run with the demo app [Step-by-Step Guide]]]></title>
+    <link href="https://geshan.com.np/blog/2019/11/how-to-run-symfony-on-google-cloud-run-with-the-demo-app-step-by-step-guide/"/>
+    <updated>2019-11-03T14:22:00+00:00</updated>
+    <id>https://geshan.com.np/blog/2019/11/how-to-run-symfony-on-google-cloud-run-with-the-demo-app-step-by-step-guide</id>
+    <content type="html"><![CDATA[<p>Symfony is without doubts one of the most <a href="https://raygun.com/blog/top-php-frameworks/">popular</a> PHP frameworks. It has amazing flexibility and is written in an applaudable modular fashion. Some Symfony components even <a href="https://symfony.com/projects/laravel">power</a> other prominent frameworks like Laravel. Running Symfony is a bit tricky at times, especially the <a href="https://symfony.com/doc/current/setup/file_permissions.html">permissions</a> of the cache and logs folder, this blog post demystifies running the Symfony <a href="https://github.com/symfony/demo">Demo App</a> in a docker container and hosting it serverless on <a href="https://cloud.google.com/run/">Google Cloud Run</a>.</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/00symfony-on-gcr.jpg" title="Get Symfony running on Google Cloud Run with the demo app" alt="Get Symfony running on Google Cloud Run with the demo app"></p>
+
+<!-- more -->
+
+
+<h2>Prerequisites</h2>
+
+<ol>
+<li>You have done at least one project with Symfony (of course you are comfortable with PHP and composer)</li>
+<li>You have a good working knowledge of git and Github</li>
+<li>Know a fair bit of <a href="https://geshan.com.np/blog/categories/docker/">docker</a>, maybe even multi-stage build</li>
+<li>Have a working Google cloud account (they give you <a href="https://cloud.google.com/free/">$300 credit</a> free for 1 yr, no reasons not to have an account)</li>
+</ol>
+
+
+<p>This post is not going to be a detailed one like the last one about <a href="https://geshan.com.np/blog/2019/10/get-laravel-6-running-on-google-cloud-run-step-by-step-with-ci/">Laravel on Google Cloud Run</a>. If you are fairly new Git or Docker, please do read the above-mentioned post thoroughly.</p>
+
+<h2>Steps</h2>
+
+<p>Before going to the steps, the repo is hosted on my <a href="https://github.com/geshan/symfony-demo-google-cloud-run">Github</a> and it is open-source of course. It might look insanely easy but we will go through some details after the steps. So let’s get started now:</p>
+
+<h3>1. Go to the repo</h3>
+
+<p>Navigate to the open-source <a href="https://github.com/geshan/symfony-demo-google-cloud-run">Github</a> repo. That is a very easy step, isn’t it? :)</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/01github-repo.jpg" title="Github repo with Symfony demo app dockerized and ready for Google Cloud Run" alt="Github repo with Symfony demo app dockerized and ready for Google Cloud Run"></p>
+
+<h3>2. Click on the Google Cloud button</h3>
+
+<p>Then click on the <code>Run on Google Cloud</code> blue button, as shown below: 02google-cloud-button</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/02google-cloud-button.jpg" title="Just click the Google Cloud button and see it roll" alt="Just click the Google Cloud button and see it roll"></p>
+
+<h3>3. Choose correct settings on Google cloud CLI</h3>
+
+<p>After that, given you are logged into your Google account and have Google cloud setup with 1 or more projects, click <code>Proceed</code>. You might need to wait a bit, after that</p>
+
+<ol>
+<li>Choose the project – <code>Choose a project to deploy this application</code></li>
+<li>Choose the region – <code>Choose a region to deploy this application</code>, I usually choose <code>us-central-1</code></li>
+</ol>
+
+
+<p>Then wait for the container to be built and deployed, you can see my process below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/03deploy-symfony.jpg" title="Steps to deploy Symfony on Google Cloud Run" alt="Steps to deploy Symfony on Google Cloud Run"></p>
+
+<p>If everything goes fine on your Google Cloud Shell, you will see HTTPs URL you can go to in order to see your Symfony demo app running like below:</p>
+
+<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/symfony-on-google-cloud-run/04symfony-running.jpg" title="Symfony running on Google Cloud Run" alt="Symfony running on Google Cloud Run"></p>
+
+<p>One issue with this setup is that data will not be saved if you click around and add new posts. This happens because the data is saved in the SQLite file, as it is not persisted new containers get the old file and you get the same data pushed in the repo.</p>
+
+<h2>So what just happened?</h2>
+
+<p>There are some things you need to consider for this automagic deployment of the Symfony App. Let’s look at what just happened above:</p>
+
+<ol>
+<li>The Symfony Demo app has been dockerized, have a look at this <a href="https://github.com/geshan/symfony-demo-google-cloud-run/blob/master/Dockerfile">Dockerfile</a> and the <a href="https://github.com/geshan/symfony-demo-google-cloud-run/blob/master/docker/000-default.conf">Apache config</a> too. The Dockerfile uses multistage build, on stage to install dependencies with composer and another one with Apache to run the application.</li>
+<li>If you want to run it locally, just run <code>docker-compose up</code> then go to <code>http://localhost:8080</code>. <a href="https://cloud.google.com/run/docs/reference/container-contract">8080</a> is the required port needed for Google Cloud Run.</li>
+<li>Thanks to the <a href="https://cloud.google.com/blog/products/serverless/introducing-cloud-run-button-click-to-deploy-your-git-repos-to-google-cloud">Google Cloud Run button</a> and the Cloud Shell script that does the automagic deployment.</li>
+</ol>
+
+
+<p>To make the most out of this tutorial, you can fork the <a href="https://github.com/geshan/symfony-demo-google-cloud-run">repo</a>, add your own button then explore more with it.</p>
+
+<h2>Conclusion</h2>
+
+<p>Running Symfony entails some tricky configuration :) so the Dockerized version is a breeze to run. I really believe that Google Cloud Run is a superior product if you know how to dockerize your web app and run it on port 8080 you can get amazing scalability with unparallel ease to make it run.</p>
+
+<blockquote><p>I would recommend Cloud Run for any pet project or even production application.</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Set up Laravel 6 on Google Cloud Run step by step with Continuous Integration (CI)]]></title>
@@ -465,69 +546,6 @@ management and change management is important in our work life.</p>
 <p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/3-podcasts-part-2/scrum-master-toolbox-podcast.jpg" title="Scurm Master Toolbox podcast" alt="Scurm Master Toolbox podcast"></p>
 
 <blockquote><p>For this time it was all podcasts with one on one interviews. Hope you like them and it helps you expand your tech horizon.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[There are only two types of automated software tests, fast ones and not fast ones]]></title>
-    <link href="https://geshan.com.np/blog/2016/03/there-are-only-two-types-of-automated-software-tests/"/>
-    <updated>2016-03-17T05:38:18+00:00</updated>
-    <id>https://geshan.com.np/blog/2016/03/there-are-only-two-types-of-automated-software-tests</id>
-    <content type="html"><![CDATA[<p>Tests check that the code does what it is expected to do. It also gives confidence to the software engineer that the code
-works as intended. This equates to less or no bugs in the software. You must have heard about lots of types of automated software tests.
-There is unit testing, integration testing, functional testing, acceptance testing, smoke testing etc.
-As per Guru99&rsquo;s <a href="http://www.guru99.com/types-of-software-testing.html">post</a> there are more than 100 types of
-software testing. In this post I am going to categorize automated software tests into two, the fast ones and not fast ones.</p>
-
-<p><img class="center" src="https://geshan.com.np/images/generic/loading.gif" data-echo="/images/testing-types/software-testing.jpg" title="There are only two types of automated software tests, fast ones and not fast ones" alt="There are only two types of automated software tests, fast ones and not fast ones"></p>
-
-<!-- more -->
-
-
-<h3>How do you distinguish between slow and fast tests?</h3>
-
-<p>Generally, if your whole tests suite runs in seconds it is fast.
-If your whole test suite runs in minutes/hour it is slow. To make your tests small you need to make your application small.
-As faster tests running on your Continuous Integration (CI) service will give you faster feedback.
-May be it is time to go micro-services?</p>
-
-<p>Lets discuss the more about fast and not fast (slow) automated software tests.</p>
-
-<h3>The fast tests</h3>
-
-<p>Fast tests are code that test one unit of code generally a method. Unit test is a type of fast test.
-They don&rsquo;t depend on any external dependencies. External dependencies include file system, database, web server, network
-or any third party API or service. Unit tests even mock the other code elements they need like other classes and its methods.
-This makes the test focused on one unit and they run in milliseconds/seconds not minutes. A simple example is below:</p>
-
-<script src="http://gist-it.appspot.com/http://github.com/geshan/dataprovider-example/blob/master/tests/DataProvider/Example/Test/CheckoutTest.php"></script>
-
-
-<p>You can view the full code <a href="http://github.com/geshan/dataprovider-example">here</a>, yes it is a simple class with no code or external dependency.</p>
-
-<p>Some integration tests can also be fast tests. These integration tests can test many classes. They should not
-dependent on any external dependencies mentioned above to obtain speed. So these tests will still run in seconds and
-not take minutes to finish.</p>
-
-<h3>The not fast tests (slow ones)</h3>
-
-<p>Any test that takes long to run are not fast tests (slow tests). Generally, these type of tests need to load
-the whole application to test it. These types of tests depend on external dependencies. External dependencies include file
-system, database, web server, network, third party API or service.</p>
-
-<p>Acceptance tests that need to load a full web application on a browser is a type of slow tests. Even smoke tests if it needs
-to load the whole application and takes long time to execute fall in this category.</p>
-
-<script src="https://gist.github.com/geshan/4512326704954f6b8388.js"></script>
-
-
-<p>The above example is taken from <a href="https://github.com/Sylius/Sylius/blob/master/features/checkout/checkout_with_offline_payment.feature">Sylius</a>
-project, to test checkout with offline payment method on the browser.</p>
-
-<h3>Conclusion</h3>
-
-<p>Testing is super important for a robust software application. Automated testing + CI is one of the <a href="http://geshan.com.np/blog/2015/10/4-pillars-of-a-solid-software-application-and-tools-to-support-it/">four pillars</a>
-of any solid software application. Happy testing hope your tests run in seconds not minutes.</p>
 ]]></content>
   </entry>
   
